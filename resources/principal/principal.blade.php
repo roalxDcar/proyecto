@@ -759,6 +759,7 @@
   <script src="{!! assets('assets/js/aos.js') !!}"></script>
   <script src="{!! assets('assets/js/rangeslider.min.js') !!}"></script>
   <script src="{!! assets('assets/js/main.js') !!}"></script>
+  <!-- lslslsl -->
     
   </body>
 </html>
