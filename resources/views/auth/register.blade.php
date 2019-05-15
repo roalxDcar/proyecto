@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
+                <br>
+                <h4 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0"><b>REGISTRARSE</b></a></h4>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -54,19 +55,19 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
+
+
+                        <div class="row form-group">
+                              <div class="col-md-12">
+                                <input type="submit" value="Registrarse" class="btn btn-primary py-2 px-4 text-white">
+                              </div>
                         </div>
                     </form>
                 </div>
