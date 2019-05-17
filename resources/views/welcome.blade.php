@@ -100,7 +100,7 @@
               <form method="post">
                 <div class="row align-items-center">
                   <div class="col-lg-12 mb-4 mb-xl-0 col-xl-4">
-                    <input type="text" class="form-control rounded" placeholder="Qué estás buscando?">
+                    <input type="text" class="form-control rounded" placeholder="Nombre del Centro Deportivo">
                   </div>
                   <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
                     <div class="wrap-icon">
@@ -113,6 +113,7 @@
                     <div class="select-wrap">
                       <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
                       <select class="form-control rounded" name="" id="">
+                        <option value="">Todos</option>
                         <option value="">Voley</option>
                         <option value="">Wally</option>
                         <option value="">Futbol</option>
