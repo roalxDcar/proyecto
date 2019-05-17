@@ -51,19 +51,8 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="listings.html">Ads</a></li>
-                <li class="has-children">
-                  <a href="about.html">About</a>
-                  <ul class="dropdown">
-                    <li><a href="#">The Company</a></li>
-                    <li><a href="#">The Leadership</a></li>
-                    <li><a href="#">Philosophy</a></li>
-                    <li><a href="#">Careers</a></li>
-                  </ul>
-                </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Comentarios</a></li>
+                <li><a href="contact.html">Contactos</a></li>
 
                 @if (Route::has('login'))
                 @auth
@@ -93,7 +82,7 @@
 
   
 
-    <div class="site-blocks-cover overlay" style="background-image: url(assets/images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay" style="background-image: url(../assets/images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
