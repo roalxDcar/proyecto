@@ -43,7 +43,7 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0">INFO<span class="text-primary">-SPORT</span>  </a></h1>
+            <h1 class="mb-0 site-logo"><a class="text-black mb-0">INFO<span class="text-primary">-SPORT</span>  </a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -56,8 +56,9 @@
         @if (Route::has('login'))
                 @auth
                 <li class="active"><a href="{{ url('/home') }}">Home</a></li>
+                <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded">Registrarse</span></a></li>
                         @else
-                <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión </a></li>
+                <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión</a></li>
 
                         @if (Route::has('register'))
                             <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded">Registrarse</span></a></li>
@@ -81,7 +82,7 @@
       
     </header>
 
-    <div class="site-blocks-cover overlay" style="background-image: url(assets/images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay" style="background-image: url(../assets/images/voley.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
@@ -185,7 +186,7 @@
         
         <div class="row">
           <div class="col-12">
-            <h2 class="h5 mb-4 text-black">Featured Ads</h2>
+            <h2 class="h5 mb-4 text-black">Centros Deportivos</h2>
           </div>
         </div>
         <div class="row">
@@ -193,12 +194,12 @@
             <div class="owl-carousel nonloop-block-13">
               
               <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_1.jpg')"></a>
+                <a href="listings-single.html" class="img d-block" style="background-image: url('../assets/images/euro.png')"></a>
                 <div class="lh-content">
                   <span class="category">Cars &amp; Vehicles</span>
                   <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Red Luxury Car</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
+                  <h3><a href="listings-single.html">Wally Euro</a></h3>
+                  <address> Distrito 3, Av. Bolivia, El Alto</address>
                   <p class="mb-0">
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
@@ -211,7 +212,7 @@
               </div>
 
               <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
+                <a href="listings-single.html" class="img d-block" style="background-image: url('../assets/images/img_2.jpg')"></a>
                 <div class="lh-content">
                   <span class="category">Real Estate</span>
                   <a href="#" class="bookmark"><span class="icon-heart"></span></a>
@@ -246,95 +247,7 @@
                 </div>
               </div>
 
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_4.jpg')"></a>
-                <div class="lh-content">
-                  <span class="category">Electronics</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">iPhone X gray</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_1.jpg')"></a>
-                <div class="lh-content">
-                  <span class="category">Cars &amp; Vehicles</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Red Luxury Car</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
-                <div class="lh-content">
-                  <span class="category">Real Estate</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">House with Swimming Pool</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_3.jpg')"></a>
-                <div class="lh-content">
-                  <span class="category">Furniture</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Wooden Chair &amp; Table</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_4.jpg')"></a>
-                <div class="lh-content">
-                  <span class="category">Electronics</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">iPhone X gray</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div>
+              
 
             </div>
           </div>
@@ -344,224 +257,8 @@
       </div>
     </div>
     
-    <div class="site-section" data-aos="fade">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center border-primary">
-            <h2 class="font-weight-light text-primary">Popular Products</h2>
-            <p class="color-black-opacity-5">Lorem Ipsum Dolor Sit Amet</p>
-          </div>
-        </div>
+    
 
-        <div class="row">
-          <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
-            
-            <div class="listing-item">
-              <div class="listing-image">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-              </div>
-              <div class="listing-item-content">
-                <a href="#" class="bookmark" data-toggle="tooltip" data-placement="left" title="Bookmark"><span class="icon-heart"></span></a>
-                <a class="px-3 mb-3 category" href="#">Car &amp; Vehicles</a>
-                <h2 class="mb-1"><a href="#">Red Luxury Car</a></h2>
-                <span class="address">West Orange, New York</span>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
-            
-            <div class="listing-item">
-              <div class="listing-image">
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-              </div>
-              <div class="listing-item-content">
-                <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                <a class="px-3 mb-3 category" href="#">Real Estate</a>
-                <h2 class="mb-1"><a href="#">House with Swimming Pool</a></h2>
-                <span class="address">West Orange, New York</span>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
-            
-            <div class="listing-item">
-              <div class="listing-image">
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-              </div>
-              <div class="listing-item-content">
-                <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                <a class="px-3 mb-3 category" href="#">Furniture</a>
-                <h2 class="mb-1"><a href="#">Wooden Chair &amp; Table</a></h2>
-                <span class="address">West Orange, New York</span>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-md-6 mb-4 mb-lg-4 col-lg-6">
-            
-            <div class="listing-item">
-              <div class="listing-image">
-                <img src="images/img_4.jpg" alt="Image" class="img-fluid">
-              </div>
-              <div class="listing-item-content">
-                <a href="#" class="bookmark" data-toggle="tooltip" data-placement="left" title="Bookmark"><span class="icon-heart"></span></a>
-                <a class="px-3 mb-3 category" href="#">Electronics</a>
-                <h2 class="mb-1"><a href="#">iPhone X gray</a></h2>
-                <span class="address">West Orange, New York</span>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 mb-4 mb-lg-4 col-lg-6">
-            
-            <div class="listing-item">
-              <div class="listing-image">
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-              </div>
-              <div class="listing-item-content">
-                <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                <a class="px-3 mb-3 category" href="#">Real Estate</a>
-                <h2 class="mb-1"><a href="#">House with Swimming Pool</a></h2>
-                <span class="address">West Orange, New York</span>
-              </div>
-            </div>
-
-          </div>
-          
-
-        </div>
-      </div>
-    </div>
-
-
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-7 text-left border-primary">
-            <h2 class="font-weight-light text-primary">Trending Today</h2>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-6">
-
-            <div class="d-block d-md-flex listing">
-              <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
-              <div class="lh-content">
-                <span class="category">Real Estate</span>
-                <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="listings-single.html">House with Swimming Pool</a></h3>
-                <address>Don St, Brooklyn, New York</address>
-                <p class="mb-0">
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-secondary"></span>
-                  <span class="review">(3 Reviews)</span>
-                </p>
-              </div>
-            </div>
-            <div class="d-block d-md-flex listing">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_3.jpg')"></a>
-                <div class="lh-content">
-                  <span class="category">Furniture</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Wooden Chair &amp; Table</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="d-block d-md-flex listing">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_4.jpg')"></a>
-                <div class="lh-content">
-                  <span class="category">Electronics</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">iPhone X gray</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div>
-
-             
-
-          </div>
-          <div class="col-lg-6">
-
-            <div class="d-block d-md-flex listing">
-              <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_1.jpg')"></a>
-              <div class="lh-content">
-                <span class="category">Cars &amp; Vehicles</span>
-                <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="listings-single.html">Red Luxury Car</a></h3>
-                <address>Don St, Brooklyn, New York</address>
-                <p class="mb-0">
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-secondary"></span>
-                  <span class="review">(3 Reviews)</span>
-                </p>
-              </div>
-            </div>
-
-            <div class="d-block d-md-flex listing">
-              <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
-              <div class="lh-content">
-                <span class="category">Real Estate</span>
-                <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                <h3><a href="listings-single.html">House with Swimming Pool</a></h3>
-                <address>Don St, Brooklyn, New York</address>
-                <p class="mb-0">
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-secondary"></span>
-                  <span class="review">(3 Reviews)</span>
-                </p>
-              </div>
-            </div>
-            <div class="d-block d-md-flex listing">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_3.jpg')"></a>
-                <div class="lh-content">
-                  <span class="category">Furniture</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Wooden Chair &amp; Table</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
     
     <div class="site-section bg-white">
       <div class="container">
@@ -576,7 +273,7 @@
           <div>
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-3">
+                <img src="../assets/images/person_3.jpg" alt="Image" class="img-fluid mb-3">
                 <p>John Smith</p>
               </figure>
               <blockquote>
@@ -587,7 +284,7 @@
           <div>
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid mb-3">
+                <img src="../assets/images/person_2.jpg" alt="Image" class="img-fluid mb-3">
                 <p>Christine Aguilar</p>
               </figure>
               <blockquote>
@@ -599,7 +296,7 @@
           <div>
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="images/person_4.jpg" alt="Image" class="img-fluid mb-3">
+                <img src="../assets/images/person_4.jpg" alt="Image" class="img-fluid mb-3">
                 <p>Robert Spears</p>
               </figure>
               <blockquote>
@@ -611,7 +308,7 @@
           <div>
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="images/person_5.jpg" alt="Image" class="img-fluid mb-3">
+                <img src="../assets/images/person_5.jpg" alt="Image" class="img-fluid mb-3">
                 <p>Bruce Rogers</p>
               </figure>
               <blockquote>
@@ -637,7 +334,7 @@
         <div class="row mb-3 align-items-stretch">
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <img src="images/hero_1.jpg" alt="Image" class="img-fluid rounded">
+              <img src="../assets/images/hero_1.jpg" alt="Image" class="img-fluid rounded">
               <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
               <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
@@ -645,7 +342,7 @@
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <img src="images/hero_1.jpg" alt="Image" class="img-fluid rounded">
+              <img src="../assets/images/hero_1.jpg" alt="Image" class="img-fluid rounded">
               <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
               <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
@@ -653,7 +350,7 @@
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <img src="images/hero_1.jpg" alt="Image" class="img-fluid rounded">
+              <img src="../assets/images/hero_1.jpg" alt="Image" class="img-fluid rounded">
               <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
               <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>

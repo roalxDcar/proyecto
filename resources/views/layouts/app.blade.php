@@ -1,194 +1,113 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <title>Info-Sport</title>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/ico" />
 
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="{!! asset('assets/fonts/icomoon/style.css') !!}">
+    <title>Info-Sport</title>
 
-    <link rel="stylesheet" href="{!! asset('assets/css/bootstrap.min.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/magnific-popup.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/jquery-ui.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/owl.carousel.min.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/owl.theme.default.min.css') !!}">
-
-    <link rel="stylesheet" href="{!! asset('assets/css/bootstrap-datepicker.css') !!}">
-
-    <link rel="stylesheet" href="{!! asset('assets/fonts/flaticon/font/flaticon.css') !!}">
-
-    <link rel="stylesheet" href="{!! asset('assets/css/aos.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/rangeslider.css') !!}">
-
-    <link rel="stylesheet" href="{!! asset('assets/css/style.css') !!}">
-</head>
-<body>
-
-
-
-
-  <div class="site-wrap">
-
-    <div class="site-mobile-menu">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
-    
-    <header class="site-navbar container py-0 bg-white" role="banner">
-
-      <!-- <div class="container"> -->
-        <div class="row align-items-center">
-          
-          <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0">INFO<span class="text-primary">-SPORT</span>  </a></h1>
-          </div>
-          <div class="col-12 col-md-10 d-none d-xl-block">
-            <nav class="site-navigation position-relative text-right" role="navigation">
-
-              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="blog.html">Comentarios</a></li>
-                <li><a href="contact.html">Contactos</a></li>
-
-                @if (Route::has('login'))
-                @auth
-                    <a href="{{ url('/principal') }}">Home</a>
-                        @else
-                <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión </a></li>
-
-                        @if (Route::has('register'))
-                            <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded">Registrarse</span></a></li>
-                        @endif
-                @endauth
-        @endif
-
-              </ul>
-            </nav>
-          </div>
-
-
-          <div class="d-inline-block d-xl-none ml-auto py-3 col-6 text-right" style="position: relative; top: 3px;">
-            <a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
-          </div>
-
-        </div>
-      <!-- </div> -->
-      
-    </header>
-
+    <!-- Bootstrap -->
+    <link href="{!! asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{!! asset('assets/vendors/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{!! asset('assets/vendors/nprogress/nprogress.css') !!}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{!! asset('assets/vendors/iCheck/skins/flat/green.css') !!}" rel="stylesheet">
   
+    <!-- bootstrap-progressbar -->
+    <link href="{!! asset('assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') !!}" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="{!! asset('assets/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet') !!}"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="{!! asset('assets/vendors/bootstrap-daterangepicker/daterangepicker.css') !!}" rel="stylesheet">
 
-    <div class="site-blocks-cover overlay" style="background-image: url(../assets/images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
+    <!-- Custom Theme Style -->
+    <link href="{!! asset('assets/build/css/custom.min.css') !!}" rel="stylesheet">
+  </head>
 
-          <div class="col-md-12">
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
             
 
+            @include('layouts.leftNavegation')
 
-
-
-@yield('content')
-
-
+            <!-- /menu footer buttons -->
+            {{-- <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div> --}}
+            <!-- /menu footer buttons -->
           </div>
         </div>
-      </div>
-    </div>  
 
-
-    
-    <div class="newsletter bg-primary py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h2>Newsletter</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="col-md-6">
-            
-            <form class="d-flex">
-              <input type="text" class="form-control" placeholder="Email">
-              <input type="submit" value="Subscribe" class="btn btn-white"> 
-            </form>
-          </div>
-        </div>
+        
+         @include('layouts.topNavegation')
+        <!-- page content -->
+        @yield('content')
+        
+        @include('layouts.footer')
+        
       </div>
     </div>
+
+    <!-- jQuery -->
+    <script src="{!! asset('assets/vendors/jquery/dist/jquery.min.js') !!}"></script>
+    <!-- Bootstrap -->
+    <script src="{!! asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
+    <!-- FastClick -->
+    <script src="{!! asset('assets/vendors/fastclick/lib/fastclick.js') !!}"></script>
+    <!-- NProgress -->
+    <script src="{!! asset('assets/vendors/nprogress/nprogress.js') !!}"></script>
+    <!-- Chart.js -->
+    <script src="{!! asset('assets/vendors/Chart.js/dist/Chart.min.js') !!}"></script>
+    <!-- gauge.js -->
+    <script src="{!! asset('assets/vendors/gauge.js/dist/gauge.min.js') !!}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{!! asset('assets/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') !!}"></script>
+    <!-- iCheck -->
+    <script src="{!! asset('assets/vendors/iCheck/icheck.min.js') !!}"></script>
+    <!-- Skycons -->
+    <script src="{!! asset('assets/vendors/skycons/skycons.js') !!}"></script>
+    <!-- Flot -->
+    <script src="{!! asset('assets./vendors/Flot/jquery.flot.js') !!}"></script>
+    <script src="{!! asset('assets/vendors/Flot/jquery.flot.pie.js') !!}"></script>
+    <script src="{!! asset('assets/vendors/Flot/jquery.flot.time.js') !!}"></script>
+    <script src="{!! asset('assets/vendors/Flot/jquery.flot.stack.js') !!}"></script>
+    <script src="{!! asset('assets/vendors/Flot/jquery.flot.resize.js') !!}"></script>
+    <!-- Flot plugins -->
+    <script src="{!! asset('assets/vendors/flot.orderbars/js/jquery.flot.orderBars.js') !!}"></script>
+    <script src="{!! asset('assets/vendors/flot-spline/js/jquery.flot.spline.min.js') !!}"></script>
+    <script src="{!! asset('assets/vendors/flot.curvedlines/curvedLines.js') !!}"></script>
+    <!-- DateJS -->
+    <script src="{!! asset('assets/vendors/DateJS/build/date.js') !!}"></script>
+    <!-- JQVMap -->
+    <script src="{!! asset('assets/vendors/jqvmap/dist/jquery.vmap.js') !!}"></script>
+    <script src="{!! asset('assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js') !!}"></script>
+    <script src="{!! asset('assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') !!}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{!! asset('assets/vendors/moment/min/moment.min.js') !!}"></script>
+    <script src="{!! asset('assets/vendors/bootstrap-daterangepicker/daterangepicker.js') !!}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{!! asset('assets/build/js/custom.min.js') !!}"></script>
   
-    
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-6">
-                <h2 class="footer-heading mb-4">About</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident rerum unde possimus molestias dolorem fuga, illo quis fugiat!</p>
-              </div>
-              
-              <div class="col-md-3">
-                <h2 class="footer-heading mb-4">Navigations</h2>
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h2 class="footer-heading mb-4">Follow Us</h2>
-                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <form action="#" method="post">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Search products..." aria-label="Enter Email" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                  <button class="btn btn-primary text-white" type="button" id="button-addon2">Search</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <script src="{!! asset('assets/js/jquery-3.3.1.min.js') !!}"></script>
-  <script src="{!! asset('assets/js/jquery-migrate-3.0.1.min.js') !!}"></script>
-  <script src="{!! asset('assets/js/jquery-ui.js') !!}"></script>
-  <script src="{!! asset('assets/js/popper.min.js') !!}"></script>
-  <script src="{!! asset('assets/js/bootstrap.min.js') !!}"></script>
-  <script src="{!! asset('assets/js/owl.carousel.min.js') !!}"></script>
-  <script src="{!! asset('assets/js/jquery.stellar.min.js') !!}"></script>
-  <script src="{!! asset('assets/js/jquery.countdown.min.js') !!}"></script>
-  <script src="{!! asset('assets/js/jquery.magnific-popup.min.js') !!}"></script>
-  <script src="{!! asset('assets/js/bootstrap-datepicker.min.js') !!}"></script>
-  <script src="{!! asset('assets/js/aos.js') !!}"></script>
-  <script src="{!! asset('assets/js/rangeslider.min.js') !!}"></script>
-
-  <script src="{!! asset('assets/js/main.js') !!}"></script>
-</body>
+  </body>
 </html>
