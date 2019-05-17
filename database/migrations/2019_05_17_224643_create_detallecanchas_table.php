@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstadolocalesTable extends Migration
+class CreateDetallecanchasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateEstadolocalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('estadolocales', function (Blueprint $table) {
+        Schema::create('detallecanchas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('descripcion');
+            $table->integer('id_centro')->unsigned();
+            $table->integer('id_cancha')->unsigned();
             $table->string('observacion')->nullable();
             $table->timestamps();
+
+            $table->foreign('id_centro')->references('id')->on('centros');
+            $table->foreign('id_cancha')->references('id')->on('canchas');
         });
     }
 
@@ -28,6 +32,6 @@ class CreateEstadolocalesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estadolocales');
+        Schema::dropIfExists('detallelocales');
     }
 }

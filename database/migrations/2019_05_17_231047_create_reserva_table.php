@@ -25,7 +25,7 @@ class CreateReservaTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_detalle')->references('id')->on('detallelocales');
+            $table->foreign('id_detalle')->references('id')->on('detallecanchas');
             $table->foreign('id_estado')->references('id')->on('estadopagos');
         });
     }

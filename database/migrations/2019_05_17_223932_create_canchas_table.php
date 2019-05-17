@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocalesTable extends Migration
+class CreateCanchasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLocalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('locales', function (Blueprint $table) {
+        Schema::create('canchas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_deporte')->unsigned();
             $table->integer('id_estado')->unsigned();
@@ -25,7 +25,7 @@ class CreateLocalesTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_deporte')->references('id')->on('deportes');
-            $table->foreign('id_estado')->references('id')->on('estadolocales');
+            $table->foreign('id_estado')->references('id')->on('estadocanchas');
         });
     }
 
@@ -36,6 +36,6 @@ class CreateLocalesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('locales');
+        Schema::dropIfExists('canchas');
     }
 }
