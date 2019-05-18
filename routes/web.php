@@ -31,7 +31,7 @@ Route::group(['middleware'=>['auth']],function(){
 
 });
 
-Route::resource('personal','PersonalController');
+Route::resource('usuario','UsuarioController');
 
 Route::resource('calendario','CalendarioController');
 

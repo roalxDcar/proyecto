@@ -10,7 +10,23 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="../assets/images/img.jpg" alt="">{{ Auth::user()->name }}
+                     
+                    @if( Auth::user()->id_rol == 1 )
+                          <img src="../assets/images/img.jpg" alt=""> Usuario
+                            
+                            @else
+
+                            @if( Auth::user()->id_rol == 2 )
+
+                            <img src="../assets/images/img.jpg" alt=""> Administrador
+                            @else
+
+
+                            <img src="../assets/images/img.jpg" alt=""> Empleado
+                             @endif
+
+                    @endif
+                    
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

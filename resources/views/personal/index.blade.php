@@ -29,7 +29,7 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <button type="" class="btn btn-default"><a href="{{ route('personal.create') }}"><i class="fa fa-user"></i> <b>Nuevo Personal</b> </a></button>
+                      <button type="" class="btn btn-default"><a href="{{ route('usuario.create') }}"><i class="fa fa-user"></i> <b>Nuevo Personal</b> </a></button>
                       
                       </li>
                     </ul>
@@ -40,19 +40,36 @@
                       <thead>
                         <tr>
                           <th>N°</th>
-                          <th>Rol</th>
+                          <th>idRol</th>
                           <th>Nombre</th>
-                          <th>Correo</th>
+                          <th>Paterno</th>
+                          <th>Materno</th>
+                          <th>Genero</th>
+                          <th>Telefono</th>
+                          <th>Celular</th>
+                          <th>CI</th>
+                          <th>Email</th>
+                          <td>Direccion</td>
+
                         </tr>
                       </thead>
 
 
                       <tbody>
-                        @foreach( $personal as $p )
+                        @foreach( $user as $use )
                         <tr>
-                          <td>{{ $p->id }}</td>
-                          <td>{{ $p->$name }}</td>
-                          <td>{{ $p->$email }}</td>
+                          <td>{{ $use->id }}</td>
+                          <td>{{ $use->id_rol}}</td>
+                          <td>{{ $use->name }}</td>
+                          <td>{{ $use->paterno }}</td>
+                          <td>{{ $use->materno }}</td>
+                          <td>{{ $use->genero }}</td>
+                          <td>{{ $use->telefono }}</td>
+                          <td>{{ $use->celular }}</td>
+                          <td>{{ $use->ci }}</td>
+                          <td>{{ $use->email }}</td>
+                          <td>{{ $use->direccion }}</td>
+
                         </tr>
                         @endforeach
                         
@@ -63,7 +80,7 @@
               </div>
 
 
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              {{-- <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Lista de Administradores</h2>
@@ -109,51 +126,11 @@
                           <td>2011/07/25</td>
                           <td>$170,750</td>
                         </tr>
-                        <tr>
-                          <td>Ashton Cox</td>
-                          <td>Junior Technical Author</td>
-                          <td>San Francisco</td>
-                          <td>66</td>
-                          <td>2009/01/12</td>
-                          <td>$86,000</td>
-                        </tr>
-                        <tr>
-                          <td>Cedric Kelly</td>
-                          <td>Senior Javascript Developer</td>
-                          <td>Edinburgh</td>
-                          <td>22</td>
-                          <td>2012/03/29</td>
-                          <td>$433,060</td>
-                        </tr>
-                        <tr>
-                          <td>Airi Satou</td>
-                          <td>Accountant</td>
-                          <td>Tokyo</td>
-                          <td>33</td>
-                          <td>2008/11/28</td>
-                          <td>$162,700</td>
-                        </tr>
-                        <tr>
-                          <td>Brielle Williamson</td>
-                          <td>Integration Specialist</td>
-                          <td>New York</td>
-                          <td>61</td>
-                          <td>2012/12/02</td>
-                          <td>$372,000</td>
-                        </tr>
-                        <tr>
-                          <td>Herrod Chandler</td>
-                          <td>Sales Assistant</td>
-                          <td>San Francisco</td>
-                          <td>59</td>
-                          <td>2012/08/06</td>
-                          <td>$137,500</td>
-                        </tr>
                         
                       </tbody>
                     </table>
                   </div>
                 </div>
-              </div>
+              </div> --}}
 
 @endsection

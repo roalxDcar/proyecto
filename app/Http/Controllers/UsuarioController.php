@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
-class PersonalController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class PersonalController extends Controller
      */
     public function index()
     {
-        return view('personal.index');
+        $usuario = User::orderBy('id','desc')->paginate(5); 
+        return view('personal.index',['user'=> $usuario ]);
     }
 
     /**
