@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Rol;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -25,7 +26,8 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('personal.create');
+        $r= Rol::all();
+        return view('personal.create',['r'=>$r]);
     }
 
     /**
@@ -36,7 +38,19 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $user = new User;
+         $user->name = $request->name;
+         $user->paterno = $request->paterno;
+         $user->materno = $request->materno;
+         $user->genero = $request->genero;
+         $user->telefono = $request->telefono;
+         $user->celular = $request->celular;
+         $user->ci = $request->ci;
+         $user->direccion = $request->direccion;
+         $user->email = $request->email;
+         $user->password = bcrypt($request->password);
+         $user->save();
+         return redirect()->route('usuario.index');
     }
 
     /**
@@ -58,7 +72,9 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $r= Rol::all();
+        return view('personal.edit',['r'=>$r ,'user'=>$user]);
     }
 
     /**
@@ -70,7 +86,19 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $user = User::findOrFail($id);
+         $user->name = $request->name;
+         $user->paterno = $request->paterno;
+         $user->materno = $request->materno;
+         $user->genero = $request->genero;
+         $user->telefono = $request->telefono;
+         $user->celular = $request->celular;
+         $user->ci = $request->ci;
+         $user->direccion = $request->direccion;
+         $user->email = $request->email;
+         $user->password = bcrypt($request->password);
+         $user->save();
+         return redirect()->route('usuario.index');
     }
 
     /**

@@ -12,7 +12,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Nuevo Personal</h2>
+                    <h2>Actualizar Datos <small>Personal</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       </li>
                       </li>
@@ -22,8 +22,9 @@
                   <div class="x_content">
                     <br />
 
-                    <form data-parsley-validate class="form-horizontal form-label-left" action="{{ route('usuario.store') }}" method="POST">
+    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('usuario.update',$user->id) }}">                      
                       @csrf
+                      @method('PUT')
 
 
                       <div class="form-group">
@@ -42,7 +43,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" value="{{ $user->name }}" name="name" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -50,7 +51,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Apellido Paterno <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="paterno" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" name="paterno" value="{{ $user->paterno }}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -58,7 +59,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Apellido Materno <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="materno" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" name="materno" value="{{ $user->materno }}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -80,7 +81,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Telefono <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="birthday" name="telefono" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                          <input id="birthday" name="telefono" value="{{ $user->telefono }}" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
                         </div>
                       </div>
 
@@ -88,7 +89,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Celular <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="celular" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" name="celular" value="{{ $user->celular }}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -96,7 +97,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Cedula de Identidad <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="ci" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" name="ci" value="{{ $user->ci }}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -104,7 +105,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Direccion <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="direccion" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" name="direccion" value="{{ $user->direccion }}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -112,7 +113,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Email <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" name="email" value="{{ $user->email }}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -121,7 +122,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Contraseña <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="password" id="last-name" name="password" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="password" id="last-name" name="password" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>                       
 

@@ -50,15 +50,16 @@
                           <th>CI</th>
                           <th>Email</th>
                           <td>Direccion</td>
-
-                        </tr>
+                          <td>Actualizar</td>
+                          </tr>
                       </thead>
-
-
+                        @php ($c=0)
                       <tbody>
                         @foreach( $user as $use )
                         <tr>
-                          <td>{{ $use->id }}</td>
+                        @php ($c++)
+                        {{-- id_usuario hecho con un contador -> c --}}
+                          <td> {{ $c }}</td>
                           <td>{{ $use->id_rol}}</td>
                           <td>{{ $use->name }}</td>
                           <td>{{ $use->paterno }}</td>
@@ -69,10 +70,14 @@
                           <td>{{ $use->ci }}</td>
                           <td>{{ $use->email }}</td>
                           <td>{{ $use->direccion }}</td>
+                          <td>
+                          <a href="{{ route('usuario.edit',$use->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
+                          </td>
+                          
 
                         </tr>
                         @endforeach
-                        
+                       
                       </tbody>
                     </table>
                   </div>
