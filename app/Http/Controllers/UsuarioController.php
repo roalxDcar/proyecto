@@ -15,8 +15,12 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuario = User::orderBy('id','desc')->paginate(5); 
-        return view('personal.index',['user'=> $usuario ]);
+        $usuario = User::orderBy('id','desc')->paginate(5);
+        $rol= Rol::all(); 
+        return view('personal.index',[
+            'user'=> $usuario, 
+            'rol'=>$rol
+        ]);
     }
 
     /**
@@ -39,6 +43,7 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
          $user = new User;
+         $user->id_rol = $request->id_rol;
          $user->name = $request->name;
          $user->paterno = $request->paterno;
          $user->materno = $request->materno;
@@ -87,6 +92,7 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
          $user = User::findOrFail($id);
+         // $user->id_rol = $request->id_rol;
          $user->name = $request->name;
          $user->paterno = $request->paterno;
          $user->materno = $request->materno;

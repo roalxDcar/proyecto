@@ -18,7 +18,16 @@ class User extends Authenticatable
      protected $fillable = [
         'name', 'email', 'password',
      ];
+     
     protected $table = 'users';
+
+    protected $primariKey = 'id';
+
+    public $timestamps = false;
+
+    public function roles(){
+        return $this->belongsTo('rols','idrol'); 
+    }
 
     /**
      * The attributes that should be hidden for arrays.

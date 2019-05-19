@@ -40,7 +40,7 @@
                       <thead>
                         <tr>
                           <th>N°</th>
-                          <th>idRol</th>
+                          <th>Rol</th>
                           <th>Nombre</th>
                           <th>Paterno</th>
                           <th>Materno</th>
@@ -60,11 +60,26 @@
                         @php ($c++)
                         {{-- id_usuario hecho con un contador -> c --}}
                           <td> {{ $c }}</td>
-                          <td>{{ $use->id_rol}}</td>
+                          
+                          @foreach( $rol as $r )
+                            @if( $use->id_rol == $r->idrol )
+                              <td>{{ $r->descripcion }}</td>
+                            @endif
+                          @endforeach
+
                           <td>{{ $use->name }}</td>
                           <td>{{ $use->paterno }}</td>
                           <td>{{ $use->materno }}</td>
-                          <td>{{ $use->genero }}</td>
+
+                          @if( $use->genero == 1 )
+                            <td> Masculino  </td>
+                            @else
+                            @if( $use->genero == 2 )
+                            <td> Femenino  </td>
+                            @endif
+                            <td>  </td>
+                          @endif
+
                           <td>{{ $use->telefono }}</td>
                           <td>{{ $use->celular }}</td>
                           <td>{{ $use->ci }}</td>
