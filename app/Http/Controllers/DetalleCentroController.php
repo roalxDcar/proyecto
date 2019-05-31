@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DetalleCentro;
 use Illuminate\Http\Request;
 
 class DetalleCentroController extends Controller
@@ -13,7 +14,8 @@ class DetalleCentroController extends Controller
      */
     public function index()
     {
-        //
+        $detallecentro = DetalleCentro::all();
+        return view('detallecentro.index',['detallecentro'=> $detallecentro ]);
     }
 
     /**
@@ -23,7 +25,7 @@ class DetalleCentroController extends Controller
      */
     public function create()
     {
-        //
+        return view('detallecentro.create');
     }
 
     /**
@@ -34,7 +36,13 @@ class DetalleCentroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $detalle = new DetalleCentro;
+            $detalle->propietario = $request->propietario;
+            $detalle->nit = $request->nit;
+            $detalle->domicilio = $request->domicilio;
+            $detalle->actividad = $request->actividad;
+            $detalle->save();
+            return redirect()->route('detallecentro.index');
     }
 
     /**
@@ -56,7 +64,9 @@ class DetalleCentroController extends Controller
      */
     public function edit($id)
     {
-        //
+        $detalle = DetalleCentro::findOrFail($id);
+        
+        return view('detallecentro.edit',['detallecentro'=> $detalle ]);
     }
 
     /**
@@ -68,7 +78,13 @@ class DetalleCentroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+            $detalle = DetalleCentro::findOrFail($id);
+            $detalle->propietario = $request->propietario;
+            $detalle->nit = $request->nit;
+            $detalle->domicilio = $request->domicilio;
+            $detalle->actividad = $request->actividad;
+            $detalle->save();
+            return redirect()->route('detallecentro.index');
     }
 
     /**

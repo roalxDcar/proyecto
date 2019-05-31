@@ -30,6 +30,12 @@
                       <li><a href="form_advanced.html">Cancha</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-edit"></i> Centro Deportivo <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{ route('detallecentro.index') }}">Detalles centro deportivo</a></li>
+                      <li><a href="{{ route('detallecentro.index') }}">Registro centro deportivo</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="general_elements.html">General Elements</a></li>
