@@ -9,7 +9,7 @@ class Rol extends Model
     protected $primaryKey = 'idrol';
 
     protected $fillable = [
-        'name','paterno','materno','genero','telefono','celular','ci', 'email', 'password','direccion',
+        'descripcion',
      ];
 
     protected $table = 'rols';

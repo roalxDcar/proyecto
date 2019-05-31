@@ -15,20 +15,20 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $primaryKey = 'id';
+
      protected $fillable = [
         'id_rol','name','paterno','materno','genero','telefono','celular','ci', 'email', 'password','direccion',
      ];
      
     protected $table = 'users';
 
-    protected $primaryKey = 'id';
-
     public $timestamps = false;
 
     public function rol(){
         return $this->belongsTo('App\Rol','idrol'); 
     }
-
     /**
      * The attributes that should be hidden for arrays.
      *
