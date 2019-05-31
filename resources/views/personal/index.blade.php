@@ -61,11 +61,13 @@
                         {{-- id_usuario hecho con un contador -> c --}}
                           <td> {{ $c }}</td>
                           
-                          @foreach( $rol as $r )
-                            @if( $use->id_rol == $r->idrol )
+                          @foreach( $rol as $r ) 
+
+                            @if( $use->id_rol == $r->idrol ) 
                               <td>{{ $r->descripcion }}</td>
-                            @endif
-                          @endforeach
+                            @endif 
+
+                           @endforeach 
 
                           <td>{{ $use->name }}</td>
                           <td>{{ $use->paterno }}</td>

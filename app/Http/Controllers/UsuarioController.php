@@ -18,7 +18,7 @@ class UsuarioController extends Controller
         $usuario = User::orderBy('id','desc')->paginate(5);
         $rol= Rol::all(); 
         return view('personal.index',[
-            'user'=> $usuario, 
+            'user'=> $usuario,
             'rol'=>$rol
         ]);
 
