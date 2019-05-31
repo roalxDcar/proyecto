@@ -19,7 +19,7 @@ class User extends Authenticatable
     protected $primaryKey = 'id';
 
      protected $fillable = [
-        'id_rol','name','paterno','materno','genero','telefono','celular','ci', 'email', 'password','direccion',
+        'id_rol','name','paterno','materno','genero','telefono','celular','ci', 'email', 'password','direccion'
      ];
      
     protected $table = 'users';
@@ -27,7 +27,8 @@ class User extends Authenticatable
     public $timestamps = false;
 
     public function rol(){
-        return $this->belongsTo('App\Rol','idrol'); 
+        // id_rol   ->  llave foranea de usuario(rol)
+        return $this->belongsTo('App\Rol','id_rol'); 
     }
     /**
      * The attributes that should be hidden for arrays.

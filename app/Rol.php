@@ -9,14 +9,14 @@ class Rol extends Model
     protected $primaryKey = 'idrol';
 
     protected $fillable = [
-        'descripcion',
+        'descripcion'
      ];
 
     protected $table = 'rols';
 
     public $timestamps = false;
 
-    public function user(){
-    	return $this->hasMany('App\User','id_rol');
+    public function users(){
+    	return $this->hasMany('App\User');
     }
 }
