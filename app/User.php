@@ -24,6 +24,11 @@ class User extends Authenticatable
      
     protected $table = 'users';
 
+<<<<<<< HEAD
+=======
+    protected $primaryKey = 'id';
+
+>>>>>>> aab4b4ef32046ebcb373ac81a545e83cb4791d28
     public $timestamps = false;
 
     public function rol(){

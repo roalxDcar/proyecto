@@ -33,6 +33,11 @@ Route::group(['middleware'=>['auth']],function(){
 
 Route::resource('usuario','UsuarioController');
 
+
+Route::resource('detallecentro','DetalleCentroController');
+
+Route::resource('centro','CentroController');
+
 Route::resource('calendario','CalendarioController');
 
 // Route::get('content.contenido', 'HomeController@index')->name('home');

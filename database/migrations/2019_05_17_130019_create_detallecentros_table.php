@@ -16,7 +16,7 @@ class CreateDetalleCentrosTable extends Migration
         Schema::create('detallecentros', function (Blueprint $table) {
             $table->increments('id');
             $table->string('propietario');
-            $table->string('nit')->unique();
+            $table->string('nit');
             $table->string('domicilio');
             $table->string('actividad');
             $table->rememberToken();
@@ -31,6 +31,6 @@ class CreateDetalleCentrosTable extends Migration
      */
     public function down()
     {
-        //
+        // 
     }
 }
