@@ -25,8 +25,8 @@ class User extends Authenticatable
 
     public $timestamps = false;
 
-    public function roles(){
-        return $this->belongsTo('rols','idrol'); 
+    public function rol(){
+        return $this->belongsTo('App\Rol','idrol'); 
     }
 
     /**

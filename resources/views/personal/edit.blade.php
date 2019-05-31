@@ -33,7 +33,7 @@
                           <div id="gender" class="btn-group" data-toggle="buttons">
                             <select name="id_rol" class="form-control">
                                     @foreach( $r as $res )
-                                    <option value="{{ $res->id }}"> {{ $res->descripcion }} </option>
+                                    <option value="{{ $res->idrol }}"> {{ $res->descripcion }} </option>
                                     @endforeach 
                               </select> 
                           </div>
