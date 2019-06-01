@@ -4,7 +4,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Detalles <small>Some examples to get you started</small></h3>
+                <h3>Deporte <small>..</small></h3>
               </div>
 
               <div class="title_right">
@@ -22,14 +22,14 @@
             <div class="clearfix"></div>
 
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista Centros </h2>
+                    <h2>Lista Deportes </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <button type="" class="btn btn-default"><a href="{{ route('centro.create') }}"><i class="fa fa-user"></i> <b>Agregar Centro</b> </a></button>
+                      <button type="" class="btn btn-default"><a href="{{ route('deporte.create') }}"><i class="fa fa-user"></i> <b>Agregar Deporte</b> </a></button>
                       
                       </li>
                     </ul>
@@ -40,29 +40,20 @@
                       <thead>
                         <tr>
                           <th>N°</th>
-                          <th>Propietario</th>
-                          <th>Nombre</th>
-                          <th>Telefono</th>
-                          <th>Ubicacion</th>
-                          <th>Descripcion</th>
-                          <th>Actualizar</th>
+                          <th>Tipo</th>
 
                         </tr>
                       </thead>
 
 
                       <tbody>
-                        @foreach($centro as $centro)
+                        @foreach($deporte as $d)
                         <tr>
-                          <td>{{ $centro->id }}</td>
-                          <td>{{ $centro->id_detalle }}</td>
-                          <td>{{ $centro->nombre }}</td>
-                          <td>{{ $centro->telefono }}</td>
-                          <td>{{ $centro->ubicacion }}</td>
-                          <td>{{ $centro->descripcion }}</td>
-                          <td>
-                          <a href="{{ route('centro.edit',$centro->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
-                          </td>
+                          <td>{{ $d->id }}</td>
+                          <td>{{ $d->nombre }}</td>
+                          {{--<td>
+                           <a href="{{ route('centro.edit',$centro->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
+                          </td> --}}
 
                         </tr>
                         @endforeach
@@ -72,5 +63,6 @@
                   </div>
                 </div>
               </div>
+
 
 @endsection

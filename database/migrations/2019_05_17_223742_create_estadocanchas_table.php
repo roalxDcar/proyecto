@@ -15,7 +15,7 @@ class CreateEstadocanchasTable extends Migration
     {
         Schema::create('estadocanchas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('descripcion');
+            $table->string('descripcion');
             $table->string('observacion')->nullable();
             $table->timestamps();
         });

@@ -4,7 +4,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Detalles <small>Some examples to get you started</small></h3>
+                <h3>Estado de Canchas <small>Some examples to get you started</small></h3>
               </div>
 
               <div class="title_right">
@@ -25,11 +25,11 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista Detalles Centro </h2>
+                    <h2>Lista Estado </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <button type="" class="btn btn-default"><a href="{{ route('detallecentro.create') }}"><i class="fa fa-user"></i> <b>Agregar Detalle</b> </a></button>
+                      <button type="" class="btn btn-default"><a href="{{ route('estadocancha.create') }}"><i class="fa fa-user"></i> <b>Agregar Estado</b> </a></button>
                       
                       </li>
                     </ul>
@@ -40,27 +40,23 @@
                       <thead>
                         <tr>
                           <th>N°</th>
-                          <th>Propietario</th>
-                          <th>Nit</th>
-                          <th>Domicilio</th>
-                          <th>Actividad</th>
+                          <th>Descripcion</th>
+                          <th>Observacion</th>
                           <th>Actualizar</th>
-
+                           
 
                         </tr>
                       </thead>
 
 
                       <tbody>
-                        @foreach($detallecentro as $detallecentro)
+                        @foreach($estadocancha as $estado)
                         <tr>
-                          <td>{{ $detallecentro->id }}</td>
-                          <td>{{ $detallecentro->propietario }}</td>
-                          <td>{{ $detallecentro->nit }}</td>
-                          <td>{{ $detallecentro->domicilio }}</td>
-                          <td>{{ $detallecentro->actividad }}</td>
+                          <td>{{ $estado->id }}</td>
+                          <td>{{ $estado->descripcion }}</td>
+                          <td>{{ $estado->observacion }}</td>
                           <td>
-                          <a href="{{ route('detallecentro.edit',$detallecentro->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
+                          <a href="{{ route('estadocancha.edit',$estado->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
                           </td>
 
                         </tr>

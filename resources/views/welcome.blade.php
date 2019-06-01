@@ -98,9 +98,19 @@
             <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="200">
               <form method="post">
                 <div class="row align-items-center">
-                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-4">
-                    <input type="text" class="form-control rounded" placeholder="Nombre del Centro Deportivo">
+
+                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
+                    <div class="select-wrap">
+                      <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+                      <select class="form-control rounded" name="deporte" id="">
+                        {{-- @foreach()
+                        @endforeach --}}
+                        <option value="">Centro Deportivo</option>
+                        <option value="">Voley</option>
+                      </select>
+                    </div>
                   </div>
+
                   <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
                     <div class="wrap-icon">
                       <span class="icon icon-room"></span>
@@ -112,6 +122,8 @@
                     <div class="select-wrap">
                       <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
                       <select class="form-control rounded" name="" id="">
+                        {{-- @foreach()
+                        @endforeach --}}
                         <option value="">Todos</option>
                         <option value="">Voley</option>
                         <option value="">Wally</option>

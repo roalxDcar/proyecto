@@ -38,6 +38,10 @@ Route::resource('detallecentro','DetalleCentroController');
 
 Route::resource('centro','CentroController');
 
+Route::resource('deporte','DeporteController');
+
+Route::resource('estadocancha','EstadoCanchaController');
+
 Route::resource('calendario','CalendarioController');
 
 // Route::get('content.contenido', 'HomeController@index')->name('home');
