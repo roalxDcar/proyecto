@@ -1,4 +1,4 @@
-@extends('layouts1.app')
+@extends('layouts.app1')
 @section('content1')
 
 
