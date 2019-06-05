@@ -32,7 +32,7 @@ Route::group(['middleware'=>['auth']],function(){
 		return view('content.administrador');})->name('administrador');
 
 	Route::get('empleado', function () {
-		return view('content.empleado');})->name('empleado');
+		return 'empleado';})->name('empleado');
 
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -42,17 +42,17 @@ Route::group(['middleware'=>['auth']],function(){
 // Route::post('password/email','Auth\PasswordController@postEmail');
 
 
-Route::resource('usuario','UsuarioController');
+Route::resource('ad_personal','UsuarioController');
 
-Route::resource('detallecentro','DetalleCentroController');
+Route::resource('ad_detallecentro','DetalleCentroController');
 
-Route::resource('centro','CentroController');
+Route::resource('ad_centro','CentroController');
 
-Route::resource('deporte','DeporteController');
+Route::resource('ad_deporte','DeporteController');
 
-Route::resource('estadocancha','EstadoCanchaController');
+Route::resource('ad_estadocancha','EstadoCanchaController');
 
-Route::resource('calendario','CalendarioController');
+Route::resource('ad_calendario','CalendarioController');
 
 // Route::get('content.contenido', 'HomeController@index')->name('home');
 

@@ -29,7 +29,7 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <button type="" class="btn btn-default"><a href="{{ route('estadocancha.create') }}"><i class="fa fa-user"></i> <b>Agregar Estado</b> </a></button>
+                      <button type="" class="btn btn-default"><a href="{{ route('ad_estadocancha.create') }}"><i class="fa fa-user"></i> <b>Agregar Estado</b> </a></button>
                       
                       </li>
                     </ul>
@@ -56,7 +56,7 @@
                           <td>{{ $estado->descripcion }}</td>
                           <td>{{ $estado->observacion }}</td>
                           <td>
-                          <a href="{{ route('estadocancha.edit',$estado->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
+                          <a href="{{ route('ad_estadocancha.edit',$estado->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
                           </td>
 
                         </tr>

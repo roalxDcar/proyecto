@@ -29,7 +29,7 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <button type="" class="btn btn-default"><a href="{{ route('deporte.create') }}"><i class="fa fa-user"></i> <b>Agregar Deporte</b> </a></button>
+                      <button type="" class="btn btn-default"><a href="{{ route('ad_deporte.create') }}"><i class="fa fa-user"></i> <b>Agregar Deporte</b> </a></button>
                       
                       </li>
                     </ul>

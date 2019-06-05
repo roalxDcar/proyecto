@@ -22,7 +22,7 @@
                   <div class="x_content">
                     <br />
 
-                    <form data-parsley-validate class="form-horizontal form-label-left" action="{{ route('usuario.store') }}" method="POST">
+                    <form data-parsley-validate class="form-horizontal form-label-left" action="{{ route('ad_usuario.store') }}" method="POST">
                       @csrf
 
 
@@ -128,7 +128,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-default" type="butto"><a href="{{ route('usuario.index') }}">Cancelar</a></button>
+                          <button class="btn btn-default" type="butto"><a href="{{ route('ad_usuario.index') }}">Cancelar</a></button>
 						            <button class="btn btn-warning" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

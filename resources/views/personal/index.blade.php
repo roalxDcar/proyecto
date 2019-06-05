@@ -29,7 +29,7 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <button type="" class="btn btn-default"><a href="{{ route('usuario.create') }}"><i class="fa fa-user"></i> <b>Nuevo Personal</b> </a></button>
+                      <button type="" class="btn btn-default"><a href="{{ route('ad_personal.create') }}"><i class="fa fa-user"></i> <b>Nuevo Personal</b> </a></button>
                       
                       </li>
                     </ul>
@@ -88,7 +88,7 @@
                           <td>{{ $use->email }}</td>
                           <td>{{ $use->direccion }}</td>
                           <td>
-                          <a href="{{ route('usuario.edit',$use->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
+                          <a href="{{ route('ad_personal.edit',$use->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
                           </td>
                           
 
