@@ -25,14 +25,24 @@ Route::group(['middleware'=>['guest']],function(){
 //autenticados en login
 Route::group(['middleware'=>['auth']],function(){
 
-	Route::get('principal', function () {return view('content.principal');})->name('principal');
+	Route::get('usuario', function () {
+		return 'usuario';})->name('usuario');
+
+	Route::get('administrador', function () {
+		return view('content.administrador');})->name('administrador');
+
+	Route::get('empleado', function () {
+		return view('content.empleado');})->name('empleado');
 
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 });
 
-Route::resource('usuario','UsuarioController');
+// Route::get('password/email','Auth\PasswordController@getEmail');
+// Route::post('password/email','Auth\PasswordController@postEmail');
 
+
+Route::resource('usuario','UsuarioController');
 
 Route::resource('detallecentro','DetalleCentroController');
 

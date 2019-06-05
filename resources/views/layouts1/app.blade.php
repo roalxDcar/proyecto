@@ -1,46 +1,8 @@
-@extends('layouts1.app')
-@section('content1')
-
-
-    <div class="site-blocks-cover overlay" style="background-image: url(../assets/images/voley.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
-
-          <div class="col-md-12">
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
-
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
-
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-          </div>
-        </div>
-      </div>
-    </div> 
-@endsection
-
-
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 <head>
-    <title>Info-Sport</title>
-    <meta charset="utf-8">
+	<title>Info-Sport</title>
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800" rel="stylesheet">
@@ -62,7 +24,6 @@
     <link rel="stylesheet" href="{!! asset('assets/css/style.css') !!}">
 </head>
 <body>
-
 
   <div class="site-wrap">
 
@@ -95,7 +56,6 @@
                     <li><a href="{{ route('/principal') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
                         @else
                     <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión </a></li>
-                    <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded">Registrarse</span></a></li>
                         @if (Route::has('register'))
                             <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded">Registrarse</span></a></li>
                         @endif
@@ -116,11 +76,12 @@
       
     </header>
 
-  
- 
 
 
-    
+@yield('content1')
+
+
+
     <div class="newsletter bg-primary py-5">
       <div class="container">
         <div class="row align-items-center">
@@ -202,4 +163,3 @@
   <script src="{!! asset('assets/js/main.js') !!}"></script>
 </body>
 </html>
-
