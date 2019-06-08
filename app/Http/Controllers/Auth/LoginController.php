@@ -47,6 +47,10 @@ class LoginController extends Controller
             }else{
                 if(auth()->user()->id_rol == 1){
                     return '/usuario';
+                }else{
+                    if(auth()->user()->id_rol == 4){
+                        return '/admin';
+                    }
                 }
             }
         }

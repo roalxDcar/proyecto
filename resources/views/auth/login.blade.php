@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="card">
                 <br>
-                <h4 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0"><b>INICIAR SESION</b></a></h4>
+                <h4 class="mb-0 site-logo"><a href="#" class="text-black mb-0"><b>INICIAR SESION</b></a></h4>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

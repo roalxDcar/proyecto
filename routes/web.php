@@ -32,7 +32,7 @@ Route::group(['middleware'=>['auth']],function(){
 		return view('content.administrador');})->name('administrador');
 
 	Route::get('empleado', function () {
-		return 'empleado';})->name('empleado');
+		return view('contenidousuario.empleado');})->name('empleado');
 
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 

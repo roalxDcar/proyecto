@@ -21,5 +21,8 @@ class RolsTableSeeder extends Seeder
         Rol::create([
             'descripcion' => 'Empleado',
         ]);
+        Rol::create([
+            'descripcion' => 'Admin',
+        ]);
     }
 }
