@@ -77,11 +77,18 @@
       <!-- </div> -->
       
     </header>
-
-  @yield('content1')
-
-
     
+    <div class="site-blocks-cover overlay" style="background-image: url(../assets/images/voley.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+
+            <div class="col-md-12"> 
+                @yield('content1')
+            </div>
+        </div>
+      </div>
+    </div>  
+
     <div class="newsletter bg-primary py-5">
       <div class="container">
         <div class="row align-items-center">
