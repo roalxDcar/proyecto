@@ -11,22 +11,7 @@
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                      
-                    @if( Auth::user()->id_rol == 1 )
-                          <img src="../assets/images/img.jpg" alt=""> Usuario
-                            
-                            @else
-
-                            @if( Auth::user()->id_rol == 2 )
-
-                            <img src="../assets/images/img.jpg" alt=""> Administrador
-                            @else
-
-
-                            <img src="../assets/images/img.jpg" alt=""> Empleado
-                             @endif
-
-                    @endif
-                    
+                    <img src="../assets/images/imagen.png" alt=""> Administrador
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
