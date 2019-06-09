@@ -41,7 +41,7 @@
                         <tr>
                           <th>N°</th>
                           <th>Propietario</th>
-                          <th>Nombre</th>
+                          <th>Nombre Centro</th>
                           <th>Telefono</th>
                           <th>Ubicacion</th>
                           <th>Descripcion</th>
@@ -55,7 +55,11 @@
                         @foreach($centro as $centro)
                         <tr>
                           <td>{{ $centro->id }}</td>
-                          <td>{{ $centro->id_detalle }}</td>
+                          @foreach( $detalle as $d )
+                            @if( $d->id == $centro->id_detalle )
+                              <td>{{ $d->propietario }}</td>
+                            @endif
+                          @endforeach
                           <td>{{ $centro->nombre }}</td>
                           <td>{{ $centro->telefono }}</td>
                           <td>{{ $centro->ubicacion }}</td>

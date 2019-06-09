@@ -22,7 +22,7 @@
                   <div class="x_content">
                     <br />
 
-                    <form data-parsley-validate class="form-horizontal form-label-left" action="{{ route('ad_usuario.store') }}" method="POST">
+                    <form data-parsley-validate class="form-horizontal form-label-left" action="{{ route('ad_personal.store') }}" method="POST">
                       @csrf
 
 
@@ -31,8 +31,19 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <div id="gender" class="btn-group" data-toggle="buttons">
                             <select name="id_rol" class="form-control">
-                                    @foreach( $r as $res )
-                                    <option value="{{ $res->idrol }}"> {{ $res->descripcion }} </option>
+                                    <option value="2"> Administrador </option>
+                                    <option value="3"> Empleado </option>
+                              </select> 
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Centro Deportivo<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div id="gender" class="btn-group" data-toggle="buttons">
+                            <select name="centro" class="form-control">
+                                    @foreach( $centro as $c )
+                                    <option value="{{ $c->id }}"> {{ $c->nombre }} </option>
                                     @endforeach 
                               </select> 
                           </div>
@@ -128,7 +139,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-default" type="butto"><a href="{{ route('ad_usuario.index') }}">Cancelar</a></button>
+                          <button class="btn btn-default" type="butto"><a href="{{ route('ad_personal.index') }}">Cancelar</a></button>
 						            <button class="btn btn-warning" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

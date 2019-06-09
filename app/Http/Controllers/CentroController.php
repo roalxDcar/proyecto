@@ -16,8 +16,11 @@ class CentroController extends Controller
     public function index()
     {
         $centro = Centro::all();
-        
-        return view('centro.index',['centro'=> $centro]);
+        $detalle = DetalleCentro::all();
+        return view('centro.index',[
+            'centro'=> $centro,
+            'detalle'=>$detalle
+        ]);
     }
 
     /**
@@ -46,7 +49,7 @@ class CentroController extends Controller
             $centro->ubicacion = $request->ubicacion;
             $centro->descripcion = $request->descripcion;
             $centro->save();
-            return redirect()->route('centro.index');
+            return redirect()->route('ad_centro.index');
     }
 
     /**

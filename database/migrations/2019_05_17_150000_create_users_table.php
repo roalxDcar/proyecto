@@ -16,6 +16,8 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_rol')->unsigned()->default(1);
+            $table->integer('id_centro')->unsigned()->nullable();
+
             $table->string('name');
             $table->string('paterno')->nullable();
             $table->string('materno')->nullable();
@@ -32,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_rol')->references('idrol')->on('rols');
+            $table->foreign('id_centro')->references('id')->on('centros');
         });
     }
 

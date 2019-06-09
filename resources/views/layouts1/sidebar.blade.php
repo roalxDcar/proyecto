@@ -60,9 +60,6 @@
                                 <li>
                                     <a href="tab.html">Estado Cancha</a>
                                 </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>  
                             </ul>
                         </li>
                     </ul>                        

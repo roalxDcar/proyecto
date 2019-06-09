@@ -41,11 +41,10 @@
                         <tr>
                           <th>N°</th>
                           <th>Rol</th>
+                          <th>Centro Deportivo</th>
                           <th>Nombre</th>
                           <th>Paterno</th>
-                          <th>Materno</th>
-                          <th>Genero</th>
-                          <th>Telefono</th>
+                          <th>Materno</th>                      
                           <th>Celular</th>
                           <th>CI</th>
                           <th>Email</th>
@@ -58,31 +57,22 @@
                         @foreach( $user as $use )
                         <tr>
                         @php ($c++)
+                        @if( $use->id_rol == 2 || $use->id_rol == 3 )
                         {{-- id_usuario hecho con un contador -> c --}}
-                          <td> {{ $c }}</td>
-                          
+                          <td> {{ $c }}</td>   
                           @foreach( $rol as $r ) 
-
                             @if( $use->id_rol == $r->idrol ) 
                               <td>{{ $r->descripcion }}</td>
                             @endif 
-
                            @endforeach 
-
+                           @foreach( $centro as $c ) 
+                            @if( $use->id_centro == $c->id ) 
+                              <td>{{ $c->nombre }}</td>
+                            @endif 
+                           @endforeach
                           <td>{{ $use->name }}</td>
                           <td>{{ $use->paterno }}</td>
                           <td>{{ $use->materno }}</td>
-
-                          @if( $use->genero == 1 )
-                            <td> Masculino  </td>
-                            @else
-                            @if( $use->genero == 2 )
-                            <td> Femenino  </td>
-                            @endif
-                            <td>  </td>
-                          @endif
-
-                          <td>{{ $use->telefono }}</td>
                           <td>{{ $use->celular }}</td>
                           <td>{{ $use->ci }}</td>
                           <td>{{ $use->email }}</td>
@@ -90,8 +80,7 @@
                           <td>
                           <a href="{{ route('ad_personal.edit',$use->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
                           </td>
-                          
-
+                        @endif
                         </tr>
                         @endforeach
                        

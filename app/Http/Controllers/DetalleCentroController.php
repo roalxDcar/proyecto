@@ -42,7 +42,7 @@ class DetalleCentroController extends Controller
             $detalle->domicilio = $request->domicilio;
             $detalle->actividad = $request->actividad;
             $detalle->save();
-            return redirect()->route('detallecentro.index');
+            return redirect()->route('ad_detallecentro.index');
     }
 
     /**
@@ -84,7 +84,7 @@ class DetalleCentroController extends Controller
             $detalle->domicilio = $request->domicilio;
             $detalle->actividad = $request->actividad;
             $detalle->save();
-            return redirect()->route('detallecentro.index');
+            return redirect()->route('ad_detallecentro.index');
     }
 
     /**

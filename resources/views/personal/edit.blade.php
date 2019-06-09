@@ -22,7 +22,7 @@
                   <div class="x_content">
                     <br />
 
-    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('ad_usuario.update',$user->id) }}">                      
+    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('ad_personal.update',$user->id) }}">                      
                       @csrf
                       @method('PUT')
 
@@ -39,6 +39,20 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Centro Deportivo<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div id="gender" class="btn-group" data-toggle="buttons">
+                            <select name="centro" class="form-control">
+                                    @foreach( $c as $centro )
+                                    <option value="{{ $centro->id }}"> {{ $centro->nombre }} </option>
+                                    @endforeach 
+                              </select> 
+                          </div>
+                        </div>
+                      </div>
+
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre <span class="required">*</span>
                         </label>

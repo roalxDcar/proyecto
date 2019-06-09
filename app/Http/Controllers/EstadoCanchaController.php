@@ -40,7 +40,7 @@ class EstadoCanchaController extends Controller
             $estado->descripcion = $request->descripcion;
             $estado->observacion = $request->observacion;
             $estado->save();
-            return redirect()->route('estadocancha.index');
+            return redirect()->route('ad_estadocancha.index');
     }
 
     /**
@@ -79,7 +79,7 @@ class EstadoCanchaController extends Controller
             $estado->descripcion = $request->descripcion;
             $estado->observacion = $request->observacion;
             $estado->save();
-            return redirect()->route('estadocancha.index');
+            return redirect()->route('ad_estadocancha.index');
     }
 
     /**
