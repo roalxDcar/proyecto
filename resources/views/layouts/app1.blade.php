@@ -55,7 +55,7 @@
 
                 @if (Route::has('login'))
                 @auth
-                    <li><a href="{{ route('/principal') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+                    <li><a href="{{ route('/principa') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
                         @else
                     <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión </a></li>
                         @if (Route::has('register'))

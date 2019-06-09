@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/principal';
+    protected $redirectTo = '/usuario';
 
     /**
      * Create a new controller instance.
@@ -40,27 +40,6 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function redirectPath(){
-
-        if(auth()->user()->id_rol == 3){
-             return '/empleado';
-        }else{
-            if(auth()->user()->id_rol == 2){
-                return '/administrador';
-            }else{
-                if(auth()->user()->id_rol == 1){
-                    return '/usuario';
-                }else{
-                    if(auth()->user()->id_rol == 4){
-                        return '/admin';
-                    }
-                }
-            }
-        }
-
-        return '/';
-
-    }
 
     /**
      * Get a validator for an incoming registration request.

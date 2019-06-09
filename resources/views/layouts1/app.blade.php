@@ -49,11 +49,14 @@
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-            @include('layouts1.header1')
+            @include('layouts1.topNavegation')
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-            @yield('contenido')
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        @yield('contenido')
                         @include('layouts1.footer')
                     </div>
                 </div>

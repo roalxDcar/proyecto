@@ -26,13 +26,16 @@ Route::group(['middleware'=>['guest']],function(){
 Route::group(['middleware'=>['auth']],function(){
 
 	Route::get('usuario', function () {
-		return 'usuario';})->name('usuario');
+		return view('content.usuario');})->name('usuario');
+
+	Route::get('empleado', function () {
+		return view('content.empleado');})->name('empleado');
 
 	Route::get('administrador', function () {
 		return view('content.administrador');})->name('administrador');
 
-	Route::get('empleado', function () {
-		return view('contenidousuario.empleado');})->name('empleado');
+	Route::get('admin', function () {
+		return view('content.admin');})->name('admin');
 
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -41,7 +44,7 @@ Route::group(['middleware'=>['auth']],function(){
 // Route::get('password/email','Auth\PasswordController@getEmail');
 // Route::post('password/email','Auth\PasswordController@postEmail');
 
-
+// Route -> Admin (Administrador de todos los centros deportivos)
 Route::resource('ad_personal','UsuarioController');
 
 Route::resource('ad_detallecentro','DetalleCentroController');
