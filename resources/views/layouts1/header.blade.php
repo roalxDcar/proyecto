@@ -3,7 +3,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="../../assets/new/images/icon/infosport.png" />
+                            <img src="../../assets/new/images/icon/info11.jpg" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">

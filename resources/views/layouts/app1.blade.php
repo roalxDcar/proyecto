@@ -52,17 +52,8 @@
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="blog.html">Comentarios</a></li>
                 <li><a href="contact.html">Contactos</a></li>
-
-                @if (Route::has('login'))
-                @auth
-                    <li><a href="{{ route('/principa') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
-                        @else
-                    <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión </a></li>
-                        @if (Route::has('register'))
-                            <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded">Registrarse</span></a></li>
-                        @endif
-                @endauth
-              @endif              
+                <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión </a></li>
+                <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded">Registrarse</span></a></li> 
 
               </ul>
             </nav>

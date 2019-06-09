@@ -1,7 +1,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="../../assets/new/images/icon/infosport.jpg"/>
+                    <img src="../../assets/new/images/icon/info11.png"/>
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">

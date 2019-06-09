@@ -55,7 +55,21 @@
 
         @if (Route::has('login'))
                 @auth
-                <li><a href="{{ url('/principal') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+
+                @if( Auth::user()->id_rol == 1 )
+                <li><a href="{{ url('/usuario') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+                @else
+                  @if( Auth::user()->id_rol == 2 )
+                  <li><a href="{{ url('/administrador') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+                  @else
+                    @if( Auth::user()->id_rol == 3 )
+                    <li><a href="{{ url('/empleado') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+                    @else
+                    <li><a href="{{ url('/admin') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+                    @endif
+                  @endif
+                @endif
+
                         @else
                 <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión</a></li>
 
