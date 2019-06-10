@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="right_col" role="main">
-          <div class="">
+
             <div class="page-title">
 
 
@@ -46,7 +45,7 @@
                           <div id="gender" class="btn-group" data-toggle="buttons">
                             <select name="centro" class="form-control">
                                     @foreach( $c as $centro )
-                                    <option value="{{ $centro->id }}"> {{ $centro->nombre }} </option>
+                                      <option value="{{ $centro->id }}"> {{ $centro->nombre }} </option>
                                     @endforeach 
                               </select> 
                           </div>
@@ -143,7 +142,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-default" type="butto"><a href="{{ route('ad_usuario.index') }}">Cancelar</a></button>
+                          <button class="btn btn-default" type="butto"><a href="{{ route('ad_personal.index') }}">Cancelar</a></button>
 						            <button class="btn btn-warning" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

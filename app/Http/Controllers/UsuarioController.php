@@ -88,7 +88,12 @@ class UsuarioController extends Controller
     {
         $user = User::findOrFail($id);
         $r= Rol::all();
-        return view('personal.edit',['r'=>$r ,'user'=>$user]);
+        $centro = Centro::all();
+        return view('personal.edit',[
+            'r'=>$r ,
+            'user'=>$user,
+            'c'=>$centro
+        ]);
     }
 
     /**

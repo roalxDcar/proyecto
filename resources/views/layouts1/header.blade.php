@@ -2,8 +2,8 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
-                            <img src="../../assets/new/images/icon/info11.jpg" />
+                        <a class="logo" href="#">
+                            <img src="../../assets/new/images/icon/info1.jpg" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">

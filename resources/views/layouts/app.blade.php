@@ -32,8 +32,8 @@
 
   <body class="nav-md">
     <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             
 
@@ -56,18 +56,17 @@
             </div> --}}
             <!-- /menu footer buttons -->
           </div>
+            </div>   
+             @include('layouts.topNavegation')
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    @yield('content')
+                    @include('layouts.footer')
+                </div>
+            </div>
         </div>
-
-        
-         @include('layouts.topNavegation')
-        <!-- page content -->
-        @yield('content')
-        
-        @include('layouts.footer')
-        
-      </div>
     </div>
-
     <!-- jQuery -->
     <script src="{!! asset('assets/vendors/jquery/dist/jquery.min.js') !!}"></script>
     <!-- Bootstrap -->
