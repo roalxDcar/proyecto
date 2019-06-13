@@ -33,13 +33,14 @@
                                 @endforeach
                               </select>
                       </div>
-
+                      
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">cancha <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="id_cancha" name="id_cancha" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
+                          <label for="exampleInputPassword1">Seleccione la cancha:</label>
+                              <select name="id_cancha" class="form-control">
+                                @foreach($cancha as $c)
+                                <option value="{{ $c->id }}">{{ $c->nombre }}</option>
+                                @endforeach
+                              </select>
                       </div>
 
                       <div class="form-group">

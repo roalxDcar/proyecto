@@ -36,23 +36,20 @@
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Centro Deportivo <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-<<<<<<< HEAD
-                      <li><a href="{{ route('detallecentro.index') }}">Detalles centro deportivo</a></li>
-                      <li><a href="{{ route('centro.index') }}">Registro centro deportivo</a></li>
+                    <ul class="nav child_menu"
+                      <li><a href="{{ route('ad_detallecentro.index') }}">Detalles centro deportivo</a></li>
+                      <li><a href="{{ route('ad_centro.index') }}">Registro centro deportivo</a></li>
                       <li><a href="{{ route('detallecancha.index') }}">Detalles de Canchas</a></li>
-                      <li><a href="{{ route('estadocancha.index') }}">E stado de cancha</a></li>
+                      <li><a href="{{ route('ad_estadocancha.index') }}">E stado de cancha</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="general_elements.html">General Elements</a></li>
                       <li><a href="media_gallery.html">Media Gallery</a></li>
-=======
                       <li><a href="{{ route('ad_detallecentro.index') }}">NIT centro deportivo</a></li>
                       <li><a href="{{ route('ad_centro.index') }}">Registro centro deportivo</a></li>
                       <li><a href="{{ route('ad_estadocancha.index') }}">Estado de cancha</a></li>
->>>>>>> 4797250c03fbe38c7e6213c0925a5e57f073ff2d
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> Calendario <span class="fa fa-chevron-down"></span></a>

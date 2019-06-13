@@ -29,8 +29,10 @@ class DetalleCanchaController extends Controller
     public function create()
     {
         $detallecancha =DetalleCancha::all();
+        $cancha = Cancha::all();
         $centro = Centro::all();
-        return view('detallecancha.create',['detallecancha'=> $detallecancha, 'centro'=> $centro]);
+        
+        return view('detallecancha.create',[ 'cancha'=> $cancha, 'centro'=> $centro]);
 
     }
 
