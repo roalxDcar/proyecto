@@ -57,5 +57,7 @@ Route::resource('ad_estadocancha','EstadoCanchaController');
 
 Route::resource('ad_calendario','CalendarioController');
 
+Route::resource('cancha','CanchaController');
+
 // Route::get('content.contenido', 'HomeController@index')->name('home');
 

@@ -8,7 +8,7 @@ class Cancha extends Model
 {
     //
 
-    protected $table = 'centros';
+    protected $table = 'canchas';
 
     protected $primaryKey = 'id';
 

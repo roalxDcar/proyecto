@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cancha;
-use App\EstadoCancha
+use App\EstadoCancha;
 use Illuminate\Http\Request;
 
 class CanchaController extends Controller
@@ -16,7 +16,8 @@ class CanchaController extends Controller
     public function index()
     {
         $cancha = Cancha::orderBy('id','desc')->paginate(5);
-        return view('cancha.index',['cancha'=>$cancha]);
+        $e = EstadoCancha::all();
+        return view('cancha.index',['cancha'=>$cancha, 'estado'=>$e]);
     }
 
     /**

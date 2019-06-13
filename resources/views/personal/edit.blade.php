@@ -43,11 +43,10 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Centro Deportivo<span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <div id="gender" class="btn-group" data-toggle="buttons">
-                            <select name="centro" class="form-control">
-                                    @foreach( $c as $centro )
-                                      <option value="{{ $centro->id }}"> {{ $centro->nombre }} </option>
-                                    @endforeach 
-                              </select> 
+                            <select name="id_rol" class="form-control">
+                                    <option value="2"> Administrador </option>
+                                    <option value="3"> Empleado </option>
+                              </select>
                           </div>
                         </div>
                       </div>

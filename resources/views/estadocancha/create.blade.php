@@ -21,7 +21,7 @@
                   <div class="x_content">
                     <br />
 
-                    <form data-parsley-validate class="form-horizontal form-label-left"  method="POST" action="{{ route('estadocancha.store') }}">
+                    <form data-parsley-validate class="form-horizontal form-label-left"  method="POST" action="{{ route('ad_estadocancha.store') }}">
                       @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Descripcion <span class="required">*</span>
@@ -46,7 +46,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-default" type="butto"><a href="{{ route('estadocancha.index') }}">Cancelar</a></button>
+                          <button class="btn btn-default" type="butto"><a href="{{ route('ad_estadocancha.index') }}">Cancelar</a></button>
 						  <button class="btn btn-warning" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>
