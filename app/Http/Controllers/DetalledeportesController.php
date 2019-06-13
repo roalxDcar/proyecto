@@ -13,7 +13,10 @@ class DetalledeportesController extends Controller
      */
     public function index()
     {
-        //
+        $detalle = Detalledeporte::All();
+        $deporte = Deporte::All();
+        $dcancha = Detallecancha::All();
+        return view('detalledeporte.index',['detalle'=>$detalle, 'deporte'=>$deporte, 'dcancha'=>$dcancha]);
     }
 
     /**
@@ -23,7 +26,9 @@ class DetalledeportesController extends Controller
      */
     public function create()
     {
-        //
+        $deporte = Deporte::All();
+        $dcancha = Detallecancha::All();
+        return view('detalledeporte.create',['deporte'=>$deporte, 'dcancha'=>$dcancha]);
     }
 
     /**
@@ -34,7 +39,10 @@ class DetalledeportesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $detalle = new Detalledeporte;
+        $detalle->nombre = $request->nombre;
+        $detalle -> save();
+        return redirect()->route('ad_detalledeporte.index');
     }
 
     /**
