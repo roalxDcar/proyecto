@@ -39,6 +39,7 @@
                     <ul class="nav child_menu">
                       <li><a href="{{ route('detallecentro.index') }}">Detalles centro deportivo</a></li>
                       <li><a href="{{ route('centro.index') }}">Registro centro deportivo</a></li>
+                      <li><a href="{{ route('detallecancha.index') }}">Detalles de Canchas</a></li>
                       <li><a href="{{ route('estadocancha.index') }}">E stado de cancha</a></li>
                     </ul>
                   </li>

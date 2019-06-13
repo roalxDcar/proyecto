@@ -68,7 +68,9 @@ class CentroController extends Controller
      */
     public function edit(Centro $centro)
     {
-        //
+        $centro = Centro::findOrFail($id);
+        
+        return view('centro.edit',['centro'=> $centro ]);
     }
 
     /**
@@ -80,7 +82,14 @@ class CentroController extends Controller
      */
     public function update(Request $request, Centro $centro)
     {
-        //
+            $centro = Centro::findOrFail($id);
+            $centro->id_detalle = $request->id_detalle;
+            $centro->nombre = $request->nombre;
+            $centro->telefono = $request->telefono;
+            $centro->ubicacion = $request->ubicacion;
+            $centro->descripcion = $request->descripcion;
+            $centro->save();
+            return redirect()->route('centro.index');
     }
 
     /**
