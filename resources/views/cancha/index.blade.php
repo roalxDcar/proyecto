@@ -55,7 +55,7 @@
                         @foreach($cancha as $c)
                         <tr>
                           <td>{{ $c->id }}</td>
-                          @foreach($e as $e)
+                          @foreach($es as $e)
                                 <td>{{ $e->descripcion }}</td>
                           @endforeach
                           <td>{{ $c->nombre }}</td>
