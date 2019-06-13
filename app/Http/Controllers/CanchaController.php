@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cancha;
+use App\EstadoCancha
 use Illuminate\Http\Request;
 
 class CanchaController extends Controller
@@ -24,8 +26,8 @@ class CanchaController extends Controller
      */
     public function create()
     {
-        //
-        return view('cancha.create');
+        $estado = EstadoCancha::All();
+        return view('cancha.create',['estado'=>$estado]);
     }
 
     /**
@@ -38,12 +40,13 @@ class CanchaController extends Controller
     {
         //
         $cancha = new Cancha;
-        $cancha->propietario = $request->propietario;
-        $cancha->nit = $request->nit;
-        $cancha->domicilio = $request->domicilio;
-        $cancha->actividad = $request->actividad;
+        $cancha->id_cancha = $request->id_cancha;
+        $cancha->nombre = $request->nombre;
+        $cancha->costo = $request->costo;
+        $cancha->descripcion = $request->descripcion;
+        $cancha->valoracion = $request->valoracion;
         $cancha->save();
-        return redirect()->route('ad_detallecentro.index');
+        return redirect()->route('cancha.index');
     }
 
     /**
@@ -65,7 +68,9 @@ class CanchaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cancha = Cancha::findOrFail($id);
+        $cancha = EstadoCancha::all();
+        return view('cancha.index',['cancha'=>$cancha,'estado'=>$estado]);
     }
 
     /**
@@ -77,7 +82,14 @@ class CanchaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cancha = Cancha::findOrFail($id);
+        $cancha->id_cancha = $request->id_cancha;
+        $cancha->nombre = $request->nombre;
+        $cancha->costo = $request->costo;
+        $cancha->descripcion = $request->descripcion;
+        $cancha->valoracion = $request->valoracion;
+        $cancha->save();
+        return redirect()->route('cancha.index');
     }
 
     /**

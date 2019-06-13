@@ -54,10 +54,10 @@
                       @php ($c=0)
                       <tbody>
                         @foreach( $user as $use )
-                        @if( $cen->id == $use->id_centro )
-                        <tr>
-                        @php ($c++)
-                        @if( $use->id_rol == 2 || $use->id_rol == 3 )
+                          @if( $cen->id == $use->id_centro )
+                          <tr>
+                          @php ($c++)
+                          @if( $use->id_rol == 2 || $use->id_rol == 3 )
                         {{-- id_usuario hecho con un contador -> c --}}
                           <td> {{ $c }}</td>   
                           @foreach( $rol as $r ) 
@@ -75,7 +75,7 @@
                           <td>
                           <a href="{{ route('ad_personal.edit',$use->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
                           </td>
-                        @endif
+                          @endif
                         </tr>
                         @endif
                         @endforeach

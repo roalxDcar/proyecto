@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-        <div class="right_col" role="main">
-          <div class="">
+
             <div class="page-title">
               <div class="title_left">
                 <h3>Detalles <small>Some examples to get you started</small></h3>

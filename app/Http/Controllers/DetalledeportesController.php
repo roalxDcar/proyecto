@@ -13,7 +13,10 @@ class DetalledeportesController extends Controller
      */
     public function index()
     {
-        //
+        $detalle = Detalledeporte::all();
+        $detallecancha = Detallecancha::all();
+        $deporte = Deporte::All();
+        return view('detalledeporte.index',['detalle'=>$detalle, 'detallecancha'=>$detallecancha, 'deporte'=>$deporte]); 
     }
 
     /**
