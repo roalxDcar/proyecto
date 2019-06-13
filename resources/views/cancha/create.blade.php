@@ -38,6 +38,18 @@
                       </div>
 
                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Centro Deportivo <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          @foreach( $centro as $c )
+                              @if(  Auth::user()->id_centro == $c )
+                                 <input  id="id_centro" disabled="" value="{{ $c->nombre }}" name="id_centro" class="form-control col-md-7 col-xs-12">
+                              @endif
+                          @endforeach
+                        </div>
+                      </div>
+
+                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre de la Cancha <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -65,7 +77,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Valoración <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Valoracion" name="Valoracion" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="valoracion" name="valoracion" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      

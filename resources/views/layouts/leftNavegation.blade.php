@@ -26,8 +26,8 @@
                   
                   <li><a><i class="fa fa-sticky-note-o"></i> Registro <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ route('ad_personal.index') }}">Personal</a></li>
-                      <li><a href="{{ route('cancha.index') }}">Cancha</a></li>
+                      <li><a href="{{ route('ad_personal.index') }}">Administrador</a></li>
+                      <li><a href="{{ route('cancha.index') }}">Canchas</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-soccer-ball-o"></i> Deporte <span class="fa fa-chevron-down"></span></a>
