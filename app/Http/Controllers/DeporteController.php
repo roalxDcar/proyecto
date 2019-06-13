@@ -40,7 +40,7 @@ class DeporteController extends Controller
         $deporte = new Deporte;
         $deporte->nombre = $request->nombre;
         $deporte -> save();
-        return redirect()->route('deporte.index');
+        return redirect()->route('ad_deporte.index');
     }
 
     /**

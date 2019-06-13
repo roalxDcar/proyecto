@@ -1,6 +1,6 @@
 
-			<div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> INFO<span class="text-green">-SPORT</span></a>
+			      <div class="navbar nav_title" style="border: 0;">
+              <a href="#" class="site_title"><i class="fa fa-paw"></i> INFO<span class="text-green">-SPORT</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -8,7 +8,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="../assets/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="../../assets/images/imagen.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido</span>
@@ -24,19 +24,20 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   
-                  <li><a><i class="fa fa-edit"></i> Registro <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-sticky-note-o"></i> Registro <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ route('usuario.index') }}">Personal</a></li>
+                      <li><a href="{{ route('ad_personal.index') }}">Personal</a></li>
                       <li><a href="form_advanced.html">Cancha</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Deporte <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-soccer-ball-o"></i> Deporte <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                      <li><a href="{{ route('deporte.index') }}">Tipo</a></li>
+                      <li><a href="{{ route('ad_deporte.index') }}">Tipo</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Centro Deportivo <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+<<<<<<< HEAD
                       <li><a href="{{ route('detallecentro.index') }}">Detalles centro deportivo</a></li>
                       <li><a href="{{ route('centro.index') }}">Registro centro deportivo</a></li>
                       <li><a href="{{ route('detallecancha.index') }}">Detalles de Canchas</a></li>
@@ -47,20 +48,16 @@
                     <ul class="nav child_menu">
                       <li><a href="general_elements.html">General Elements</a></li>
                       <li><a href="media_gallery.html">Media Gallery</a></li>
+=======
+                      <li><a href="{{ route('ad_detallecentro.index') }}">NIT centro deportivo</a></li>
+                      <li><a href="{{ route('ad_centro.index') }}">Registro centro deportivo</a></li>
+                      <li><a href="{{ route('ad_estadocancha.index') }}">Estado de cancha</a></li>
+>>>>>>> 4797250c03fbe38c7e6213c0925a5e57f073ff2d
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> Calendario <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ route('calendario.index') }}">Horario</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
+                      <li><a href="{{ route('ad_calendario.index') }}">Horario</a></li>
                     </ul>
                   </li>
 

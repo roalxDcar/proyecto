@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Rol;
+use App\Centro;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -16,10 +17,12 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuario = User::orderBy('id','desc')->paginate(5);
-        $rol= Rol::all(); 
+        $rol= Rol::all();
+        $centro=Centro::all(); 
         return view('personal.index',[
             'user'=> $usuario,
-            'rol'=>$rol
+            'rol'=>$rol,
+            'centro'=>$centro
         ]);
 
     }
@@ -32,7 +35,11 @@ class UsuarioController extends Controller
     public function create()
     {
         $r= Rol::all();
-        return view('personal.create',['r'=>$r]);
+        $centro = Centro::All();
+        return view('personal.create',[
+            'r'=>$r,
+            'centro'=> $centro
+        ]);
     }
 
     /**
@@ -45,6 +52,7 @@ class UsuarioController extends Controller
     {
          $user = new User;
          $user->id_rol = $request->id_rol;
+         $user->id_centro = $request->centro;         
          $user->name = $request->name;
          $user->paterno = $request->paterno;
          $user->materno = $request->materno;
@@ -56,7 +64,7 @@ class UsuarioController extends Controller
          $user->email = $request->email;
          $user->password = bcrypt($request->password);
          $user->save();
-         return redirect()->route('usuario.index');
+         return redirect()->route('ad_personal.index');
     }
 
     /**
@@ -80,7 +88,12 @@ class UsuarioController extends Controller
     {
         $user = User::findOrFail($id);
         $r= Rol::all();
-        return view('personal.edit',['r'=>$r ,'user'=>$user]);
+        $centro = Centro::all();
+        return view('personal.edit',[
+            'r'=>$r ,
+            'user'=>$user,
+            'c'=>$centro
+        ]);
     }
 
     /**
@@ -94,6 +107,7 @@ class UsuarioController extends Controller
     {
          $user = User::findOrFail($id);
          $user->id_rol = $request->id_rol;
+         $user->id_centro = $request->centro;
          $user->name = $request->name;
          $user->paterno = $request->paterno;
          $user->materno = $request->materno;
@@ -105,7 +119,7 @@ class UsuarioController extends Controller
          $user->email = $request->email;
          $user->password = bcrypt($request->password);
          $user->save();
-         return redirect()->route('usuario.index');
+         return redirect()->route('ad_personal.index');
     }
 
     /**

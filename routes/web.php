@@ -25,24 +25,37 @@ Route::group(['middleware'=>['guest']],function(){
 //autenticados en login
 Route::group(['middleware'=>['auth']],function(){
 
-	Route::get('principal', function () {return view('content.principal');})->name('principal');
+	Route::get('usuario', function () {
+		return view('content.usuario');})->name('usuario');
+
+	Route::get('empleado', function () {
+		return view('content.empleado');})->name('empleado');
+
+	Route::get('administrador', function () {
+		return view('content.administrador');})->name('administrador');
+
+	Route::get('admin', function () {
+		return view('content.admin');})->name('admin');
 
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 });
 
-Route::resource('usuario','UsuarioController');
+// Route::get('password/email','Auth\PasswordController@getEmail');
+// Route::post('password/email','Auth\PasswordController@postEmail');
 
+// Route -> Admin (Administrador de todos los centros deportivos)
+Route::resource('ad_personal','UsuarioController');
 
-Route::resource('detallecentro','DetalleCentroController');
+Route::resource('ad_detallecentro','DetalleCentroController');
 
-Route::resource('centro','CentroController');
+Route::resource('ad_centro','CentroController');
 
-Route::resource('deporte','DeporteController');
+Route::resource('ad_deporte','DeporteController');
 
-Route::resource('estadocancha','EstadoCanchaController');
+Route::resource('ad_estadocancha','EstadoCanchaController');
 
-Route::resource('calendario','CalendarioController');
+Route::resource('ad_calendario','CalendarioController');
 
 Route::resource('detallecancha','DetalleCanchaController');
 

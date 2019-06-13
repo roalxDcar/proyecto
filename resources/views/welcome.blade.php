@@ -43,7 +43,7 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><a class="text-black mb-0">INFO<span class="text-primary">-SPORT</span>  </a></h1>
+            <h1 class="mb-0 site-logo"><a class="text-black mb-0">INFO<span class="text-primary">-SPORT</span></a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -55,7 +55,21 @@
 
         @if (Route::has('login'))
                 @auth
-                <li><a href="{{ url('/principal') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+
+                @if( Auth::user()->id_rol == 1 )
+                <li><a href="{{ url('/usuario') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+                @else
+                  @if( Auth::user()->id_rol == 2 )
+                  <li><a href="{{ url('/administrador') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+                  @else
+                    @if( Auth::user()->id_rol == 3 )
+                    <li><a href="{{ url('/empleado') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+                    @else
+                    <li><a href="{{ url('/admin') }}" class="cta"><span class="bg-primary text-white rounded">Home</span></a></li>
+                    @endif
+                  @endif
+                @endif
+
                         @else
                 <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión</a></li>
 

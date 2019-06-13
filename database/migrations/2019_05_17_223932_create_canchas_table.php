@@ -15,7 +15,6 @@ class CreateCanchasTable extends Migration
     {
         Schema::create('canchas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_deporte')->unsigned();
             $table->integer('id_estado')->unsigned();
             $table->string('nombre');
             $table->integer('costo');
@@ -24,7 +23,6 @@ class CreateCanchasTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('id_deporte')->references('id')->on('deportes');
             $table->foreign('id_estado')->references('id')->on('estadocanchas');
         });
     }

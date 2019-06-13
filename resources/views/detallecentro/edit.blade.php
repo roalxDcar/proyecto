@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="right_col" role="main">
-          <div class="">
+
             <div class="page-title">
 
 
@@ -23,7 +22,7 @@
                     <br />
 
     <form data-parsley-validate class="form-horizontal form-label-left" method="POST" 
-    action="{{ route('detallecentro.update',$detallecentro->id) }}">                      
+    action="{{ route('ad_detallecentro.update',$detallecentro->id) }}">                      
                       @csrf
                       @method('PUT')
 
@@ -63,7 +62,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-default" type="butto"><a href="{{ route('detallecentro.index') }}">Cancelar</a></button>
+                          <button class="btn btn-default" type="butto"><a href="{{ route('ad_detallecentro.index') }}">Cancelar</a></button>
 						            <button class="btn btn-warning" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

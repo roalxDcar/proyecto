@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-        <div class="right_col" role="main">
-          <div class="">
+
             <div class="page-title">
               <div class="title_left">
                 <h3>Detalles <small>Some examples to get you started</small></h3>
@@ -29,7 +28,7 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <button type="" class="btn btn-default"><a href="{{ route('centro.create') }}"><i class="fa fa-user"></i> <b>Agregar Centro</b> </a></button>
+                      <button type="" class="btn btn-default"><a href="{{ route('ad_centro.create') }}"><i class="fa fa-user"></i> <b>Agregar Centro</b> </a></button>
                       
                       </li>
                     </ul>
@@ -41,7 +40,7 @@
                         <tr>
                           <th>N°</th>
                           <th>Propietario</th>
-                          <th>Nombre</th>
+                          <th>Nombre Centro</th>
                           <th>Telefono</th>
                           <th>Ubicacion</th>
                           <th>Descripcion</th>
@@ -55,13 +54,17 @@
                         @foreach($centro as $centro)
                         <tr>
                           <td>{{ $centro->id }}</td>
-                          <td>{{ $centro->id_detalle }}</td>
+                          @foreach( $detalle as $d )
+                            @if( $d->id == $centro->id_detalle )
+                              <td>{{ $d->propietario }}</td>
+                            @endif
+                          @endforeach
                           <td>{{ $centro->nombre }}</td>
                           <td>{{ $centro->telefono }}</td>
                           <td>{{ $centro->ubicacion }}</td>
                           <td>{{ $centro->descripcion }}</td>
                           <td>
-                          <a href="{{ route('centro.edit',$centro->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
+                          <a href="{{ route('ad_centro.edit',$centro->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
                           </td>
 
                         </tr>

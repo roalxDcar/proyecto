@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="right_col" role="main">
-          <div class="">
+
             <div class="page-title">
 
 
@@ -22,7 +21,7 @@
                   <div class="x_content">
                     <br />
 
-    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('usuario.update',$user->id) }}">                      
+    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('ad_personal.update',$user->id) }}">                      
                       @csrf
                       @method('PUT')
 
@@ -39,6 +38,20 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Centro Deportivo<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div id="gender" class="btn-group" data-toggle="buttons">
+                            <select name="centro" class="form-control">
+                                    @foreach( $c as $centro )
+                                      <option value="{{ $centro->id }}"> {{ $centro->nombre }} </option>
+                                    @endforeach 
+                              </select> 
+                          </div>
+                        </div>
+                      </div>
+
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre <span class="required">*</span>
                         </label>
@@ -129,7 +142,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-default" type="butto"><a href="{{ route('usuario.index') }}">Cancelar</a></button>
+                          <button class="btn btn-default" type="butto"><a href="{{ route('ad_personal.index') }}">Cancelar</a></button>
 						            <button class="btn btn-warning" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>

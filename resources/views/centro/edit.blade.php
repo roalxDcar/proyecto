@@ -1,11 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
 
-
-
+          <div class="page-title">
             </div>
             <div class="clearfix"></div>
             <div class="row">
@@ -23,7 +19,11 @@
                     <br />
 
     <form data-parsley-validate class="form-horizontal form-label-left" method="POST" 
+<<<<<<< HEAD
     action="{{ route('centro.update',$centro->id) }}">                      
+=======
+    action="{{ route('ad_detallecentro.update',$detallecentro->id) }}">                      
+>>>>>>> 4797250c03fbe38c7e6213c0925a5e57f073ff2d
                       @csrf
                       @method('PUT')
 
@@ -71,7 +71,11 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+<<<<<<< HEAD
                           <button class="btn btn-default" type="butto"><a href="{{ route('centro.index') }}">Cancelar</a></button>
+=======
+                          <button class="btn btn-default" type="butto"><a href="{{ route('ad_detallecentro.index') }}">Cancelar</a></button>
+>>>>>>> 4797250c03fbe38c7e6213c0925a5e57f073ff2d
 						            <button class="btn btn-warning" type="reset">Limpiar</button>
                           <button type="submit" class="btn btn-success">Guardar</button>
                         </div>
