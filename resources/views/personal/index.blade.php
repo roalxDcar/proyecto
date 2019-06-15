@@ -55,29 +55,29 @@
                       <tbody>
                         @foreach( $user as $use )
                           @if( $cen->id == $use->id_centro )
-                          <tr>
-                          @php ($c++)
-                          @if( $use->id_rol == 2 || $use->id_rol == 3 )
-                        {{-- id_usuario hecho con un contador -> c --}}
-                          <td> {{ $c }}</td>   
-                          @foreach( $rol as $r ) 
-                            @if( $use->id_rol == $r->idrol ) 
-                              <td>{{ $r->descripcion }}</td>
-                            @endif 
-                           @endforeach 
-                          <td>{{ $use->name }}</td>
-                          <td>{{ $use->paterno }}</td>
-                          <td>{{ $use->materno }}</td>
-                          <td>{{ $use->celular }}</td>
-                          <td>{{ $use->ci }}</td>
-                          <td>{{ $use->email }}</td>
-                          <td>{{ $use->direccion }}</td>
-                          <td>
-                          <a href="{{ route('ad_personal.edit',$use->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
-                          </td>
+                            <tr>
+                            @php ($c++)
+                                @if( $use->id_rol == 2 || $use->id_rol == 3 )
+                                  {{-- id_usuario hecho con un contador -> c --}}
+                                    <td> {{ $c }}</td>   
+                                    @foreach( $rol as $r ) 
+                                      @if( $use->id_rol == $r->idrol ) 
+                                        <td>{{ $r->descripcion }}</td>
+                                      @endif 
+                                     @endforeach 
+                                    <td>{{ $use->name }}</td>
+                                    <td>{{ $use->paterno }}</td>
+                                    <td>{{ $use->materno }}</td>
+                                    <td>{{ $use->celular }}</td>
+                                    <td>{{ $use->ci }}</td>
+                                    <td>{{ $use->email }}</td>
+                                    <td>{{ $use->direccion }}</td>
+                                    <td>
+                                    <a href="{{ route('ad_personal.edit',$use->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
+                                    </td>
+                                @endif
+                            </tr>
                           @endif
-                        </tr>
-                        @endif
                         @endforeach
                       </tbody>
                     </table>

@@ -26,8 +26,8 @@
                   
                   <li><a><i class="fa fa-sticky-note-o"></i> Registro <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ route('ad_personal.index') }}">Administrador</a></li>
-                      <li><a href="{{ route('cancha.index') }}">Canchas</a></li>
+                      <li><a href="{{ route('ad_personal.index') }}">Lista de Administradores</a></li>
+                      <li><a href="{{ route('cancha.index') }}">Lista de Canchas</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-soccer-ball-o"></i> Deporte <span class="fa fa-chevron-down"></span></a>
@@ -37,8 +37,8 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Centro Deportivo <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ route('ad_detallecentro.index') }}">NIT centro deportivo</a></li>
-                      <li><a href="{{ route('ad_centro.index') }}">Registro centro deportivo</a></li>
+                      <li><a href="{{ route('ad_detallecentro.index') }}">Documentos de centro deportivo</a></li>
+                      <li><a href="{{ route('ad_centro.index') }}">Lista de centros deportivos</a></li>
                       <li><a href="{{ route('ad_estadocancha.index') }}">Estado de cancha</a></li>
                     </ul>
                   </li>

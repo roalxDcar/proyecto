@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cancha;
+use App\Promocion;
+use App\User;
+use App\Centro;
 
-class CaractercanchaController extends Controller
+
+class PrincipalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +17,14 @@ class CaractercanchaController extends Controller
      */
     public function index()
     {
-        $c = Caractercancha::orderBy('id','desc')->paginate(5);
-        $cancha = Cancha::all();
-        return view('caracteristica.index',[
-                'c' => $c,
-                'cancha'=>$cancha
-            ]);
+        $promo = Promocion::Orderby('id','asc')->paginate(20);
+        $user = User::all();
+        $centro = Centro::all();
+        return view('content.usuario',[
+            'promo'=>$promo,
+            'user'=>$user,
+            'centro'=>$centro
+        ]);
     }
 
     /**
@@ -29,10 +34,7 @@ class CaractercanchaController extends Controller
      */
     public function create()
     {
-        $cancha = Cancha::all();
-        return view('caracteristica.create',[
-                'cancha'=>$cancha
-            ]);
+        //
     }
 
     /**
@@ -43,12 +45,7 @@ class CaractercanchaController extends Controller
      */
     public function store(Request $request)
     {
-        $car = new Caractercancha;
-        $car->id_cancha = $request->observacion;
-        $car->->observacion = $request->observacion;
-        $car->save();
-        return redirect()->route();
-
+        //
     }
 
     /**
@@ -70,11 +67,7 @@ class CaractercanchaController extends Controller
      */
     public function edit($id)
     {
-        $car = Caractercancha::findOrfail($id)
-        $cancha = Cancha::all();
-        return view('Caracteristica.edit',[
-            'cancha'=>$cancha
-        ]);
+        //
     }
 
     /**
@@ -86,11 +79,7 @@ class CaractercanchaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $c = Caractercancha::findOrFail($id);
-        $c->id_cancha = $request->id_cancha;
-        $c->observacion = $request->observacion;
-        $c->save();
-        return redirect()->route('caracteristica.index');
+        //
     }
 
     /**

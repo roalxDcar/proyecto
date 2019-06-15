@@ -41,21 +41,47 @@
     <header class="site-navbar container py-0 bg-white" role="banner">
 
       <!-- <div class="container"> -->
+        {{-- BARRA SUPERIOR DE LA PANTALLA PRINCIPAL --}}
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><a class="text-black mb-0">INFO<span class="text-primary">-SPORT</span>  </a></h1>
+            <h1 class="mb-0 site-logo"><a href="{{ url('/') }}" class="text-black mb-0">INFO<span class="text-primary">-SPORT</span>  </a></h1>
           </div>
+
+
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="blog.html">Comentarios</a></li>
-                <li><a href="contact.html">Contactos</a></li>
-                <li class="ml-xl-3 login"><a href="{{ route('login') }}"><span class="border-left pl-xl-4"></span>Iniciar Sesión </a></li>
-                <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded">Registrarse</span></a></li> 
+
+                @if(Route::has('login'))
+                  @auth
+                      <li><a href="#">Comentarios</a></li>
+                      <li><a href="#"><span class="border-left pl-xl-4"></span>Contactos</a></li>
+                      <li><a href="#"><span class="border-left pl-xl-4"></span>Reservar Cancha</a></li>
+                      <li><a href="#"><span class="border-left pl-xl-4"></span>Mapa</a></li>
+                      <li class="has-children">
+                        <a class="cta"><span class="bg-primary text-white rounded">{{ Auth::user()->name }}</span></a>
+                        <ul class="dropdown">
+                          <li><a href="#">Perfil</a></li>
+                          <li><a href="#">Ajustes</a></li>
+                            {{-- Cerrar Sesion --}}
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right"></i>Cerrar Sesion</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              @csrf
+                            </form>
+                          </li>
+                        </ul>
+                      </li>
+
+                    @else
+                    <li class="ml-xl-3 login"><a href="{{ route('login') }}"> Iniciar Sesión</a></li>
+                    <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded"> Registrarse</span></a></li>
+                  @endauth
+                @endif 
 
               </ul>
+
             </nav>
           </div>
 
@@ -68,17 +94,25 @@
       <!-- </div> -->
       
     </header>
-    
+    {{-- Contenido dentro de la foto "PRINCIPAL" --}}
     <div class="site-blocks-cover overlay" style="background-image: url(../../assets/images/voley.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
-
-            <div class="col-md-12"> 
+            <div class="col-md-12">
+                {{-- CONTENIDOS --}}
                 @yield('content1')
-            </div>
+                {{-- FIN DE CONTENIDO --}}
+
+                {{-- Parte final --}}
+          {{--  
+          </div>
         </div>
       </div>
-    </div>  
+    </div> 
+    --}}  
+                {{-- Fin de Parte final --}}
+
+    {{-- Contenido dentro de la foto "PRINCIPAL" --}}
 
     <div class="newsletter bg-primary py-5">
       <div class="container">

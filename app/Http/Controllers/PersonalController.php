@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Rol;
+use App\Centro;
 use Illuminate\Http\Request;
-use App\Cancha;
 
-class CaractercanchaController extends Controller
+class PersonalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +16,14 @@ class CaractercanchaController extends Controller
      */
     public function index()
     {
-        $c = Caractercancha::orderBy('id','desc')->paginate(5);
-        $cancha = Cancha::all();
-        return view('caracteristica.index',[
-                'c' => $c,
-                'cancha'=>$cancha
-            ]);
+        $per = User::orderBy('id','desc')->paginate(20);
+        $rol= Rol::all();
+        $centro=Centro::all(); 
+        return view('personaladmi.index',[
+            'user'=> $per,
+            'rol'=>$rol,
+            'centro'=>$centro
+        ]);
     }
 
     /**
@@ -29,10 +33,14 @@ class CaractercanchaController extends Controller
      */
     public function create()
     {
-        $cancha = Cancha::all();
-        return view('caracteristica.create',[
-                'cancha'=>$cancha
-            ]);
+        $per = User::orderBy('id','desc')->paginate(5);
+        $rol= Rol::all();
+        $centro=Centro::all(); 
+        return view('personaladmi.create',[
+            'user'=> $per,
+            'rol'=>$rol,
+            'centro'=>$centro
+        ]);
     }
 
     /**
@@ -43,12 +51,22 @@ class CaractercanchaController extends Controller
      */
     public function store(Request $request)
     {
-        $car = new Caractercancha;
-        $car->id_cancha = $request->observacion;
-        $car->->observacion = $request->observacion;
-        $car->save();
-        return redirect()->route();
-
+        //
+         $us = new User;
+         $us->id_rol = $request->id_rol;
+         $us->id_centro = $request->id_centro;         
+         $us->name = $request->name;
+         $us->paterno = $request->paterno;
+         $us->materno = $request->materno;
+         $us->genero = $request->genero;
+         $us->telefono = $request->telefono;
+         $us->celular = $request->celular;
+         $us->ci = $request->ci;
+         $us->direccion = $request->direccion;
+         $us->email = $request->email;
+         $us->password = bcrypt($request->password);
+         $us->save();
+         return redirect()->route('personal.index');
     }
 
     /**
@@ -70,11 +88,7 @@ class CaractercanchaController extends Controller
      */
     public function edit($id)
     {
-        $car = Caractercancha::findOrfail($id)
-        $cancha = Cancha::all();
-        return view('Caracteristica.edit',[
-            'cancha'=>$cancha
-        ]);
+        //
     }
 
     /**
@@ -86,11 +100,7 @@ class CaractercanchaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $c = Caractercancha::findOrFail($id);
-        $c->id_cancha = $request->id_cancha;
-        $c->observacion = $request->observacion;
-        $c->save();
-        return redirect()->route('caracteristica.index');
+        //
     }
 
     /**

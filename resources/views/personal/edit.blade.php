@@ -21,7 +21,7 @@
                   <div class="x_content">
                     <br />
 
-    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('ad_personal.update',$user->id) }}">                      
+                    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('ad_personal.update',$user->id) }}">                      
                       @csrf
                       @method('PUT')
 

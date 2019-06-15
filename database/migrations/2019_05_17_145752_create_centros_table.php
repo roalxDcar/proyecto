@@ -20,6 +20,7 @@ class CreateCentrosTable extends Migration
             $table->integer('telefono');
             $table->string('ubicacion');
             $table->string('descripcion');
+            $table->string('foto')->nullable();
 
             $table->rememberToken();
             $table->timestamps();
