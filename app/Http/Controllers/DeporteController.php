@@ -13,7 +13,7 @@ class DeporteController extends Controller
      */
     public function index()
     {
-        $deporte=Deporte::OrderBy('id','desc')->paginate(5);
+        $deporte=Deporte::OrderBy('id','asc')->paginate(5);
         return view('deporte.index',[ 
             'deporte'=>$deporte
         ]);

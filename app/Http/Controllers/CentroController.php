@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Centro;
 use App\DetalleCentro;
+use App\Valoracion;
 use Illuminate\Http\Request;
 
 class CentroController extends Controller
@@ -31,7 +32,11 @@ class CentroController extends Controller
     public function create()
     {
         $detallecentro =DetalleCentro::all();
-        return view('centro.create',['detallecentro'=> $detallecentro]);
+        $v = Valoracion::all();
+        return view('centro.create',[
+            'detallecentro'=> $detallecentro,
+            'v'=>$v
+        ]);
     }
 
     /**
@@ -48,6 +53,7 @@ class CentroController extends Controller
             $centro->telefono = $request->telefono;
             $centro->ubicacion = $request->ubicacion;
             $centro->descripcion = $request->descripcion;
+            $centro->id_valoracion = $request->id_valoracion;
             $centro->save();
             return redirect()->route('ad_centro.index');
     }
@@ -58,7 +64,7 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function show(Centro $centro)
+    public function show($id)
     {
         //
     }
@@ -69,9 +75,17 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function edit(Centro $centro)
+    public function edit($id)
     {
         //
+        $c = Centro::findOrFail($id);
+        $detallecentro =DetalleCentro::all();
+        $v = Valoracion::all();
+        return view('centro.edit',[
+            'c'=>$c,
+            'detallecentro'=> $detallecentro,
+            'v'=>$v
+        ]);
     }
 
     /**
@@ -81,9 +95,17 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Centro $centro)
+    public function update(Request $request, $id)
     {
         //
+            $centro = Centro::findOrFail($id);
+            $centro->nombre = $request->nombre;
+            $centro->telefono = $request->telefono;
+            $centro->ubicacion = $request->ubicacion;
+            $centro->descripcion = $request->descripcion;
+            $centro->id_valoracion = $request->id_valoracion;
+            $centro->save();
+            return redirect()->route('ad_centro.index');
     }
 
     /**
@@ -92,7 +114,7 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Centro $centro)
+    public function destroy($id)
     {
         //
     }

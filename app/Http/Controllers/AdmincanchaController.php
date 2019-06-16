@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\DetalleCentro;
+use App\Cancha;
+use App\EstadoCancha;
+use App\Centro;
+use App\Valoracion;
 use Illuminate\Http\Request;
 
-class DetalleCentroController extends Controller
+class AdmincanchaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,17 @@ class DetalleCentroController extends Controller
      */
     public function index()
     {
-        $detallecentro = DetalleCentro::all();
-        return view('detallecentro.index',['detallecentro'=> $detallecentro ]);
+        //
+        $cancha = Cancha::orderBy('id','asc')->paginate(5);
+        $e = EstadoCancha::all();
+        $centro = Centro::all();
+        $valor = valoracion::All();
+        return view('admicancha.index',[
+            'cancha'=>$cancha, 
+            'es'=>$e, 
+            'centro'=>$centro, 
+            'valor'=>$valor
+        ]);
     }
 
     /**
@@ -25,7 +37,15 @@ class DetalleCentroController extends Controller
      */
     public function create()
     {
-        return view('detallecentro.create');
+        //
+        $estado = EstadoCancha::All();
+        $centro = Centro::All();
+        $valor = valoracion::All();
+        return view('admicancha.create',[
+            'estado'=>$estado, 
+            'centro'=>$centro, 
+            'valor'=>$valor
+        ]);
     }
 
     /**
@@ -36,13 +56,14 @@ class DetalleCentroController extends Controller
      */
     public function store(Request $request)
     {
-            $detalle = new DetalleCentro;
-            $detalle->propietario = $request->propietario;
-            $detalle->nit = $request->nit;
-            $detalle->domicilio = $request->domicilio;
-            $detalle->actividad = $request->actividad;
-            $detalle->save();
-            return redirect()->route('ad_centro.create');
+        //
+        $cancha = new Cancha;
+        $cancha->id_estado = $request->id_estado;
+        $cancha->nombre = $request->nombre;
+        $cancha->costo = $request->costo;
+        $cancha->descripcion = $request->descripcion;
+        $cancha->save();
+        return redirect()->route('area.index');
     }
 
     /**
@@ -64,9 +85,7 @@ class DetalleCentroController extends Controller
      */
     public function edit($id)
     {
-        $detalle = DetalleCentro::findOrFail($id);
-        
-        return view('detallecentro.edit',['detallecentro'=> $detalle ]);
+        //
     }
 
     /**
@@ -78,13 +97,7 @@ class DetalleCentroController extends Controller
      */
     public function update(Request $request, $id)
     {
-            $detalle = DetalleCentro::findOrFail($id);
-            $detalle->propietario = $request->propietario;
-            $detalle->nit = $request->nit;
-            $detalle->domicilio = $request->domicilio;
-            $detalle->actividad = $request->actividad;
-            $detalle->save();
-            return redirect()->route('ad_detallecentro.index');
+        //
     }
 
     /**

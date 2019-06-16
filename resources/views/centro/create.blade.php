@@ -19,19 +19,27 @@
 
                     <form data-parsley-validate class="form-horizontal form-label-left"  method="POST" action="{{ route('ad_centro.store') }}">
                       @csrf
-                      
-                            <div class="form-group">
-                             <label for="exampleInputPassword1">Propietario</label>
-                              <select name="id_detalle" class="form-control">
                                 @foreach($detallecentro as $detalle)
-                                <option value="{{ $detalle->id }}">{{ $detalle->propietario }}</option>
+                                  @php($p = $detalle)
                                 @endforeach
-                             </select>
-                           </div>
-                      
+
+                      <div style="visibility: hidden;">
+                        <input id="id_detalle" name="id_detalle" value="{{ $p->id }}"></input>
+                      </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre del propietario<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div id="" class="btn-group" data-toggle="buttons">
+                            <select disabled="" id="" name="" class="form-control">
+                                    <option>{{ $p->propietario }}</option>
+                            </select> 
+                          </div>
+                        </div>
+                      </div>                  
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre del Centro Deportivo<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="nombre" name="nombre" required="required" class="form-control col-md-7 col-xs-12">
@@ -47,7 +55,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Ubicacion <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Ubicacion del Centro Deportivo<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="ubicacion" name="ubicacion" required="required" class="form-control col-md-7 col-xs-12">
@@ -55,12 +63,25 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Descripcion <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Observacion <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="descripcion" name="descripcion" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Valoración<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div id="" class="btn-group" data-toggle="buttons">
+                            <select id="" name="valoracion" class="form-control">
+                                    @foreach( $v as $va )
+                                      <option value="{{ $va->id }}" >{{ $va->descripcion }}</option>
+                                    @endforeach
+                            </select> 
+                          </div>
+                        </div>
+                      </div> 
                      
 
                       <div class="ln_solid"></div>

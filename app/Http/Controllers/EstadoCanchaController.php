@@ -14,7 +14,7 @@ class EstadoCanchaController extends Controller
      */
     public function index()
     {
-        $estadocancha = EstadoCancha::orderBy('id','desc')->paginate(5);
+        $estadocancha = EstadoCancha::orderBy('id','asc')->paginate(5);
         return view('estadocancha.index',['estadocancha'=> $estadocancha ]);
     }
 

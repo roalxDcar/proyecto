@@ -36,14 +36,11 @@
                                                 <label for="cc-payment" class="control-label mb-1"><b>* Actualizar Promoción</b></label>
                                                 <textarea id="descripcion" name="descripcion" type="textarea" class="form-control" aria-required="true" aria-invalid="false" ></textarea>
                                             </div>
-                                          
-                                            <div class="card-footer">
-                                                <button type="submit" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-dot-circle-o"><a style="color: white ;"> Actualizar</a></i> 
-                                                </button>
-                                                <button type="reset" class="btn btn-danger btn-sm">
-                                                    <i class="fa fa-ban"><a style="color: white ;" href="{{ route('promocion.index') }}"> Cancelar</a></i> 
-                                                </button>
+                                            <div class="form-group">
+                                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                                  <button class="btn btn-secondary"><a  style="color:white;" href="{{ route('promocion.index') }}">Cancelar</a></button>
+                                                  <button type="submit" class="btn btn-success">Guardar</button>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>

@@ -42,16 +42,16 @@
                                         <i class="fas fa-desktop"></i>Registro</a>
                                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                                         <li>
-                                            <a href="button.html">Personal</a>
+                                            <a href="{{ route('personal.index') }}">Personal</a>
                                         </li>
                                         <li>
-                                            <a href="badge.html">Cancha</a>
+                                            <a href="{{ route('area.index') }}">Cancha</a>
                                         </li>
                                         <li>
                                             <a href="tab.html">Estado Cancha</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('promocion.index') }}">Estado Cancha</a>
+                                            <a href="{{ route('promocion.index') }}">Promocion</a>
                                         </li>
                                     </ul>
                                 </li>

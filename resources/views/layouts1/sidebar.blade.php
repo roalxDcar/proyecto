@@ -34,7 +34,7 @@
                                     <a href="{{ route('personal.index') }}">Personal</a>
                                 </li>
                                 <li>
-                                    <a href="badge.html">Cancha</a>
+                                    <a href="{{ route('area.index') }}">Cancha</a>
                                 </li>
                                 <li>
                                     <a href="tab.html">Estado Cancha</a>

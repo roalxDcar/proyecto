@@ -63,6 +63,8 @@ Route::resource('ad_calendario','CalendarioController');
 
 Route::resource('cancha','CanchaController');
 
+Route::resource('area','AdminCanchaController');
+
 Route::resource('promocion','PromocionController');
 
 

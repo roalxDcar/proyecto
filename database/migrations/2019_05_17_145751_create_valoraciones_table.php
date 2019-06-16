@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCaractercanchasTable extends Migration
+class CreateValoracionesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateCaractercanchasTable extends Migration
      */
     public function up()
     {
-        Schema::create('caractercanchas', function (Blueprint $table) {
+        Schema::create('valoraciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_cancha')->unsigned();
-            $table->string('foto');
+            $table->string('descripcion');
             $table->timestamps();
-
-            $table->foreign('id_cancha')->references('id')->on('canchas');
         });
     }
 
@@ -30,6 +27,6 @@ class CreateCaractercanchasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('caractercanchas');
+        Schema::dropIfExists('valoraciones');
     }
 }

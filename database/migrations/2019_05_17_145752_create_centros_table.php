@@ -21,11 +21,13 @@ class CreateCentrosTable extends Migration
             $table->string('ubicacion');
             $table->string('descripcion');
             $table->string('foto')->nullable();
+            $table->integer('id_valoracion')->unsigned()->nullable();
 
             $table->rememberToken();
             $table->timestamps();
             
             $table->foreign('id_detalle')->references('id')->on('detallecentros');
+            $table->foreign('id_valoracion')->references('id')->on('valoraciones');
         });
     }
 

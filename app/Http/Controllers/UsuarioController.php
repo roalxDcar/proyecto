@@ -16,7 +16,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuario = User::orderBy('id','desc')->paginate(5);
+        $usuario = User::orderBy('id','asc')->paginate(5);
         $rol= Rol::all();
         $centro=Centro::all(); 
         return view('personal.index',[

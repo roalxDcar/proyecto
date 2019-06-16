@@ -56,24 +56,31 @@
 
                 @if(Route::has('login'))
                   @auth
-                      <li><a href="#">Comentarios</a></li>
-                      <li><a href="#"><span class="border-left pl-xl-4"></span>Contactos</a></li>
-                      <li><a href="#"><span class="border-left pl-xl-4"></span>Reservar Cancha</a></li>
-                      <li><a href="#"><span class="border-left pl-xl-4"></span>Mapa</a></li>
-                      <li class="has-children">
-                        <a class="cta"><span class="bg-primary text-white rounded">{{ Auth::user()->name }}</span></a>
-                        <ul class="dropdown">
-                          <li><a href="#">Perfil</a></li>
-                          <li><a href="#">Ajustes</a></li>
-                            {{-- Cerrar Sesion --}}
-                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right"></i>Cerrar Sesion</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              @csrf
-                            </form>
-                          </li>
-                        </ul>
-                      </li>
-
+                      @if( Auth::user()->id_rol == 1 )
+                        <li><a href="#">Comentarios</a></li>
+                        <li><a href="#"><span class="border-left pl-xl-4"></span>Contactos</a></li>
+                        <li><a href="{{ route('usuario.index') }}"><span class="border-left pl-xl-4"></span>Reservar Cancha</a></li>
+                        <li><a href="#"><span class="border-left pl-xl-4"></span>Mapa</a></li>
+                        <li class="has-children">
+                          <a class="cta"><span class="bg-primary text-white rounded">{{ Auth::user()->name }}</span></a>
+                          <ul class="dropdown">
+                            <li><a href="#">Perfil</a></li>
+                            <li><a href="#">Ajustes</a></li>
+                              {{-- Cerrar Sesion --}}
+                              <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right"></i>Cerrar Sesion</a>
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                              </form>
+                            </li>
+                          </ul>
+                        </li>
+                      @else
+                          @if( Auth::user()->id_rol == 2 )
+                            <li><a href="{{ url('/administrador') }}" class="cta"><span class="bg-primary text-white rounded"> Principal</span></a></li>
+                          @else
+                            <li><a href="{{ url('/empleado') }}" class="cta"><span class="bg-primary text-white rounded"> Principal</span></a></li>
+                          @endif
+                      @endif
                     @else
                     <li class="ml-xl-3 login"><a href="{{ route('login') }}"> Iniciar Sesión</a></li>
                     <li><a href="{{ route('register') }}" class="cta"><span class="bg-primary text-white rounded"> Registrarse</span></a></li>

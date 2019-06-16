@@ -16,7 +16,7 @@ class PersonalController extends Controller
      */
     public function index()
     {
-        $per = User::orderBy('id','desc')->paginate(20);
+        $per = User::orderBy('id','asc')->paginate(20);
         $rol= Rol::all();
         $centro=Centro::all(); 
         return view('personaladmi.index',[
@@ -89,6 +89,14 @@ class PersonalController extends Controller
     public function edit($id)
     {
         //
+        $per = User::findOrFail($id);
+        $rol= Rol::all();
+        $centro = Centro::all();
+        return view('personaladmi.edit',[
+            'rol'=>$rol ,
+            'per'=>$per,
+            'centro'=>$centro
+        ]);
     }
 
     /**
@@ -100,7 +108,22 @@ class PersonalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+         $user = User::findOrFail($id);
+         $user->id_rol = $request->id_rol;
+         $user->id_centro = $request->centro;
+         $user->name = $request->name;
+         $user->paterno = $request->paterno;
+         $user->materno = $request->materno;
+         $user->genero = $request->genero;
+         $user->telefono = $request->telefono;
+         $user->celular = $request->celular;
+         $user->ci = $request->ci;
+         $user->direccion = $request->direccion;
+         $user->email = $request->email;
+         $user->password = bcrypt($request->password);
+         $user->save();
+         return redirect()->route('personal.index');
     }
 
     /**

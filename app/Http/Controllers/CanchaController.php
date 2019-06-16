@@ -16,7 +16,7 @@ class CanchaController extends Controller
      */
     public function index()
     {
-        $cancha = Cancha::orderBy('id','desc')->paginate(5);
+        $cancha = Cancha::orderBy('id','asc')->paginate(5);
         $e = EstadoCancha::all();
         $centro = Centro::all();
         return view('cancha.index',['cancha'=>$cancha, 'es'=>$e, 'centro'=>$centro]);

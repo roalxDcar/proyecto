@@ -21,7 +21,6 @@ class CreateCanchasTable extends Migration
             $table->string('nombre');
             $table->integer('costo');
             $table->string('descripcion')->nullable();
-            $table->integer('valoracion')->nullable();
 
             $table->timestamps();
 

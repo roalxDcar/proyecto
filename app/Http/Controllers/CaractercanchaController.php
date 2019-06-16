@@ -14,7 +14,7 @@ class CaractercanchaController extends Controller
      */
     public function index()
     {
-        $c = Caractercancha::orderBy('id','desc')->paginate(5);
+        $c = Caractercancha::orderBy('id','asc')->paginate(5);
         $cancha = Cancha::all();
         return view('caracteristica.index',[
                 'c' => $c,

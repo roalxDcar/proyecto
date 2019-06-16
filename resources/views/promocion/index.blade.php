@@ -53,6 +53,13 @@
                                       <h3 class="title-3 m-b-30">Promociones Creadas</h3>
                                       <div class="table-responsive">
                                           <table class="table table-top-campaign">
+                                            <thead>
+                                            <tr>
+                                              <th>N°</th>
+                                              <th>Descripcion</th>
+                                              <th>Actualizar</th>
+                                            </tr>
+                                            </thead>
                                               @php ($c=0)
 
                                             <tbody>
@@ -66,7 +73,7 @@
                                                             <td>{{ $p->descripcion }}</td>
                                                             <td>
                                                               <div class="table-data-feature">
-                                                                <a class="item" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('promocion.edit',$p->id) }}"><i class="zmdi zmdi-edit"></a></i>
+                                                                <a type="" class="item" data-toggle="tooltip" data-placement="top" title="Edit" style=" text-decoration:  none;"  href="{{ route('promocion.edit',$p->id) }}"><i class="zmdi zmdi-edit"></i></a>
                                                               </div>
                                                             </td>                                                      
                                                         </tr>

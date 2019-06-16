@@ -37,7 +37,7 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Centro Deportivo <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ route('ad_detallecentro.index') }}">Documentos de centro deportivo</a></li>
+                      <li><a href="{{ route('ad_detallecentro.index') }}">Nuevo Centro</a></li>
                       <li><a href="{{ route('ad_centro.index') }}">Lista de centros deportivos</a></li>
                       <li><a href="{{ route('ad_estadocancha.index') }}">Estado de cancha</a></li>
                     </ul>
