@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+{{-- HACER VISTA DE LAS CANCHAS//////////////////////////////////////////////// --}}
             <div class="page-title">
               <div class="title_left">
                 <h3>Caracteristicas <small>Some examples to get you started</small></h3>

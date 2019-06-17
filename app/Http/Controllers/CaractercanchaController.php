@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Caractercancha;
+use App\Cancha;
+use App\Centro;
 
 class CaractercanchaController extends Controller
 {
@@ -26,6 +28,7 @@ class CaractercanchaController extends Controller
      */
     public function create()
     {
+
         return view('caractercancha.create');
     }
 
@@ -37,20 +40,15 @@ class CaractercanchaController extends Controller
      */
     public function store(Request $request)
     {
+        $imagen = $request->file('foto');
+        $file = $imagen->store('cancha');
 
-        // $car = new Caractercancha;
-        // $car->id_cancha = $request->observacion;
-        // $car->->observacion = $request->observacion;
-        // $car->save();
-        // return redirect()->route();
+        $c = new Caractercancha;
+        $c->id_cancha = $request->id_cancha;
+        $c->foto = $file;
+        $c->save();
 
-
-        $caractercancha=request()->except('_token');
-        if($request->hasFile('observacion')){
-            $caractercancha['observacion']=$request->file('observacion')->store('uploads','public');
-        }
-        Caractercancha::insert($caractercancha);    
-        return redirect()->route('ad_caractercancha.index');
+        return redirect()->route('area.index');
 
     }
     /**
@@ -62,6 +60,14 @@ class CaractercanchaController extends Controller
     public function show($id)
     {
         //
+        $c = $id;
+        $centro = Centro::all();
+        $cancha = Cancha::all();
+        return view('caractercancha.edit',[
+            'c' => $c,
+            'centro'=>$centro,
+            'cancha'=>$cancha
+            ]);
     }
 
     /**
@@ -72,11 +78,13 @@ class CaractercanchaController extends Controller
      */
     public function edit($id)
     {
-        $car = Caractercancha::findOrfail($id)
-        $cancha = Cancha::all();
-        return view('Caracteristica.edit',[
-            'cancha'=>$cancha
-        ]);
+
+        // $car = Caractercancha::findOrfail($id);
+        // $cancha = Cancha::all();
+        // return view('caractercancha.edit',[
+        //     'caracter'=>$car,
+        //     'cancha'=>$cancha
+        // ]);
     }
 
     /**

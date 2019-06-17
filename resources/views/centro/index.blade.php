@@ -26,6 +26,7 @@
                           <th>Telefono</th>
                           <th>Ubicacion</th>
                           <th>Observación</th>
+                          <th>Fotografia</th>
                           <th>Actualizar</th>
 
                         </tr>
@@ -47,6 +48,9 @@
                           <td>{{ $centro->telefono }}</td>
                           <td>{{ $centro->ubicacion }}</td>
                           <td>{{ $centro->descripcion }}</td>
+                          <td>
+                            <a target="_blak" href="{{ asset($centro->foto) }}"><img width="100" height="80" src="{{ asset($centro->foto) }}"></a>
+                          </td>
                           <td>
                           <a href="{{ route('ad_centro.edit',$centro->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
                           </td>

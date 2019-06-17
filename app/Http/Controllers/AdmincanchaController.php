@@ -58,6 +58,7 @@ class AdmincanchaController extends Controller
     {
         //
         $cancha = new Cancha;
+        $cancha->id_centro = $request->id_centro;
         $cancha->id_estado = $request->id_estado;
         $cancha->nombre = $request->nombre;
         $cancha->costo = $request->costo;
@@ -86,6 +87,16 @@ class AdmincanchaController extends Controller
     public function edit($id)
     {
         //
+        $cancha = Cancha::findOrFail($id);
+        $estado = EstadoCancha::All();
+        $centro = Centro::All();
+        $valor = valoracion::All();
+        return view('admicancha.edit',[
+            'cancha'=>$cancha,
+            'estado'=>$estado, 
+            'centro'=>$centro, 
+            'valor'=>$valor
+        ]);
     }
 
     /**
@@ -98,6 +109,14 @@ class AdmincanchaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $cancha = Cancha::findOrFail($id);
+        $cancha->id_centro = $request->id_centro;
+        $cancha->id_estado = $request->id_estado;
+        $cancha->nombre = $request->nombre;
+        $cancha->costo = $request->costo;
+        $cancha->descripcion = $request->descripcion;
+        $cancha->save();
+        return redirect()->route('area.index');
     }
 
     /**

@@ -72,6 +72,8 @@ Route::resource('area','AdminCanchaController');
 
 Route::resource('promocion','PromocionController');
 
+Route::resource('caracteristica','CaractercanchaController');
+
 
 // Route::get('content.contenido', 'HomeController@index')->name('home');
 

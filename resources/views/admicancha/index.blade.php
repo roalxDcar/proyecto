@@ -25,24 +25,34 @@
                                               <th>Nombre</th>
                                               <th>Costo</th>
                                               <th>Observación</th>
+                                              <td>Agregar Imagen</td>
                                               <td>Actualizar</td>
                                             </tr>
                                         </thead>
-                                        @php ($c=0)
+                                        @php ($p=0)
                                         <tbody>
                                             @foreach( $cancha as $c )
                                                 @if( $c->id_centro == Auth::user()->id_centro )
                                                      <tr class="tr-shadow">
-                                                      @php ($c++)
+                                                      @php ($p++)
                                                         {{-- id_usuario hecho con un contador -> c --}}
-                                                          <td> {{ $c }}</td>  
-                                                          <td>{{ $c->estado }}</td>
+                                                          <td> {{ $p }}</td>  
+                                                          @foreach($es as $e)
+                                                            @if($c->id_estado == $e->id)
+                                                              <td>{{ $e->descripcion }}</td>
+                                                            @endif
+                                                          @endforeach
                                                           <td>{{ $c->nombre }}</td>
                                                           <td>{{ $c->costo }}</td>
                                                           <td>{{ $c->descripcion }}</td>
                                                           <td>
-                                                          <div class="table-data-feature">
-                                                                <a type="" class="item" data-toggle="tooltip" data-placement="top" title="Edit" style=" text-decoration:  none;"  href="{{ route('area.edit',$p->id) }}"><i class="zmdi zmdi-edit"></i></a>
+                                                              <div class="table-data-feature">
+                                                                <a type="" class="item" data-toggle="tooltip" data-placement="top" title="Edit" style=" text-decoration:  none;"  href="{{ route('caracteristica.show',$c->id) }}"><i class="zmdi zmdi-edit"></i></a>
+                                                              </div>
+                                                          </td>
+                                                          <td>
+                                                              <div class="table-data-feature">
+                                                                <a type="" class="item" data-toggle="tooltip" data-placement="top" title="Edit" style=" text-decoration:  none;"  href="{{ route('area.edit',$c->id) }}"><i class="zmdi zmdi-edit"></i></a>
                                                               </div>
                                                           </td>                                                      
                                                       </tr>

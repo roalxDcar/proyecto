@@ -47,28 +47,22 @@ class CentroController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->hasFile('foto')){
-            //guarda la foto en la variable $file
-            $file = $request->file('foto');
-            //creamos un nombre para que sea unico 
-            $n = time().$file->getClientOriginalName();
-            //guardamos la imagen en una carpeta "images" 
-            //------variable $file es la imagen------
-            //------$name es el nombre de la imagen-----
-            $file -> move(public_path.'/images/',$n);
-        }
-        $n=0;
-return $n;
-            // $centro = new Centro;
-            // $centro->id_detalle = $request->id_detalle;
-            // $centro->nombre = $request->nombre;
-            // $centro->telefono = $request->telefono;
-            // $centro->ubicacion = $request->ubicacion;
-            // $centro->descripcion = $request->descripcion;
-            // $centro->foto = $nuevo;
-            // $centro->id_valoracion = $request->id_valoracion;
-            // $centro->save();
-            // return redirect()->route('ad_centro.index');
+        $imagen = $request->file('foto');
+
+        $file = $imagen->store('centro');
+
+
+
+            $centro = new Centro;
+            $centro->id_detalle = $request->id_detalle;
+            $centro->nombre = $request->nombre;
+            $centro->telefono = $request->telefono;
+            $centro->ubicacion = $request->ubicacion;
+            $centro->descripcion = $request->descripcion;
+            $centro->foto = $file;
+            $centro->id_valoracion = $request->id_valoracion;
+            $centro->save();
+            return redirect()->route('ad_centro.index');
     }
 
     /**
@@ -110,12 +104,18 @@ return $n;
      */
     public function update(Request $request, $id)
     {
-        //
+        //toma la imagen y todos sus datos
+        $imagen = $request->file('foto');
+        //nombre de la imagen para almacenarlo
+        $file = $imagen->store('centro');
+
+        //almacena todos los datos
             $centro = Centro::findOrFail($id);
             $centro->nombre = $request->nombre;
             $centro->telefono = $request->telefono;
             $centro->ubicacion = $request->ubicacion;
             $centro->descripcion = $request->descripcion;
+            $centro->foto = $file;
             $centro->id_valoracion = $request->id_valoracion;
             $centro->save();
             return redirect()->route('ad_centro.index');
