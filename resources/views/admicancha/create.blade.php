@@ -50,18 +50,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="select" class=" form-control-label">Valoración*</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <select name="id_estado" id="id_estado" class="form-control">
-                                                        @foreach( $valor as $v )
-                                                           <option value="{{ $v->id }}">{{ $v->descripcion }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
                                             <div>
                                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block-center">
                                                     <i class="fa fa-lock fa-lg"></i>&nbsp;

@@ -25,7 +25,6 @@
                                               <th>Nombre</th>
                                               <th>Costo</th>
                                               <th>Observación</th>
-                                              <th>Calidad</th>
                                               <td>Actualizar</td>
                                             </tr>
                                         </thead>
@@ -41,7 +40,6 @@
                                                           <td>{{ $c->nombre }}</td>
                                                           <td>{{ $c->costo }}</td>
                                                           <td>{{ $c->descripcion }}</td>
-                                                          <td>{{ $c->valoracion }}</td>
                                                           <td>
                                                           <div class="table-data-feature">
                                                                 <a type="" class="item" data-toggle="tooltip" data-placement="top" title="Edit" style=" text-decoration:  none;"  href="{{ route('area.edit',$p->id) }}"><i class="zmdi zmdi-edit"></i></a>

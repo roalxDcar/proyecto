@@ -48,7 +48,6 @@ class CanchaController extends Controller
         $cancha->nombre = $request->nombre;
         $cancha->costo = $request->costo;
         $cancha->descripcion = $request->descripcion;
-        $cancha->valoracion = $request->valoracion;
         $cancha->save();
         return redirect()->route('cancha.index');
     }
@@ -91,7 +90,6 @@ class CanchaController extends Controller
         $cancha->nombre = $request->nombre;
         $cancha->costo = $request->costo;
         $cancha->descripcion = $request->descripcion;
-        $cancha->valoracion = $request->valoracion;
         $cancha->save();
         return redirect()->route('cancha.index');
     }

@@ -47,15 +47,28 @@ class CentroController extends Controller
      */
     public function store(Request $request)
     {
-            $centro = new Centro;
-            $centro->id_detalle = $request->id_detalle;
-            $centro->nombre = $request->nombre;
-            $centro->telefono = $request->telefono;
-            $centro->ubicacion = $request->ubicacion;
-            $centro->descripcion = $request->descripcion;
-            $centro->id_valoracion = $request->id_valoracion;
-            $centro->save();
-            return redirect()->route('ad_centro.index');
+        if($request->hasFile('foto')){
+            //guarda la foto en la variable $file
+            $file = $request->file('foto');
+            //creamos un nombre para que sea unico 
+            $n = time().$file->getClientOriginalName();
+            //guardamos la imagen en una carpeta "images" 
+            //------variable $file es la imagen------
+            //------$name es el nombre de la imagen-----
+            $file -> move(public_path.'/images/',$n);
+        }
+        $n=0;
+return $n;
+            // $centro = new Centro;
+            // $centro->id_detalle = $request->id_detalle;
+            // $centro->nombre = $request->nombre;
+            // $centro->telefono = $request->telefono;
+            // $centro->ubicacion = $request->ubicacion;
+            // $centro->descripcion = $request->descripcion;
+            // $centro->foto = $nuevo;
+            // $centro->id_valoracion = $request->id_valoracion;
+            // $centro->save();
+            // return redirect()->route('ad_centro.index');
     }
 
     /**
@@ -77,7 +90,6 @@ class CentroController extends Controller
      */
     public function edit($id)
     {
-<<<<<<< HEAD
         //
         $c = Centro::findOrFail($id);
         $detallecentro =DetalleCentro::all();
@@ -87,11 +99,6 @@ class CentroController extends Controller
             'detallecentro'=> $detallecentro,
             'v'=>$v
         ]);
-=======
-        $centro = Centro::findOrFail($id);
-        
-        return view('centro.edit',['centro'=> $centro ]);
->>>>>>> 80a760272018a3df192230a2c676500b1b8cd4bc
     }
 
     /**
@@ -103,25 +110,15 @@ class CentroController extends Controller
      */
     public function update(Request $request, $id)
     {
-<<<<<<< HEAD
         //
             $centro = Centro::findOrFail($id);
-=======
-            $centro = Centro::findOrFail($id);
-            $centro->id_detalle = $request->id_detalle;
->>>>>>> 80a760272018a3df192230a2c676500b1b8cd4bc
             $centro->nombre = $request->nombre;
             $centro->telefono = $request->telefono;
             $centro->ubicacion = $request->ubicacion;
             $centro->descripcion = $request->descripcion;
-<<<<<<< HEAD
             $centro->id_valoracion = $request->id_valoracion;
             $centro->save();
             return redirect()->route('ad_centro.index');
-=======
-            $centro->save();
-            return redirect()->route('centro.index');
->>>>>>> 80a760272018a3df192230a2c676500b1b8cd4bc
     }
 
     /**
