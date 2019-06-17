@@ -26,6 +26,22 @@ class UsersTableSeeder extends Seeder
             'password'=>bcrypt(12345678),
             'direccion'=>'Z/ Pedro DOmingo Murillo C/ Gregorio garcia Lanza'
 
+        ]);    
+
+        User::create([
+        	'id_rol' => 4,
+        	'id_centro' => null,
+        	'name' => 'Hayar',
+        	'paterno'=>'Aliaga',
+        	'materno'=>'Gutierrez',
+        	'genero'=>'1',
+        	'telefono'=>22457821,
+        	'celular'=>78549821,
+        	'ci'=>13408746,
+        	'email'=>'hayaralexaliagagutierrez@gmail.com',
+        	'password'=>bcrypt(12345678),
+        	'direccion'=>'Z/ Pedro DOmingo Murillo C/ Gregorio garcia Lanza'
+
         ]);
     }
 }

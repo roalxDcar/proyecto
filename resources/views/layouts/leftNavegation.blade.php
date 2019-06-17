@@ -36,9 +36,25 @@
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Centro Deportivo <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu"
+                      <li><a href="{{ route('ad_detallecentro.index') }}">Detalles centro deportivo</a></li>
+                      <li><a href="{{ route('ad_centro.index') }}">Registro centro deportivo</a></li>
+                      <li><a href="{{ route('detallecancha.index') }}">Detalles de Canchas</a></li>
+                      <li><a href="{{ route('ad_estadocancha.index') }}">Estado de cancha</a></li>
+                      <li><a href="{{ route('ad_caractercancha.index') }}">Imagenes de canchas</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+<<<<<<< HEAD
                       <li><a href="{{ route('ad_detallecentro.index') }}">Nuevo Centro</a></li>
                       <li><a href="{{ route('ad_centro.index') }}">Lista de centros deportivos</a></li>
+=======
+                      <li><a href="general_elements.html">General Elements</a></li>
+                      <li><a href="media_gallery.html">Media Gallery</a></li>
+                      <li><a href="{{ route('ad_detallecentro.index') }}">NIT centro deportivo</a></li>
+                      <li><a href="{{ route('ad_centro.index') }}">Registro centro deportivo</a></li>
+>>>>>>> 80a760272018a3df192230a2c676500b1b8cd4bc
                       <li><a href="{{ route('ad_estadocancha.index') }}">Estado de cancha</a></li>
                     </ul>
                   </li>

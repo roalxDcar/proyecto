@@ -55,11 +55,16 @@ Route::resource('ad_detallecentro','DetalleCentroController');
 
 Route::resource('ad_centro','CentroController');
 
+Route::resource('ad_caractercancha','CaractercanchaController');
+
 Route::resource('ad_deporte','DeporteController');
 
 Route::resource('ad_estadocancha','EstadoCanchaController');
 
 Route::resource('ad_calendario','CalendarioController');
+
+
+Route::resource('detallecancha','DetalleCanchaController');
 
 Route::resource('cancha','CanchaController');
 
