@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Caractercancha;
 class CaractercanchaController extends Controller
 {
@@ -35,14 +36,32 @@ class CaractercanchaController extends Controller
      */
     public function store(Request $request)
     {
-        $caractercancha=request()->except('_token');
-        if($request->hasFile('observacion')){
-            $caractercancha['observacion']=$request->file('observacion')->store('uploads','public');
-        }
-        Caractercancha::insert($caractercancha);
+            $caractercancha= new Caractercancha;
+                if ($request->Hasfile('observacion')){
+                    $file = $request->file('observacion');
+                    $extension = $file->getClientOriginalExtension();
+                    $filename = time(). '.' .$extension;
+                    $file->move('uploads/imagen/',$filename);
+                    $caractercancha->observacion = $filename;
+                }else {
+                    return $request;
+                    $caractercancha->observacion = '';
+                }
+        $caractercancha->save();
         
         return redirect()->route('ad_caractercancha.index');
     }
+
+    // guarda: 
+    // $caractercancha=request()->except('_token');
+    //     if($request->hasFile('observacion')){
+    //         $caractercancha['observacion']=$request->file('observacion')->store('uploads','public');
+    //     }
+    //     Caractercancha::insert($caractercancha);
+        
+    //     return redirect()->route('ad_caractercancha.index');
+
+
  // con los que no da : 
 
  //        if($request->hasFile('observacion')){
@@ -72,7 +91,12 @@ class CaractercanchaController extends Controller
         
  //        return redirect()->route('ad_caractercancha.index');
 
-
+        // $caractercancha=Caractercancha::create(request->all());
+        // if($request->file('observacion')){
+        //     $path=Storage::disk('public')->put('image',$request->file('observacion'));
+        //     $caractercancha->fill(['observacion'=> asset($path)])->save();
+        // }
+        // return redirect()->route('ad_caractercancha.index');
 
     /**
      * Display the specified resource.

@@ -51,7 +51,7 @@
                         <tr>
                           <td>{{ $loop->iteration }}</td>
                           <td>
-                            <img class="card-img-top" src="canchas/{{ $caracter->observacion }}" alt="" width="200">
+                            <img  src="{{ asset('uploads/imagen/'.$caracter->observacion) }}" alt="" width="200">
                           </td>
                           <td>
                           <a href="{{ route('ad_caractercancha.edit',$caracter->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>

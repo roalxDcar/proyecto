@@ -17,7 +17,7 @@
                   <div class="x_content">
                     <br />
 
-                    <form data-parsley-validate class="form-horizontal form-label-left"  method="POST" action="{{ route('ad_caractercancha.store') }}">
+                    <form data-parsley-validate class="form-horizontal form-label-left"  method="POST" action="{{ route('ad_caractercancha.store') }}" enctype="multipart/form-data">
                      {{ csrf_field() }}
                       
                            <div class="input-group">
