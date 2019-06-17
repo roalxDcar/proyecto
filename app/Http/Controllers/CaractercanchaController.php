@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Caractercancha;
 class CaractercanchaController extends Controller
 {
     /**
@@ -13,10 +13,8 @@ class CaractercanchaController extends Controller
      */
     public function index()
     {
-        $c = Caractercancha::orderBy('id','desc')->paginate(5);
-        return view('caracteristicas.index',[
-                'c' => $c
-            ]);
+        $caractercancha= Caractercancha::all();
+        return view('caractercancha.index',['caractercancha'=> $caractercancha ]);
     }
 
     /**
@@ -26,7 +24,7 @@ class CaractercanchaController extends Controller
      */
     public function create()
     {
-        //
+        return view('caractercancha.create');
     }
 
     /**
@@ -37,8 +35,44 @@ class CaractercanchaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $caractercancha=request()->except('_token');
+        if($request->hasFile('observacion')){
+            $caractercancha['observacion']=$request->file('observacion')->store('uploads','public');
+        }
+        Caractercancha::insert($caractercancha);
+        
+        return redirect()->route('ad_caractercancha.index');
     }
+ // con los que no da : 
+
+ //        if($request->hasFile('observacion')){
+ //            $file= $request->file('observacion');
+ //            $name= time().$file->getClientOriginalName();  
+ //            $file->move(public_path().'/canchas/', $name);
+  
+ //        }
+ //        $caractercancha= new Caractercancha;
+ //        $caractercancha-> observacion = $name;
+ //        $caractercancha->save();
+        
+ //        return redirect()->route('ad_caractercancha.index');
+
+ //        $caractercancha= new Caractercancha;
+ //        if ($request->Hasfile('observacion')){
+ //            $file = $request->file('observacion');
+ //            $extension = $file->getClientOriginalExtension();
+ //            $filename = time(). '.' .$extension;
+ //            $file->move('uploads/imagen/',$filename);
+ //            $caractercancha->image = $filename;
+ //        }else {
+ //            return $request;
+ //            $caractercancha->image = '';
+ //        }
+ //        $caractercancha->save();
+        
+ //        return redirect()->route('ad_caractercancha.index');
+
+
 
     /**
      * Display the specified resource.

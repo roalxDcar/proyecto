@@ -51,17 +51,18 @@ Route::resource('ad_detallecentro','DetalleCentroController');
 
 Route::resource('ad_centro','CentroController');
 
+Route::resource('ad_caractercancha','CaractercanchaController');
+
 Route::resource('ad_deporte','DeporteController');
 
 Route::resource('ad_estadocancha','EstadoCanchaController');
 
 Route::resource('ad_calendario','CalendarioController');
 
-<<<<<<< HEAD
+
 Route::resource('detallecancha','DetalleCanchaController');
-=======
+
 Route::resource('cancha','CanchaController');
->>>>>>> 36c6754b11b1ae1a453ba176eb373c61ecbc9290
 
 // Route::get('content.contenido', 'HomeController@index')->name('home');
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Caractercancha extends Model
 {
     //
-     protected $table = 'promociones';
+     protected $table = 'caractercanchas';
 
     protected $primarykey = 'id';
 }

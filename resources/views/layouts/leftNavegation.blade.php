@@ -40,7 +40,8 @@
                       <li><a href="{{ route('ad_detallecentro.index') }}">Detalles centro deportivo</a></li>
                       <li><a href="{{ route('ad_centro.index') }}">Registro centro deportivo</a></li>
                       <li><a href="{{ route('detallecancha.index') }}">Detalles de Canchas</a></li>
-                      <li><a href="{{ route('ad_estadocancha.index') }}">E stado de cancha</a></li>
+                      <li><a href="{{ route('ad_estadocancha.index') }}">Estado de cancha</a></li>
+                      <li><a href="{{ route('ad_caractercancha.index') }}">Imagenes de canchas</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
