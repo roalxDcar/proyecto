@@ -61,8 +61,10 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="">
+
                     @yield('content')
                     @include('layouts.footer')
+                    
                 </div>
             </div>
         </div>

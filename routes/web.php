@@ -59,8 +59,6 @@ Route::resource('ad_caractercancha','CaractercanchaController');
 
 Route::resource('ad_deporte','DeporteController');
 
-Route::resource('ad_estadocancha','EstadoCanchaController');
-
 Route::resource('ad_calendario','CalendarioController');
 
 

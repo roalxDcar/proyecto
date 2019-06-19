@@ -8,7 +8,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Centro Deportivo Datos </h2>
+                    <h2>Centro Deportivo Datos "NIT" </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -26,6 +26,7 @@
                         <tr>
                           <th>N°</th>
                           <th>Propietario</th>
+                          <th>Centro Deportivo</th>
                           <th>Nit</th>
                           <th>Domicilio</th>
                           <th>Actividad</th>
@@ -41,6 +42,13 @@
                         <tr>
                           <td>{{ $detallecentro->id }}</td>
                           <td>{{ $detallecentro->propietario }}</td>
+
+                          @foreach($centro as $ce)
+                             @if($ce->id == $detallecentro->id)
+                               <td>{{ $ce->nombre }}</td>
+                             @endif
+                          @endforeach
+                          
                           <td>{{ $detallecentro->nit }}</td>
                           <td>{{ $detallecentro->domicilio }}</td>
                           <td>{{ $detallecentro->actividad }}</td>

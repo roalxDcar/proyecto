@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Centro;
 use App\DetalleCentro;
-use App\Valoracion;
 use Illuminate\Http\Request;
 
 class CentroController extends Controller
@@ -32,10 +31,8 @@ class CentroController extends Controller
     public function create()
     {
         $detallecentro =DetalleCentro::all();
-        $v = Valoracion::all();
         return view('centro.create',[
-            'detallecentro'=> $detallecentro,
-            'v'=>$v
+            'detallecentro'=> $detallecentro
         ]);
     }
 
@@ -48,7 +45,6 @@ class CentroController extends Controller
     public function store(Request $request)
     {
         $imagen = $request->file('foto');
-
         $file = $imagen->store('centro');
 
 
@@ -58,9 +54,7 @@ class CentroController extends Controller
             $centro->nombre = $request->nombre;
             $centro->telefono = $request->telefono;
             $centro->ubicacion = $request->ubicacion;
-            $centro->descripcion = $request->descripcion;
             $centro->foto = $file;
-            $centro->id_valoracion = $request->id_valoracion;
             $centro->save();
             return redirect()->route('ad_centro.index');
     }
@@ -87,11 +81,9 @@ class CentroController extends Controller
         //
         $c = Centro::findOrFail($id);
         $detallecentro =DetalleCentro::all();
-        $v = Valoracion::all();
         return view('centro.edit',[
             'c'=>$c,
-            'detallecentro'=> $detallecentro,
-            'v'=>$v
+            'detallecentro'=> $detallecentro
         ]);
     }
 
@@ -114,9 +106,7 @@ class CentroController extends Controller
             $centro->nombre = $request->nombre;
             $centro->telefono = $request->telefono;
             $centro->ubicacion = $request->ubicacion;
-            $centro->descripcion = $request->descripcion;
             $centro->foto = $file;
-            $centro->id_valoracion = $request->id_valoracion;
             $centro->save();
             return redirect()->route('ad_centro.index');
     }

@@ -10,7 +10,7 @@ class EstadoCancha extends Model
 
     protected $table = 'estadocanchas';
 
-    protected $fillable = ['descripcion','observacion'];
+    protected $fillable = ['descripcion'];
 
     protected $primaryKey = 'id';
 }

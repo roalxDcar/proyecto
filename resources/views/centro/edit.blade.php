@@ -49,30 +49,12 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Descripcion</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="descripcion" value="{{ $c->descripcion }}">
-                        </div>
-                      </div>
-                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Fotografia del Centro <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="file" id="foto" name="foto" required="required" class="">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Calidad<span class="required">*</span></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <div id="" class="btn-group" data-toggle="buttons">
-                            <select id="" name="valoracion" class="form-control">
-                                    @foreach( $v as $va )
-                                       <option value="{{ $va->id }}" >{{ $va->descripcion }}</option>
-                                    @endforeach
-                            </select> 
-                          </div>
-                        </div>
-                      </div> 
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

@@ -19,15 +19,12 @@ class CreateCentrosTable extends Migration
             $table->string('nombre');
             $table->integer('telefono');
             $table->string('ubicacion');
-            $table->string('descripcion');
             $table->string('foto')->nullable();
-            $table->integer('id_valoracion')->unsigned()->nullable();
 
             $table->rememberToken();
             $table->timestamps();
             
             $table->foreign('id_detalle')->references('id')->on('detallecentros');
-            $table->foreign('id_valoracion')->references('id')->on('valoraciones');
         });
     }
 

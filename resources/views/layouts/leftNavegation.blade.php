@@ -24,35 +24,18 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   
-                  <li><a><i class="fa fa-sticky-note-o"></i> Registro <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ route('ad_personal.index') }}">Lista de Administradores</a></li>
-                      <li><a href="{{ route('cancha.index') }}">Lista de Canchas</a></li>
-                    </ul>
+                  <li><a href="{{ route('ad_personal.index') }}"><i class="fa fa-sticky-note-o"></i> Registro Administradores</a></li>
+
+                  <li><a href="{{ route('ad_detallecentro.index') }}"><i class="  fa fa-newspaper-o"></i> Centros Deportivos</a>
                   </li>
-                  <li><a><i class="fa fa-soccer-ball-o"></i> Deporte <span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                      <li><a href="{{ route('ad_deporte.index') }}">Tipo</a></li>
-                    </ul>
+
+                  <li><a href="{{ route('ad_centro.index') }}"><i class=" fa fa-folder-open"></i> Registro Locales</a>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Centro Deportivo <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ route('ad_detallecentro.index') }}">Nuevo Centro</a></li>
-                      <li><a href="{{ route('ad_centro.index') }}">Lista de centros deportivos</a></li>
-                      <li><a href="{{ route('detallecancha.index') }}">Detalles de Canchas</a></li>
-                      <li><a href="{{ route('ad_estadocancha.index') }}">Estado de cancha</a></li>
-                      <li><a href="{{ route('ad_caractercancha.index') }}">Imagenes de canchas</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-table"></i> Calendario <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ route('ad_calendario.index') }}">Horario</a></li>
-                    </ul>
+
+                  <li><a href="#"><i class="  fa fa-folder-open"></i> Canchas Registradas</a>
                   </li>
 
                 </ul>
               </div>
-
-
             </div>
             <!-- /sidebar menu -->
