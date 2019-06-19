@@ -48,7 +48,8 @@ Route::group(['middleware'=>['auth']],function(){
 
 // Route -> Admin (Administrador de todos los centros deportivos)
 Route::resource('ad_personal','UsuarioController');
-
+Route::resource('buscador','BuscadorController');
+// Route -> Administrador delcentro (Administrador de todos los centros deportivos)
 Route::resource('personal','PersonalController');
 
 Route::resource('ad_detallecentro','DetalleCentroController');

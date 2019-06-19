@@ -3,18 +3,26 @@
 
             <div class="page-title">
               <div class="title_left">
-                <h3>Usuarios <small>Centros Deportivos</small></h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
                     <span class="input-group-btn">
-                      <button type="" class="btn btn-default"><a href="{{ route('ad_personal.create') }}"><i class="fa fa-user"></i> <b> Nuevo Usuario </b> </a></button>
-                    </span>
+                      <button class="btn btn-default"><a href="{{ route('ad_personal.create') }}"><i class="fa fa-user"></i> <b> Nuevo Usuario </b> </a></button>
+                      </span>
+                  </div>
+                <h3>Usuarios <small>Centros Deportivos</small></h3>
+              </div>
+                <div class="title_right">
+                  <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <form method="POST" action="{{ route('buscador.store') }}" >
+                      @csrf
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="buscador" placeholder="Ingresar Nombre o Gmail...">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Buscar</button>
+                          </span>
+                      </div>
+                    </form>
                   </div>
                 </div>
-              </div>
             </div>
 
             <div class="clearfix"></div>
@@ -31,6 +39,7 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
+
                   <div class="x_content">
           
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
