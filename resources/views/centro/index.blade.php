@@ -32,8 +32,8 @@
                             <div class="mask">
                               <p><b>{{ $ce->nombre }}</b></p>
                               <div class="tools tools-bottom">
-                                <a href="{{ route('ad_centro.edit',$ce->id) }}"><i class="fa fa-pencil"></i></a>
-                                <a href="{{ asset($ce->foto) }}"><i class="fa fa-link"></i></a>
+                                <a title="Editar" href="{{ route('ad_centro.edit',$ce->id) }}"><i class="fa fa-pencil"></i></a>
+                                <a title="Ver Foto" href="{{ asset($ce->foto) }}"><i class="fa fa-link"></i></a>
                               </div>
                             </div>
                           </div>
