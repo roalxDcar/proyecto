@@ -2,6 +2,7 @@
 @section('contenido')
 
 {{-- Crear comentario --}}
+<div class="row-center">
                             <div class="col-lg-6">
                                 <div class="card">
                                       @foreach( $centro as $c )
@@ -46,5 +47,5 @@
                                     </div>
                                 </div>
                             </div>
-{{-- Mostrar promociones --}}
+{{-- Mostrar promociones --}}</div>
 @endsection

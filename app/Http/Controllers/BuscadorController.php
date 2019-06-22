@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Rol;
 use App\Centro;
+use App\Cancha;
 use Illuminate\Http\Request;
 
 class BuscadorController extends Controller
@@ -70,6 +71,8 @@ class BuscadorController extends Controller
     public function edit($id)
     {
         //
+        // $idcancha = $id;
+        // return redirect()->route('buscador.update',1);
     }
 
     /**
@@ -82,6 +85,7 @@ class BuscadorController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return $id;
     }
 
     /**

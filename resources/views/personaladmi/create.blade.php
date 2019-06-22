@@ -1,6 +1,6 @@
 @extends('layouts1.app')
 @section('contenido')
-
+<div class="row">
              <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header">
@@ -20,20 +20,9 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                                    <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label for="select" class=" form-control-label">Centro Deportivo</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <select disabled="" name="id_centro" id="id_centro" class="form-control">
-                                                                @foreach( $centro as $c )
-                                                                    @if( $c->id == Auth::user()->id_centro )
-                                                                    <option value="{{ $c->id }}">{{ $c->nombre }}</option>
-                                                                    @endif
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                            <div style="visibility: hidden;">
+                                                <input id="id_centro" name="id_centro" value="{{ Auth::user()->id_centro }}"></input>
+                                            </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="email-input" class=" form-control-label">Nombre</label>
@@ -129,5 +118,6 @@
                                     </form>
                                 </div>
                             </div>
+                        </div>
 @endsection
 

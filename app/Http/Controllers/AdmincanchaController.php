@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Cancha;
 use App\EstadoCancha;
 use App\Centro;
-use App\Valoracion;
 use Illuminate\Http\Request;
 
 class AdmincanchaController extends Controller
@@ -21,12 +20,10 @@ class AdmincanchaController extends Controller
         $cancha = Cancha::orderBy('id','asc')->paginate(5);
         $e = EstadoCancha::all();
         $centro = Centro::all();
-        $valor = valoracion::All();
         return view('admicancha.index',[
             'cancha'=>$cancha, 
             'es'=>$e, 
-            'centro'=>$centro, 
-            'valor'=>$valor
+            'centro'=>$centro
         ]);
     }
 
@@ -40,11 +37,9 @@ class AdmincanchaController extends Controller
         //
         $estado = EstadoCancha::All();
         $centro = Centro::All();
-        $valor = valoracion::All();
         return view('admicancha.create',[
             'estado'=>$estado, 
-            'centro'=>$centro, 
-            'valor'=>$valor
+            'centro'=>$centro
         ]);
     }
 
@@ -76,6 +71,7 @@ class AdmincanchaController extends Controller
     public function show($id)
     {
         //
+        
     }
 
     /**
@@ -90,12 +86,10 @@ class AdmincanchaController extends Controller
         $cancha = Cancha::findOrFail($id);
         $estado = EstadoCancha::All();
         $centro = Centro::All();
-        $valor = valoracion::All();
         return view('admicancha.edit',[
             'cancha'=>$cancha,
             'estado'=>$estado, 
-            'centro'=>$centro, 
-            'valor'=>$valor
+            'centro'=>$centro
         ]);
     }
 

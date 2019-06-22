@@ -20,17 +20,14 @@
                         {{-- Sidebar del Administrador --}}
                         @if( Auth::user()->id_rol == 2 )
                             <ul class="list-unstyled navbar__list">
-                                <li class="active has-sub">
-                                    <a class="js-arrow" href="#">
-                                        <i class="fas fa-tachometer-alt"></i>Principal</a>
-                                </li>
+
                                 <li>
                                     <a href="#">
                                         <i class="fas fa-calendar-alt"></i>Calendario</a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fas fa-edit"></i>Cambiar Horario</a>
+                                    <a href="{{ route('horario.index') }}">
+                                        <i class="fas fa-edit"></i>Horario</a>
                                 </li>
                                 <li>
                                     <a href="map.html">
@@ -48,7 +45,7 @@
                                             <a href="{{ route('area.index') }}">Cancha</a>
                                         </li>
                                         <li>
-                                            <a href="tab.html">Estado Cancha</a>
+                                            <a href="{{ route('caracteristica.index') }}">Fotografias de las Canchas</a>
                                         </li>
                                         <li>
                                             <a href="{{ route('promocion.index') }}">Promocion</a>
@@ -59,10 +56,6 @@
                         @else
                         {{-- Siderbar del Empleado --}}
                             <ul class="list-unstyled navbar__list">
-                                <li class="active has-sub">
-                                    <a class="js-arrow" href="#">
-                                        <i class="fas fa-tachometer-alt"></i>Principal</a>
-                                </li>
                                 <li>
                                     <a href="#">
                                         <i class="fas fa-calendar-alt"></i>Calendario</a>

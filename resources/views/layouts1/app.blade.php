@@ -33,6 +33,7 @@
     <!-- Main CSS-->
     <link href="{!! asset('assets/new/css/theme.css') !!}" rel="stylesheet" media="all">
 
+
 </head>
 
 <body class="animsition">
@@ -56,12 +57,11 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <div class="row-center">
+                        
 
                             @yield('contenido')
                             @include('layouts1.footer')
                             
-                        </div>
                     </div>
                 </div>
             </div>
@@ -96,6 +96,5 @@
     <script src="{!! asset('assets/new/js/main.js') !!}"></script>
 
 </body>
-
 </html>
 <!-- end document-->

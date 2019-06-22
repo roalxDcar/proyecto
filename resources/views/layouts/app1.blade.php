@@ -23,6 +23,16 @@
     <link rel="stylesheet" href="{!! asset('assets/css/rangeslider.css') !!}">
 
     <link rel="stylesheet" href="{!! asset('assets/css/style.css') !!}">
+
+@yield('head')
+        {{-- calendar --}}
+
+    <link rel="stylesheet" href="{!! asset('assets/calendar/css/fullcalendar.min.css') !!}">
+    
+    <script src="{!! asset('assets/calendar/js/fullcalendar.min.js') !!}"></script>
+    <script src="{!! asset('assets/calendar/js/jquery.min.js') !!}"></script>
+    <script src="{!! asset('assets/calendar/js/moment.min.js') !!}"></script>
+    {{-- calendar --}}
 </head>
 <body>
 
@@ -56,10 +66,11 @@
 
                 @if(Route::has('login'))
                   @auth
-                      @if( Auth::user()->id_rol == 1 )
-                        <li><a href="#">Comentarios</a></li>
+                      @if( Auth::user()->id_rol == 1 )                      
+                        <li><a href="{{ route('usuario.index') }}">Principal</a></li>
+                        <li><a href="#"><span class="border-left pl-xl-4"></span>Comentarios</a></li>
                         <li><a href="#"><span class="border-left pl-xl-4"></span>Contactos</a></li>
-                        <li><a href="{{ route('usuario.index') }}"><span class="border-left pl-xl-4"></span>Reservar Cancha</a></li>
+                        <li><a href="{{ route('calendario.index') }}"><span class="border-left pl-xl-4"></span>Reservar Cancha</a></li>
                         <li><a href="#"><span class="border-left pl-xl-4"></span>Mapa</a></li>
                         <li class="has-children">
                           <a class="cta"><span class="bg-primary text-white rounded">{{ Auth::user()->name }}</span></a>
@@ -111,12 +122,12 @@
                 {{-- FIN DE CONTENIDO --}}
 
                 {{-- Parte final --}}
-          {{--  
+        
           </div>
         </div>
       </div>
     </div> 
-    --}}  
+    
                 {{-- Fin de Parte final --}}
 
     {{-- Contenido dentro de la foto "PRINCIPAL" --}}
@@ -185,7 +196,7 @@
       </div>
     </footer>
   </div>
-
+@yield('script')
   <script src="{!! asset('assets/js/jquery-3.3.1.min.js') !!}"></script>
   <script src="{!! asset('assets/js/jquery-migrate-3.0.1.min.js') !!}"></script>
   <script src="{!! asset('assets/js/jquery-ui.js') !!}"></script>

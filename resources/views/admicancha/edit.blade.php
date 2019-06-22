@@ -1,5 +1,6 @@
 @extends('layouts1.app')
 @section('contenido')
+                        <div class="row-center">
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">Actualizar Cancha</div>
@@ -37,13 +38,13 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="cc-exp" class="control-label mb-1">Costo*</label>
+                                                        <label for="cc-exp" class="control-label mb-1">Costo por Hora*</label>
                                                         <input id="costo" value="{{ $cancha->costo }}" name="costo" type="tel" class="form-control cc-exp" value="" data-val="true">
                                                         <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
-                                                    <label for="x_card_code" class="control-label mb-1">Observación*</label>
+                                                    <label for="x_card_code" class="control-label mb-1">Tamaño de la Cancha*</label>
                                                     <div class="input-group">
                                                         <input id="descripcion" value="{{ $cancha->descripcion }}" name="descripcion" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code"
                                                             data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
@@ -62,4 +63,5 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
 @endsection

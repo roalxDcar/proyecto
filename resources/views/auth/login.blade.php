@@ -70,9 +70,5 @@
                     </div>
                 </div>
                 {{-- Fin de contenido --}} 
-            </div>
-        </div>
-      </div>
-    </div> 
 @endsection
 

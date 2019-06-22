@@ -115,7 +115,6 @@ class UsuarioController extends Controller
          $user->ci = $request->ci;
          $user->direccion = $request->direccion;
          $user->email = $request->email;
-         $user->password = bcrypt($request->password);
          $user->save();
          return redirect()->route('ad_personal.index');
     }

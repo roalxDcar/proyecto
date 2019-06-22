@@ -28,6 +28,7 @@
 
     <!-- Custom Theme Style -->
     <link href="{!! asset('assets/build/css/custom.min.css') !!}" rel="stylesheet">
+
   </head>
 
   <body class="nav-md">

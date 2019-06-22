@@ -17,8 +17,14 @@ class CaractercanchaController extends Controller
      */
     public function index()
     {
-        $caractercancha= Caractercancha::all();
-        return view('caractercancha.index',['caractercancha'=> $caractercancha ]);
+        $cancha = Cancha::all();
+        $caractercancha = Caractercancha::all();
+        $centro = Centro::all();
+        return view('caractercancha.index',[
+            'cancha' => $cancha,
+            'car' => $caractercancha,
+            'centro' => $centro
+        ]);
     }
 
     /**
@@ -48,7 +54,7 @@ class CaractercanchaController extends Controller
         $c->foto = $file;
         $c->save();
 
-        return redirect()->route('area.index');
+        return redirect()->route('caracteristica.index');
 
     }
     /**
@@ -79,12 +85,14 @@ class CaractercanchaController extends Controller
     public function edit($id)
     {
 
-        // $car = Caractercancha::findOrfail($id);
-        // $cancha = Cancha::all();
-        // return view('caractercancha.edit',[
-        //     'caracter'=>$car,
-        //     'cancha'=>$cancha
-        // ]);
+        $caractercancha = Caractercancha::findorfail($id);
+        $cancha = Cancha::all();
+        $centro = Centro::all();
+        return view('caractercancha.editarfoto',[
+            'cancha' => $cancha,
+            'car' => $caractercancha,
+            'centro' => $centro
+        ]);        
     }
 
     /**
@@ -96,10 +104,14 @@ class CaractercanchaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $imagen = $request->file('foto');
+        $file = $imagen->store('cancha');
+
         $c = Caractercancha::findOrFail($id);
         $c->id_cancha = $request->id_cancha;
-        $c->observacion = $request->observacion;
+        $c->foto = $file;
         $c->save();
+
         return redirect()->route('caracteristica.index');
     }
 
@@ -111,6 +123,8 @@ class CaractercanchaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Caractercancha::find($id)->delete();
+
+        return redirect()->route('caracteristica.index')->with('success','Registro eliminado satisfactoriamente');
     }
 }

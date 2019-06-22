@@ -2,6 +2,7 @@
 @section('contenido')
 
 {{-- Crear comentario --}}
+<div class="row">
                             <div class="col-lg-6">
                                 <div class="card">
                                       @foreach( $centro as $c )
@@ -19,7 +20,7 @@
                                           @csrf
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label class=" form-control-label"><b>Administrador</b></label>
+                                                    <label class=" form-control-label"><b>Usuario:</b></label>
                                                 </div>
                                                 <div style="visibility: hidden;">
                                                     <input id="id_user" name="id_user" value="{{ Auth::user()->id }}"></input>
@@ -85,5 +86,6 @@
                                       </div>
                                   </div>
                               <!--  PROMOCION -->
+                              </div>
                               </div>
 @endsection

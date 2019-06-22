@@ -1,5 +1,6 @@
 @extends('layouts1.app')
 @section('contenido')
+<div class="row-center">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
                                 
@@ -35,6 +36,7 @@
                                         <tbody>
                                             @foreach( $user as $use )
                                                 @if( $use->id_centro == Auth::user()->id_centro )
+                                                     @if($use->name != Auth::user()->name)
                                                      <tr class="tr-shadow">
                                                       @php ($c++)
                                                         {{-- id_usuario hecho con un contador -> c --}}
@@ -58,6 +60,7 @@
                                                               </div>
                                                           </td>                                                      
                                                       </tr>
+                                                     @endif
                                                 @endif
                                             @endforeach
                                             
@@ -66,4 +69,5 @@
                                 </div>
                                 <!-- END DATA TABLE -->
                             </div>
+                          </div>
 @endsection

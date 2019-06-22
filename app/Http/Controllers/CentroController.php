@@ -100,6 +100,8 @@ class CentroController extends Controller
         $imagen = $request->file('foto');
         //nombre de la imagen para almacenarlo
         $file = $imagen->store('centro');
+        // $name = time().$imagen->getClientOriginalExtension();
+        // return dd($name);
 
         //almacena todos los datos
             $centro = Centro::findOrFail($id);

@@ -111,17 +111,15 @@ class PersonalController extends Controller
         
          $user = User::findOrFail($id);
          $user->id_rol = $request->id_rol;
-         $user->id_centro = $request->centro;
+         $user->id_centro = $request->id_centro;
          $user->name = $request->name;
          $user->paterno = $request->paterno;
          $user->materno = $request->materno;
-         $user->genero = $request->genero;
          $user->telefono = $request->telefono;
          $user->celular = $request->celular;
          $user->ci = $request->ci;
          $user->direccion = $request->direccion;
          $user->email = $request->email;
-         $user->password = bcrypt($request->password);
          $user->save();
          return redirect()->route('personal.index');
     }

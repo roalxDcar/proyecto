@@ -29,7 +29,7 @@
                           <th>Estado</th>
                           <th>Nombre de la Cancha</th>
                           <th>Costo</th>
-                          <th>Descripcion</th>
+                          <th>Tamaño</th>
                           <th>Actualizar</th>
 
 

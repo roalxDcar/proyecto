@@ -1,5 +1,6 @@
 @extends('layouts1.app')
 @section('contenido')
+                        <div class="row-center">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
                                 
@@ -24,8 +25,7 @@
                                               <th>Estado</th>
                                               <th>Nombre</th>
                                               <th>Costo</th>
-                                              <th>Observación</th>
-                                              <td>Agregar Imagen</td>
+                                              <th>Tamaño de la Cacha</th>
                                               <td>Actualizar</td>
                                             </tr>
                                         </thead>
@@ -45,16 +45,17 @@
                                                           <td>{{ $c->nombre }}</td>
                                                           <td>{{ $c->costo }}</td>
                                                           <td>{{ $c->descripcion }}</td>
+                                                          @if(Auth::user()->id_rol == 2)
                                                           <td>
-                                                              <div class="table-data-feature">
-                                                                <a type="" class="item" data-toggle="tooltip" data-placement="top" title="Edit" style=" text-decoration:  none;"  href="{{ route('caracteristica.show',$c->id) }}"><i class="zmdi zmdi-edit"></i></a>
-                                                              </div>
+                                                              <a  href="{{ route('area.edit',$c->id) }}"><button type="button" class="btn btn-outline-secondary">
+                                                                <i class="fa fa-lightbulb-o"></i>&nbsp; Editar</button></a>
                                                           </td>
+                                                          @else
                                                           <td>
-                                                              <div class="table-data-feature">
-                                                                <a type="" class="item" data-toggle="tooltip" data-placement="top" title="Edit" style=" text-decoration:  none;"  href="{{ route('area.edit',$c->id) }}"><i class="zmdi zmdi-edit"></i></a>
-                                                              </div>
-                                                          </td>                                                      
+                                                              <a  href="{{ route('buscador.edit',$c->id) }}"><button type="button" class="btn btn-outline-secondary">
+                                                                <i class="fa fa-lightbulb-o"></i>&nbsp;Cambiar Estado</button></a>
+                                                          </td>
+                                                          @endif                                                      
                                                       </tr>
                                                 @endif
                                             @endforeach
@@ -63,5 +64,6 @@
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE -->
+                            </div>
                             </div>
 @endsection
