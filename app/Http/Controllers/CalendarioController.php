@@ -56,7 +56,7 @@ class CalendarioController extends Controller
     public function show($id)
     {
         //
-        $cen=$id;
+        $cen = $id;
         $centros = Centro::all();
         $hora = Hora::all();
         $turno = Turno::all();
@@ -82,8 +82,8 @@ class CalendarioController extends Controller
      */
     public function edit($id)
     {
-        //
-        return $id;
+        // //
+        // return $id;
     }
 
     /**
