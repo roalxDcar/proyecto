@@ -28,6 +28,8 @@
 
     <!-- Custom Theme Style -->
     <link href="{!! asset('assets/build/css/custom.min.css') !!}" rel="stylesheet">
+    <link href="{!! asset('assets/css/video.css') !!}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700,800,900&display=swap" rel="stylesheet">
   </head>
 
   <body class="nav-md">
