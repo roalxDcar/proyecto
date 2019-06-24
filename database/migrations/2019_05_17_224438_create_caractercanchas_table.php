@@ -15,8 +15,11 @@ class CreateCaractercanchasTable extends Migration
     {
         Schema::create('caractercanchas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('observacion');
+            $table->integer('id_cancha')->unsigned();
+            $table->string('foto');
             $table->timestamps();
+
+            $table->foreign('id_cancha')->references('id')->on('canchas');
         });
     }
 

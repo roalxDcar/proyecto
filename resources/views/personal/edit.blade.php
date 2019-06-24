@@ -21,7 +21,7 @@
                   <div class="x_content">
                     <br />
 
-    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('ad_personal.update',$user->id) }}">                      
+                    <form data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('ad_personal.update',$user->id) }}">                      
                       @csrf
                       @method('PUT')
 
@@ -31,10 +31,9 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <div id="gender" class="btn-group" data-toggle="buttons">
                             <select name="id_rol" class="form-control">
-                                    @foreach( $r as $res )
-                                    <option value="{{ $res->idrol }}"> {{ $res->descripcion }} </option>
-                                    @endforeach 
-                              </select> 
+                                    <option value="2"> Administrador </option>
+                                    <option value="3"> Empleado </option>
+                              </select>
                           </div>
                         </div>
                       </div>
@@ -43,10 +42,11 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Centro Deportivo<span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <div id="gender" class="btn-group" data-toggle="buttons">
-                            <select name="id_rol" class="form-control">
-                                    <option value="2"> Administrador </option>
-                                    <option value="3"> Empleado </option>
-                              </select>
+                            <select name="centro" class="form-control">
+                                    @foreach( $centro as $c )
+                                    <option value="{{ $c->id }}"> {{ $c->nombre }} </option>
+                                    @endforeach 
+                              </select> 
                           </div>
                         </div>
                       </div>
@@ -127,16 +127,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="last-name" name="email" value="{{ $user->email }}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
-                      </div>
-
-                      
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Contraseña <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="password" id="last-name" name="password" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>                       
+                      </div>                   
 
                       <div class="ln_solid"></div>
                       <div class="form-group">

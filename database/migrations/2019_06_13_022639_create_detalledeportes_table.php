@@ -15,12 +15,12 @@ class CreateDetalledeportesTable extends Migration
     {
         Schema::create('detalledeportes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_detallecancha')->unsigned();
+            $table->integer('id_cancha')->unsigned();
             $table->integer('id_deporte')->unsigned();
             $table->string('observacion')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_detallecancha')->references('id')->on('detallecanchas');
+            $table->foreign('id_cancha')->references('id')->on('canchas');
             $table->foreign('id_deporte')->references('id')->on('deportes');
         });
     }

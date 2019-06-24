@@ -6,41 +6,16 @@
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
-                    {{-- Sidebar del Usuario --}}
-                    @if( Auth::user()->id_rol == 1 )
-                    <ul class="list-unstyled navbar__list">
-                            <li class="active has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-tachometer-alt"></i>Principal</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-calendar-alt"></i>Calendario</a>
-                            </li>
-                            <li>
-                                <a href="map.html">
-                                    <i class="fas fa-map-marker-alt"></i>Mapa</a>
-                            </li>
-                            <li>
-                                <a href="map.html">
-                                    <i class="fas fa-folder-open"></i>Centros Deportivos</a>
-                            </li>
-                        </ul>
-                    @else
                         {{-- Sidebar del Administrador --}}
                         @if( Auth::user()->id_rol == 2 )
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Principal</a>
-                        </li>
                         <li>
                             <a href="#">
                                 <i class="fas fa-calendar-alt"></i>Calendario</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-edit"></i>Cambiar Horario</a>
+                            <a href="{{ route('horario.index') }}">
+                                <i class="fas fa-edit"></i>Horario</a>
                         </li>
                         <li>
                             <a href="map.html">
@@ -52,13 +27,16 @@
                                 <i class="fas fa-desktop"></i>Registro</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="button.html">Personal</a>
+                                    <a href="{{ route('personal.index') }}">Personal</a>
                                 </li>
                                 <li>
-                                    <a href="badge.html">Cancha</a>
+                                    <a href="{{ route('area.index') }}">Cancha</a>
                                 </li>
                                 <li>
-                                    <a href="tab.html">Estado Cancha</a>
+                                    <a href="{{ route('caracteristica.index') }}">Fotografias de las Canchas</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('promocion.index') }}">Promoción</a>
                                 </li>
                             </ul>
                         </li>
@@ -66,10 +44,7 @@
                         @else
                         {{-- Siderbar del Empleado --}}
                         <ul class="list-unstyled navbar__list">
-                            <li class="active has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-tachometer-alt"></i>Principal</a>
-                            </li>
+
                             <li>
                                 <a href="#">
                                     <i class="fas fa-calendar-alt"></i>Calendario</a>
@@ -79,12 +54,12 @@
                                     <i class="fas fa-map-marker-alt"></i>Mapa</a>
                             </li>
                             <li>
-                                <a href="map.html">
+                                <a href="{{ route('area.index') }}">
                                     <i class="fas fa-cogs"></i>Cancha</a>
                             </li>
                         </ul>
                         @endif
-                    @endif
+
                 </nav>
             </div>
         </aside>

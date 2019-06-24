@@ -1,58 +1,119 @@
-@extends('layouts.app')
-@section('content')
- <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Calendar <small>Click to add/edit events</small></h3>
-              </div>
+@extends('layouts.app1')
+@section('head')
+    <link href="{!! asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') !!}" rel="stylesheet">
+    <link href="{!! asset('assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') !!}" rel="stylesheet">
+    <link href="{!! asset('assets/vendors/bootstrap-daterangepicker/daterangepicker.css') !!}" rel="stylesheet">
+@endsection
+@section('content1')
 
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+{{-- Contenido --}}
+{{-- Calendario --}} 
+<div class="container">
+    <div class="row">  
+        <div class="col-md-10 col-md-offset-1">
+
+            <div class="panel panel-default panel-table">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col col-xs-6">
+                    @php($contador=0)
+                    @foreach($centros as $c)
+                      @if($c->id == $centro)
+                      @php($contador++)
+                        <h1 class="panel-title" style="color:black;">Horario Centro Deportivo "{{ $c->nombre }}"</h1> 
+                        @endif                    
+                    @endforeach
+                    @if($contador == 0)
+                      <h1 class="panel-title" style="color:black;">Horario</h1>
+                    @endif 
                   </div>
                 </div>
               </div>
-            </div>
+              <div class="panel-body">
+                <table class="table table-striped table-bordered table-list">
+                  <thead>
+                    @if($contador > 0)
+                      <tr >
+                        <th style="text-align: center;">Hora</th>
+                        {{-- DIAS DE LA SEMANA JALAR DE LA TABLA "DIAS"--}}
+                        @foreach($horario as $horarios )
+                          @if($horarios->id_centro == $centro)
+                            @foreach($detalledia as $d)
+                              @if($horarios->id_detalle_dia == $d->id)
+                                @foreach($dia as $dias)
+                                  @if($d->id == $dias->id_detalle_dia)
+                                    <th style="text-align: center;">{{ $dias->dia }}</th>
+                                  @endif
+                                @endforeach
+                              @endif
+                            @endforeach
+                          @endif
+                        @endforeach
+                        {{-- DIAS DE LA SEMANA JALAR DE LA TABLA "DIAS"--}}
+                      </tr>
+                      @else
+                      <tr>
+                        <th style="text-align: center;">...</th>
+                      </tr>
+                    @endif 
+                  </thead>
+                  <tbody>
+                      @if($contador > 0)
 
-            <div class="clearfix"></div>
+                          @foreach($horario as $h)
+                            @if($h->id_centro == $centro)
+                              @foreach($turno as $t)
+                                @if($h->id_turno == $t->id)
+                                  @foreach($hora as $horas)
+                                    @if($horas->id_turno == $t->id)
+                                      <tr>
+                                        {{-- Para mostrar las horas --}}
+                                        <td class="hidden-xs">{{ $horas->hora }}</td>
+                                        {{-- Boton para solicitar reserva --}}
 
-            <div class="row">
-              <div class="col-md-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Calendar Events <small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
+                                        @foreach($horario as $horarios )
+                                          @if($horarios->id_centro == $centro)
+                                            @foreach($detalledia as $d)
+                                              @if($horarios->id_detalle_dia == $d->id)
+                                                @foreach($dia as $dias)
+                                                  @if($d->id == $dias->id_detalle_dia)
+                                                    <td style="text-align: center;">
+                                                      <form action="{{ route('calendario.update',$centro) }}" enctype="multipart/form-data" method="POST">
+                                                      @csrf                              
+                                                      @method('PUT')
+                                                      {{-- Primer Input hora id--}}
+                                                      <input type="text" name="id_hora" value="{{ $horas->id }}" style="width:1px;height:1px;visibility: hidden;">
+                                                       {{-- boton para guardar la reserva --}}
+                                                      <button class="btn btn-default" type="submit">Libre</button>
+                                                      {{-- segundo input dia id--}}
+                                                      <input type="text" name="id_dia" value="{{ $dias->id }}" style="width:1px;height:1px;visibility:hidden;">  
+                                                      </form>
+                                                    </td>
+                                                  @endif
+                                                @endforeach
+                                              @endif
+                                            @endforeach
+                                          @endif
+                                        @endforeach
 
-                    <div id='calendar'></div>
+                                      </tr>
+                                    @endif
+                                  @endforeach
+                                @endif
+                              @endforeach
+                            @endif
+                          @endforeach
 
-                    
-
-                  </div>
-                </div>
+                          @else
+                          <tr>
+                            <td style="text-align: center;"><h3 class="panel-title" style="color:black;">No Disponible...</h3></td>
+                          </tr>
+                      @endif
+                  </tbody>
+                </table>
               </div>
             </div>
-          </div>
         </div>
+    </div>
+</div>
 @endsection

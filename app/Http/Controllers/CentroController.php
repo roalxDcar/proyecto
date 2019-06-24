@@ -31,7 +31,9 @@ class CentroController extends Controller
     public function create()
     {
         $detallecentro =DetalleCentro::all();
-        return view('centro.create',['detallecentro'=> $detallecentro]);
+        return view('centro.create',[
+            'detallecentro'=> $detallecentro
+        ]);
     }
 
     /**
@@ -42,12 +44,17 @@ class CentroController extends Controller
      */
     public function store(Request $request)
     {
+        $imagen = $request->file('foto');
+        $file = $imagen->store('centro');
+
+
+
             $centro = new Centro;
             $centro->id_detalle = $request->id_detalle;
             $centro->nombre = $request->nombre;
             $centro->telefono = $request->telefono;
             $centro->ubicacion = $request->ubicacion;
-            $centro->descripcion = $request->descripcion;
+            $centro->foto = $file;
             $centro->save();
             return redirect()->route('ad_centro.index');
     }
@@ -58,7 +65,7 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function show(Centro $centro)
+    public function show($id)
     {
         //
     }
@@ -69,11 +76,15 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function edit(Centro $centro)
+    public function edit($id)
     {
-        $centro = Centro::findOrFail($id);
-        
-        return view('centro.edit',['centro'=> $centro ]);
+        //
+        $c = Centro::findOrFail($id);
+        $detallecentro =DetalleCentro::all();
+        return view('centro.edit',[
+            'c'=>$c,
+            'detallecentro'=> $detallecentro
+        ]);
     }
 
     /**
@@ -83,16 +94,23 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Centro $centro)
+    public function update(Request $request, $id)
     {
+        //toma la imagen y todos sus datos
+        $imagen = $request->file('foto');
+        //nombre de la imagen para almacenarlo
+        $file = $imagen->store('centro');
+        // $name = time().$imagen->getClientOriginalExtension();
+        // return dd($name);
+
+        //almacena todos los datos
             $centro = Centro::findOrFail($id);
-            $centro->id_detalle = $request->id_detalle;
             $centro->nombre = $request->nombre;
             $centro->telefono = $request->telefono;
             $centro->ubicacion = $request->ubicacion;
-            $centro->descripcion = $request->descripcion;
+            $centro->foto = $file;
             $centro->save();
-            return redirect()->route('centro.index');
+            return redirect()->route('ad_centro.index');
     }
 
     /**
@@ -101,7 +119,7 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Centro $centro)
+    public function destroy($id)
     {
         //
     }

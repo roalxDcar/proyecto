@@ -1,34 +1,21 @@
 @extends('layouts.app')
 @section('content')
-
             <div class="page-title">
               <div class="title_left">
-                <h3>Detalles <small>Some examples to get you started</small></h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
+                <h3>Cancha<small> Centros deportivos</small></h3>
               </div>
             </div>
 
             <div class="clearfix"></div>
 
-            <div class="row">
+              @foreach( $centro as $c )
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista Detalles Centro </h2>
+                    <h2>Cancha(s) "{{ $c->nombre }}"</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <button type="" class="btn btn-default"><a href="{{ route('cancha.create') }}"><i class="fa fa-user"></i> <b>Agregar Cancha</b> </a></button>
                       
                       </li>
                     </ul>
@@ -42,8 +29,7 @@
                           <th>Estado</th>
                           <th>Nombre de la Cancha</th>
                           <th>Costo</th>
-                          <th>Descripcion</th>
-                          <th>valoracion</th>
+                          <th>Tamaño</th>
                           <th>Actualizar</th>
 
 
@@ -56,12 +42,13 @@
                         <tr>
                           <td>{{ $c->id }}</td>
                           @foreach($es as $e)
-                                <td>{{ $e->descripcion }}</td>
+                                @if($c->id_estado == $e->id)
+                                  <td>{{ $e->descripcion }}</td>
+                                @endif
                           @endforeach
                           <td>{{ $c->nombre }}</td>
                           <td>{{ $c->costo }}</td>
                           <td>{{ $c->descripcion }}</td>
-                          <td>{{ $c->valoracion }}</td>
                           <td>
                           <a href="{{ route('cancha.edit',$c->id) }}"  class="buttonPrevious buttonDisabled btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></a>
                           </td>
@@ -74,6 +61,5 @@
                   </div>
                 </div>
               </div>
-
-
+              @endforeach
 @endsection

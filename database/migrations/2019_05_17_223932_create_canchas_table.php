@@ -16,14 +16,16 @@ class CreateCanchasTable extends Migration
         Schema::create('canchas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_estado')->unsigned();
+            $table->integer('id_centro')->unsigned();
+
             $table->string('nombre');
             $table->integer('costo');
             $table->string('descripcion')->nullable();
-            $table->integer('valoracion')->nullable();
 
             $table->timestamps();
 
             $table->foreign('id_estado')->references('id')->on('estadocanchas');
+            $table->foreign('id_centro')->references('id')->on('centros');
         });
     }
 

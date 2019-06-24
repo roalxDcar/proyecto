@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Dia;
+use App\Hora;
+use App\Turno;
+use App\Detalledia;
+use App\Horario;
+use App\Centro;
+use App\Cancha;
 
 class CalendarioController extends Controller
 {
@@ -13,7 +21,9 @@ class CalendarioController extends Controller
      */
     public function index()
     {
-        return view('calendario.index');
+        //
+        $u = User::all();
+        return view('calendario.index',['u'=>$u]);
     }
 
     /**
@@ -46,6 +56,22 @@ class CalendarioController extends Controller
     public function show($id)
     {
         //
+        $cen = $id;
+        $centros = Centro::all();
+        $hora = Hora::all();
+        $turno = Turno::all();
+        $dia = Dia::all();
+        $detalledia = Detalledia::all();
+        $horario = Horario::All();
+        return view('calendario.index',[
+            'centro'=>$cen,
+            'centros'=>$centros,
+            'hora' => $hora,
+            'turno' => $turno,
+            'dia' => $dia,
+            'detalledia' => $detalledia,
+            'horario' => $horario
+        ]);
     }
 
     /**
@@ -56,7 +82,8 @@ class CalendarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        // //
+        // return $id;
     }
 
     /**
@@ -69,6 +96,26 @@ class CalendarioController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $centros = Centro::all();
+        $centro = $id;
+
+        $horas = Hora::all();
+        $hora = $request->id_hora;
+        
+        $dias = Dia::all();
+        $dia = $request->id_dia;
+        
+        $cancha = Cancha::all();
+        return view('calendario.edit',[
+            'centros'=>$centros,
+            'horas'=>$horas,
+            'dias'=>$dias,
+
+            'centro' => $centro,
+            'hora' => $hora,
+            'dia' => $dia,
+            'cancha' => $cancha
+        ]);
     }
 
     /**

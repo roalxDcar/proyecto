@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Centro;
+use App\Promocion;
 
 class PromocionController extends Controller
 {
@@ -14,6 +16,9 @@ class PromocionController extends Controller
     public function index()
     {
         //
+        $promo = Promocion::orderBy('id','asc')->paginate(20);
+        $c = Centro::all();
+        return view('promocion.index',['centro'=>$c,'promo'=>$promo]);
     }
 
     /**
@@ -35,6 +40,11 @@ class PromocionController extends Controller
     public function store(Request $request)
     {
         //
+        $p = new Promocion;
+        $p->id_user = $request->id_user;
+        $p->descripcion = $request->descripcion;
+        $p->save();
+        return redirect()->route('promocion.index'); 
     }
 
     /**
@@ -57,6 +67,9 @@ class PromocionController extends Controller
     public function edit($id)
     {
         //
+        $p = Promocion::findorFail($id);
+        $c = Centro::all();
+        return view('promocion.edit',['promo'=>$p,'centro'=>$c]);
     }
 
     /**
@@ -69,6 +82,11 @@ class PromocionController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $p = Promocion::findorFail($id);
+        $p->id_user = $request->id_user;
+        $p->descripcion = $request->descripcion;
+        $p->save();
+        return redirect()->route('promocion.index'); 
     }
 
     /**

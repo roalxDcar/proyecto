@@ -19,6 +19,7 @@ class CreateDetalleCentrosTable extends Migration
             $table->string('nit');
             $table->string('domicilio');
             $table->string('actividad');
+            $table->string('observacion');
             $table->rememberToken();
             $table->timestamps();
         });

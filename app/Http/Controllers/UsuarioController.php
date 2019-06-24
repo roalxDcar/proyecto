@@ -16,7 +16,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuario = User::orderBy('id','desc')->paginate(5);
+        $usuario = User::orderBy('id','asc')->paginate(5);
         $rol= Rol::all();
         $centro=Centro::all(); 
         return view('personal.index',[
@@ -87,12 +87,10 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        $r= Rol::all();
         $centro = Centro::all();
         return view('personal.edit',[
-            'r'=>$r ,
             'user'=>$user,
-            'c'=>$centro
+            'centro'=>$centro
         ]);
     }
 
@@ -117,7 +115,6 @@ class UsuarioController extends Controller
          $user->ci = $request->ci;
          $user->direccion = $request->direccion;
          $user->email = $request->email;
-         $user->password = bcrypt($request->password);
          $user->save();
          return redirect()->route('ad_personal.index');
     }

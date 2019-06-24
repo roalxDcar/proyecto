@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cancha;
 use App\EstadoCancha;
+use App\Centro;
 use Illuminate\Http\Request;
 
 class CanchaController extends Controller
@@ -15,9 +16,10 @@ class CanchaController extends Controller
      */
     public function index()
     {
-        $cancha = Cancha::orderBy('id','desc')->paginate(5);
+        $cancha = Cancha::orderBy('id','asc')->paginate(5);
         $e = EstadoCancha::all();
-        return view('cancha.index',['cancha'=>$cancha, 'es'=>$e]);
+        $centro = Centro::all();
+        return view('cancha.index',['cancha'=>$cancha, 'es'=>$e, 'centro'=>$centro]);
     }
 
     /**
@@ -28,7 +30,8 @@ class CanchaController extends Controller
     public function create()
     {
         $estado = EstadoCancha::All();
-        return view('cancha.create',['estado'=>$estado]);
+        $centro = Centro::All();
+        return view('cancha.create',['estado'=>$estado, 'centro'=>$centro]);
     }
 
     /**
@@ -45,7 +48,6 @@ class CanchaController extends Controller
         $cancha->nombre = $request->nombre;
         $cancha->costo = $request->costo;
         $cancha->descripcion = $request->descripcion;
-        $cancha->valoracion = $request->valoracion;
         $cancha->save();
         return redirect()->route('cancha.index');
     }
@@ -88,7 +90,6 @@ class CanchaController extends Controller
         $cancha->nombre = $request->nombre;
         $cancha->costo = $request->costo;
         $cancha->descripcion = $request->descripcion;
-        $cancha->valoracion = $request->valoracion;
         $cancha->save();
         return redirect()->route('cancha.index');
     }

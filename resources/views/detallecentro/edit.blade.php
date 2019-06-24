@@ -57,7 +57,19 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="actividad" value="{{ $detallecentro->actividad }}" name="actividad" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
-                      </div>                      
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Observacón <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div id="" class="btn-group" data-toggle="buttons">
+                            <select id="" name="observacion" class="form-control">
+                                      <option value="Con NIT" >Cuenta con NIT</option>
+                                      <option value="Sin NIT" >Sin NIT</option>
+                            </select> 
+                          </div>
+                        </div>
+                      </div>                       
 
                       <div class="ln_solid"></div>
                       <div class="form-group">

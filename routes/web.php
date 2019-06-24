@@ -25,8 +25,10 @@ Route::group(['middleware'=>['guest']],function(){
 //autenticados en login
 Route::group(['middleware'=>['auth']],function(){
 
-	Route::get('usuario', function () {
-		return view('content.usuario');})->name('usuario');
+	// Route::get('usuario', function () {
+	// 	return view('content.usuario');})->name('usuario');
+
+	Route::resource('usuario','PrincipalController');
 
 	Route::get('empleado', function () {
 		return view('content.empleado');})->name('empleado');
@@ -46,6 +48,13 @@ Route::group(['middleware'=>['auth']],function(){
 
 // Route -> Admin (Administrador de todos los centros deportivos)
 Route::resource('ad_personal','UsuarioController');
+//BUSCADOR
+Route::resource('buscador','BuscadorController');
+// Route -> Administrador delcentro (Administrador de todos los centros deportivos)
+Route::resource('personal','PersonalController');
+
+Route::resource('horario','HorarioController');
+Route::resource('reserva','ReservaController');
 
 Route::resource('ad_detallecentro','DetalleCentroController');
 
@@ -55,14 +64,18 @@ Route::resource('ad_caractercancha','CaractercanchaController');
 
 Route::resource('ad_deporte','DeporteController');
 
-Route::resource('ad_estadocancha','EstadoCanchaController');
-
-Route::resource('ad_calendario','CalendarioController');
+Route::resource('calendario','CalendarioController');
 
 
 Route::resource('detallecancha','DetalleCanchaController');
 
 Route::resource('cancha','CanchaController');
 
-// Route::get('content.contenido', 'HomeController@index')->name('home');
+Route::resource('area','AdminCanchaController');
 
+Route::resource('promocion','PromocionController');
+
+Route::resource('caracteristica','CaractercanchaController');
+
+
+// Route::get('content.contenido', 'HomeController@index')->name('home');
