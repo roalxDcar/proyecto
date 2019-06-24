@@ -32,6 +32,8 @@
 
     <!-- Main CSS-->
     <link href="{!! asset('assets/new/css/theme.css') !!}" rel="stylesheet" media="all">
+    <link href="{!! asset('assets/css/video.css') !!}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700,800,900&display=swap" rel="stylesheet">
 
 
 </head>

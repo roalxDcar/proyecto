@@ -67,7 +67,6 @@
                       </tbody>
                     </table>
                   </div>
-=======
 @extends('layouts1.app')
 @section('contenido')
 <div class="row-center">
@@ -116,7 +115,6 @@
                       <br>
                     @endif
                   @endforeach
->>>>>>> 04929b67cab167b935825e194de4a34fd8169630
                 </div>
               @endif
             @endforeach

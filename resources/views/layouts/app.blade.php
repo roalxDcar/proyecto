@@ -28,12 +28,10 @@
 
     <!-- Custom Theme Style -->
     <link href="{!! asset('assets/build/css/custom.min.css') !!}" rel="stylesheet">
-<<<<<<< HEAD
+
     <link href="{!! asset('assets/css/video.css') !!}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:700,800,900&display=swap" rel="stylesheet">
-=======
 
->>>>>>> 04929b67cab167b935825e194de4a34fd8169630
   </head>
 
   <body class="nav-md">
