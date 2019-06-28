@@ -22,7 +22,6 @@ class CreateReservasTable extends Migration
             $table->integer('id_cancha')->unsigned();
             $table->integer('id_estado')->default(1)->unsigned();
             
-            $table->date('fecha_actual');
             $table->string('nombre');
 
             $table->foreign('id_hora')->references('id')->on('horas');

@@ -67,6 +67,7 @@ Route::resource('ad_caractercancha','CaractercanchaController');
 Route::resource('ad_deporte','DeporteController');
 
 Route::resource('calendario','CalendarioController');
+Route::resource('calendarioadmin','CalendarioadminController');
 
 
 Route::resource('detallecancha','DetalleCanchaController');

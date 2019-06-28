@@ -9,6 +9,12 @@ use App\Detalledia;
 use App\Turno;
 use App\Dia;
 
+use App\User;
+use App\Hora;
+use App\Cancha;
+use App\Reserva;
+use App\Estadoreserva;
+
 class HorarioadminController extends Controller
 {
     /**
@@ -19,6 +25,25 @@ class HorarioadminController extends Controller
     public function index()
     {
         //
+        $horario = Horario::all();;
+        $centro = Centro::all();
+        $turno = Turno::all();
+        $detalledia = Detalledia::all();
+
+        $hora = Hora::all();
+        $dia = Dia::all();
+        $estado = Estadoreserva::all();
+        $reserva = Reserva::all();
+        return view('horariouser.index',[
+            'centros'=>$centro,
+            'hora' => $hora,
+            'turno' => $turno,
+            'dia' => $dia,
+            'detalledia' => $detalledia,
+            'horario' => $horario,
+            'estado' => $estado,
+            'reserva' => $reserva
+        ]);
     }
 
     /**
@@ -29,13 +54,19 @@ class HorarioadminController extends Controller
     public function create()
     {
         //
-        $turno = Turno::all();
-        $detalledia = Detalledia::all();
+        $reserva = Reserva::all();
         $centro = Centro::all();
-        return view('horario_admin.create',[
-            'turno' => $turno,
-            'dia' => $detalledia,
-            'centro' => $centro
+        $hora = Hora::all();
+        $dia = Dia::all();
+        $cancha = Cancha::all();
+        $estado = Estadoreserva::all();
+        return view('horariouser.reserva',[
+            'reserva' => $reserva,
+            'centro'=>$centro,
+            'hora' => $hora,
+            'dia' => $dia,
+            'cancha' => $cancha,
+            'estado' => $estado
         ]);
     }
 
@@ -48,12 +79,15 @@ class HorarioadminController extends Controller
     public function store(Request $request)
     {
         //
-        $h = new Horario;
-        $h->id_centro = $request->id_centro;
-        $h->id_turno = $request->id_turno;
-        $h->id_detalle_dia = $request->id_detalle_dia;
-        $h->save();
-        return redirect()->route('ad_centro.index');
+        $reserva = new Reserva;
+        $reserva -> id_user = $request->id_user;
+        $reserva -> id_centro = $request->id_centro;
+        $reserva -> id_hora = $request->id_hora;
+        $reserva -> id_dia = $request->id_dia;
+        $reserva -> id_cancha = $request->id_cancha;
+        $reserva -> nombre = $request->nombre;
+        $reserva->save();
+        return redirect()->route('horario.index');
     }
 
     /**
@@ -88,6 +122,30 @@ class HorarioadminController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $centros = Centro::all();
+        $centro = $id;
+
+        $horas = Hora::all();
+        $hora = $request->id_hora;
+        
+        $dias = Dia::all();
+        $dia = $request->id_dia;
+        
+        $cancha = Cancha::all();
+
+        $user = User::all();
+
+        return view('horariouser.editareserva',[
+            'centros'=>$centros,
+            'horas'=>$horas,
+            'dias'=>$dias,
+
+            'centro' => $centro,
+            'hora' => $hora,
+            'dia' => $dia,
+            'cancha' => $cancha,
+            'user' => $user
+        ]);
     }
 
     /**

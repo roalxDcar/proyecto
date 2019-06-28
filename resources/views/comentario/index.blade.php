@@ -30,8 +30,7 @@
               @foreach($user as $u)
               @if($u->id == $pro->id_user)
                <figure class="mb-4">
-                  <img src="images/person_2.jpg" alt="Image" class="img-fluid mb-3">
-                  <p>{{ $u->name }}</p>
+                  <p><h3><b>{{ $u->name }}</b></h3></p>
                 </figure>
                 <blockquote>
                   <p>{{ $pro->descripcion }}</p>

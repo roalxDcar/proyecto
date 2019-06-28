@@ -9,10 +9,7 @@
                         {{-- Sidebar del Administrador --}}
                         @if( Auth::user()->id_rol == 2 )
                     <ul class="list-unstyled navbar__list">
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Calendario</a>
-                        </li>
+
                         <li>
                             <a href="{{ route('horario.index') }}">
                                 <i class="fas fa-edit"></i>Horario</a>

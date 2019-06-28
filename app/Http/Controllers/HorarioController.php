@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Dia;
+use App\Hora;
+use App\Turno;
+use App\Detalledia;
 use App\Horario;
 use App\Centro;
-use App\Detalledia;
-use App\Turno;
-use App\Dia;
+use App\Cancha;
+use App\Reserva;
+use App\Estadoreserva;
 
 class HorarioController extends Controller
 {
@@ -23,11 +28,20 @@ class HorarioController extends Controller
         $centro = Centro::all();
         $turno = Turno::all();
         $detalledia = Detalledia::all();
+
+        $hora = Hora::all();
+        $dia = Dia::all();
+        $estado = Estadoreserva::all();
+        $reserva = Reserva::all();
         return view('horariouser.index',[
-            'horario' => $horario,
-            'centro' => $centro,
+            'centros'=>$centro,
+            'hora' => $hora,
             'turno' => $turno,
-            'detalledia' => $detalledia
+            'dia' => $dia,
+            'detalledia' => $detalledia,
+            'horario' => $horario,
+            'estado' => $estado,
+            'reserva' => $reserva
         ]);
     }
 
