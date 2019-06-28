@@ -11,8 +11,6 @@
                                     <form method="POST" action="{{ route('reserva.store') }}">
                                         @csrf
                                         {{-- Centro deportivo id--}}
-                                        
-
                                         <div class="form-group row">
                                             <label for="email" class="col-md-4 col-form-label text-md-right">Centro Deportivo :</label>
                                             @foreach($centros as $c)
@@ -21,8 +19,8 @@
                                               <div class="col-md-1"><input type="text" name="id_centro" value="{{ $c->id }}" style="width:1px;height:1px;visibility: hidden;">
                                               </div>
 
-                                                <div class="col-md-5">
-	                                                <input type="" class="form-control" value="{{ $c->nombre }}" required autocomplete="email" autofocus>
+                                              <div class="col-md-5">
+	                                                <input disabled="" class="form-control" value="{{ $c->nombre }}" required autocomplete="email" autofocus>
 	                                            </div>
                                               @endif
                                             @endforeach
@@ -50,7 +48,7 @@
                                               </div>
 
                                                 <div class="col-md-5">
-                                                  <input type="" class="form-control" value="{{ $h->hora }}" required autocomplete="email" autofocus>
+                                                  <input disabled="" class="form-control" value="{{ $h->hora }}" required autocomplete="email" autofocus>
                                                 </div>
                                               @endif
                                             @endforeach
@@ -66,7 +64,7 @@
                                               </div>
                                               
                                               <div class="col-md-5">
-		                                            <input id="" type="" class="form-control" name="id_centro" value="{{ $d->dia }}" required autocomplete="email" autofocus>
+		                                            <input disabled="" class="form-control" name="id_centro" value="{{ $d->dia }}" required autocomplete="email" autofocus>
 		                                          </div>
                                               @endif
                                             @endforeach
@@ -75,11 +73,11 @@
                                         <div class="form-group row">
                                             <label for="email" class="col-md-4 col-form-label text-md-right">Nombre del reservante:</label>
 
-                                            <div class="col-md-1"><input type="text" name="id_hora" value="{{ Auth::user()->id }}" style="width:1px;height:1px;visibility: hidden;">
+                                            <div class="col-md-1"><input type="text" name="id_user" value="{{ Auth::user()->id }}" style="width:1px;height:1px;visibility: hidden;">
                                             </div>
 
                                             <div class="col-md-6">
-                                              <input id="" type="" class="form-control" name="id_centro" value="{{ Auth::user()->name }}" required="name" autofocus>
+                                              <input name="nombre" class="form-control" value="{{ Auth::user()->name }}" required="name" autofocus>
                                             </div>
                                         </div>
 

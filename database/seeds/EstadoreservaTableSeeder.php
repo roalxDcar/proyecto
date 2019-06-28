@@ -19,5 +19,8 @@ class EstadoreservaTableSeeder extends Seeder
         Estadoreserva::create([
         	'estado' => 'Ocupado'
         ]);
+        Estadoreserva::create([
+            'estado' => 'Libre'
+        ]);
     }
 }

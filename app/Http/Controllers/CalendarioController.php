@@ -12,6 +12,7 @@ use App\Horario;
 use App\Centro;
 use App\Cancha;
 use App\Reserva;
+use App\Estadoreserva;
 
 class CalendarioController extends Controller
 {
@@ -78,6 +79,8 @@ class CalendarioController extends Controller
         $dia = Dia::all();
         $detalledia = Detalledia::all();
         $horario = Horario::All();
+        $estado = Estadoreserva::all();
+        $reserva = Reserva::all();
         return view('calendario.index',[
             'centro'=>$cen,
             'centros'=>$centros,
@@ -85,7 +88,9 @@ class CalendarioController extends Controller
             'turno' => $turno,
             'dia' => $dia,
             'detalledia' => $detalledia,
-            'horario' => $horario
+            'horario' => $horario,
+            'estado' => $estado,
+            'reserva' => $reserva
         ]);
     }
 
@@ -110,7 +115,7 @@ class CalendarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //Envia Datos de la Reserva
         $centros = Centro::all();
         $centro = $id;
 

@@ -66,6 +66,7 @@
                             @if($h->id_centro == $centro)
                               @foreach($turno as $t)
                                 @if($h->id_turno == $t->id)
+                                {{-- HORA --}}
                                   @foreach($hora as $horas)
                                     @if($horas->id_turno == $t->id)
                                       <tr>
@@ -75,26 +76,44 @@
 
                                         @foreach($horario as $horarios )
                                           @if($horarios->id_centro == $centro)
+
                                             @foreach($detalledia as $d)
                                               @if($horarios->id_detalle_dia == $d->id)
+                                              {{-- DIA --}}
                                                 @foreach($dia as $dias)
                                                   @if($d->id == $dias->id_detalle_dia)
+                                                  @php($paso=0)
+                                                    @foreach($reserva as $res)
+          @if($res->id_estado == 1 && $res->id_hora == $horas->id && $res->id_dia == $dias->id && $centro == $res->id_centro)
+
+                                                    <td style="text-align: center;">
+                                                          <button disabled="" class="btn btn-default" type="submit">Ocupado</button>
+                                                    </td>
+
+                                                    @php($paso++)
+
+                                                    @endif
+                                                    @endforeach
+                                                    @if($paso == 0)
                                                     <td style="text-align: center;">
                                                       <form action="{{ route('calendario.update',$centro) }}" enctype="multipart/form-data" method="POST">
-                                                      @csrf                              
-                                                      @method('PUT')
-                                                      {{-- Primer Input hora id--}}
-                                                      <input type="text" name="id_hora" value="{{ $horas->id }}" style="width:1px;height:1px;visibility: hidden;">
-                                                       {{-- boton para guardar la reserva --}}
-                                                      <button class="btn btn-default" type="submit">Libre</button>
-                                                      {{-- segundo input dia id--}}
-                                                      <input type="text" name="id_dia" value="{{ $dias->id }}" style="width:1px;height:1px;visibility:hidden;">  
+                                                        @csrf                              
+                                                        @method('PUT')
+                                                        {{-- Primer Input hora id--}}
+                                                        <input type="text" name="id_hora" value="{{ $horas->id }}" style="width:1px;height:1px;visibility: hidden;">
+                                                         {{-- boton para guardar la reserva --}}
+                                                        <button class="btn btn-default" type="submit">Libre</button>
+                                                        {{-- segundo input dia id--}}
+                                                        <input type="text" name="id_dia" value="{{ $dias->id }}" style="width:1px;height:1px;visibility:hidden;">  
                                                       </form>
                                                     </td>
+                                                    @endif
+
                                                   @endif
                                                 @endforeach
                                               @endif
                                             @endforeach
+
                                           @endif
                                         @endforeach
 

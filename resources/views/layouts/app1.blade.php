@@ -67,11 +67,9 @@
                 @if(Route::has('login'))
                   @auth
                       @if( Auth::user()->id_rol == 1 )                      
-                        <li><a href="{{ route('usuario.index') }}">Principal</a></li>
                         <li><a href="#"><span class="border-left pl-xl-4"></span>Comentarios</a></li>
                         <li><a href="#"><span class="border-left pl-xl-4"></span>Contactos</a></li>
                         <li><a href="{{ route('cancha_usuario.index') }}"><span class="border-left pl-xl-4"></span>Centros Depotivos</a></li>
-                        <li><a href="#"><span class="border-left pl-xl-4"></span>Mapa</a></li>
                         <li class="has-children">
                           <a class="cta"><span class="bg-primary text-white rounded">{{ Auth::user()->name }}</span></a>
                           <ul class="dropdown">

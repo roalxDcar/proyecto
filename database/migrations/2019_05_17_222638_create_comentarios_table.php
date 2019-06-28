@@ -19,8 +19,6 @@ class CreateComentariosTable extends Migration
             $table->integer('id_centro')->unsigned();
 
             $table->string('comentario');
-            $table->string('observacion')->nullable();
-            $table->integer('calificacion')->nullable();
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users');
