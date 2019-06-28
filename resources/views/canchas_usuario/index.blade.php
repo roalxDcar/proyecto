@@ -41,6 +41,8 @@
                     @endif
                     <address><b>Ubicación:</b> {{ $cen->ubicacion }}</address>
                     <address><b>Telefono:</b> {{ $cen->telefono }}</address>
+                    <a href="{{ route('comentario.show',$cen->id) }}"><input type="submit" class="btn btn-Secondary btn-block rounded" value="Promociones y Comentarios"></a>
+                    <br>
                     <a href="{{ route('calendario.show',$cen->id) }}"><input type="submit" class="btn btn-primary btn-block rounded" value="Reservar Cancha"></a>
                 </div>
               </div>

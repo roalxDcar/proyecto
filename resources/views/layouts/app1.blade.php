@@ -67,14 +67,12 @@
                 @if(Route::has('login'))
                   @auth
                       @if( Auth::user()->id_rol == 1 )                      
-                        <li><a href="#"><span class="border-left pl-xl-4"></span>Comentarios</a></li>
                         <li><a href="#"><span class="border-left pl-xl-4"></span>Contactos</a></li>
                         <li><a href="{{ route('cancha_usuario.index') }}"><span class="border-left pl-xl-4"></span>Centros Depotivos</a></li>
                         <li class="has-children">
                           <a class="cta"><span class="bg-primary text-white rounded">{{ Auth::user()->name }}</span></a>
                           <ul class="dropdown">
-                            <li><a href="#">Perfil</a></li>
-                            <li><a href="#">Ajustes</a></li>
+                            <li><a href="{{ route('user.index') }}">Perfil</a></li>
                               {{-- Cerrar Sesion --}}
                               <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right"></i>Cerrar Sesion</a>
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

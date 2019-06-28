@@ -81,5 +81,8 @@ Route::resource('caracteristica','CaractercanchaController');
 
 Route::resource('horario_admin','HorarioadminController');
 
+Route::resource('user','UserController');
+Route::resource('comentario','ComentarioController');
+
 
 // Route::get('content.contenido', 'HomeController@index')->name('home');
