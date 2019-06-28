@@ -43,16 +43,11 @@
                         <ul class="list-unstyled navbar__list">
 
                             <li>
-                                <a href="#">
-                                    <i class="fas fa-calendar-alt"></i>Calendario</a>
+                            <a href="{{ route('horario.index') }}">
+                                <i class="fas fa-edit"></i>Horario</a>
                             </li>
                             <li>
-                                <a href="map.html">
-                                    <i class="fas fa-map-marker-alt"></i>Mapa</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('area.index') }}">
-                                    <i class="fas fa-cogs"></i>Cancha</a>
+                                <a href="{{ route('area.index') }}"> <i class="fas fa-desktop"></i> Cancha</a>
                             </li>
                         </ul>
                         @endif

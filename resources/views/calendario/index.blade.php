@@ -87,7 +87,7 @@
           @if($res->id_estado == 1 && $res->id_hora == $horas->id && $res->id_dia == $dias->id && $centro == $res->id_centro)
 
                                                     <td style="text-align: center;">
-                                                          <button disabled="" class="btn btn-default" type="submit">Reservado</button>
+                                                          <button disabled="" style="background-color: orange; color:white;" class="btn btn-default" type="submit">Reservado</button>
                                                     </td>
 
                                                     @php($paso++)

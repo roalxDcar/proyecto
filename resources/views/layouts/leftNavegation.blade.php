@@ -32,9 +32,6 @@
                   <li><a href="{{ route('ad_centro.index') }}"><i class=" fa fa-folder-open"></i> Registro Locales</a>
                   </li>
 
-                  <li><a href="#"><i class="  fa fa-folder-open"></i> Canchas Registradas</a>
-                  </li>
-
                 </ul>
               </div>
             </div>

@@ -131,7 +131,7 @@
                                     @if($horas->id_turno == $t->id)
                                       <tr>
                                         {{-- Para mostrar las horas --}}
-                                        <td class="hidden-xs">{{ $horas->hora }}</td>
+                                        <td style="text-align: center;" class="hidden-xs">{{ $horas->hora }}</td>
                                         {{-- Boton para solicitar reserva --}}
 
                                         @foreach($horario as $horarios )
@@ -147,7 +147,7 @@
           @if($res->id_estado == 1 && $res->id_hora == $horas->id && $res->id_dia == $dias->id && Auth::user()->id_centro == $res->id_centro)
 
                                                     <td style="text-align: center;">
-                                                          <button disabled="" class="btn btn-default" type="submit">Ocupado</button>
+                                                          <button disabled="" class="btn btn-default" style="color:white;background-color: orange;" type="submit">Ocupado</button>
                                                     </td>
 
                                                     @php($paso++)
@@ -162,7 +162,7 @@
                                                         {{-- Primer Input hora id--}}
                                                         <input type="text" name="id_hora" value="{{ $horas->id }}" style="width:1px;height:1px;visibility: hidden;">
                                                          {{-- boton para guardar la reserva --}}
-                                                        <button class="btn btn-default" type="submit">Libre</button>
+                                                        <button class="btn btn-default" style="color:white;background-color: green;" type="submit">Libre</button>
                                                         {{-- segundo input dia id--}}
                                                         <input type="text" name="id_dia" value="{{ $dias->id }}" style="width:1px;height:1px;visibility:hidden;">  
                                                       </form>

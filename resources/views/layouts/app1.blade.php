@@ -67,7 +67,6 @@
                 @if(Route::has('login'))
                   @auth
                       @if( Auth::user()->id_rol == 1 )                      
-                        <li><a href="#"><span class="border-left pl-xl-4"></span>Contactos</a></li>
                         <li><a href="{{ route('cancha_usuario.index') }}"><span class="border-left pl-xl-4"></span>Centros Depotivos</a></li>
                         <li class="has-children">
                           <a class="cta"><span class="bg-primary text-white rounded">{{ Auth::user()->name }}</span></a>
@@ -138,25 +137,15 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-6">
-                <h2 class="footer-heading mb-4">About</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident rerum unde possimus molestias dolorem fuga, illo quis fugiat!</p>
+                <h2 class="footer-heading mb-4">Acerca de Info-Sport</h2>
+                <p>Esta plataforma esta diseñado para aquellos deportistas que esten buscando áreas deportivas de su ciudad.</p>
               </div>
               
               <div class="col-md-3">
-                <h2 class="footer-heading mb-4">Navigations</h2>
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
                 <h2 class="footer-heading mb-4">Follow Us</h2>
-                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="https://www.facebook.com/Info-Sport-373541533297419/" title="Facebook Info-Sport" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
                 <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
                 <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
               </div>
             </div>
           </div>
@@ -167,7 +156,7 @@
             <div class="border-top pt-5">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Info - Sport &copy;<script>document.write(new Date().getFullYear());</script> | Bolivia - El Alto
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             </div>
