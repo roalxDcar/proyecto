@@ -52,9 +52,11 @@ Route::resource('ad_personal','UsuarioController');
 Route::resource('buscador','BuscadorController');
 // Route -> Administrador delcentro (Administrador de todos los centros deportivos)
 Route::resource('personal','PersonalController');
+Route::resource('perfil','PerfilController');
 
 Route::resource('horario','HorarioController');
 Route::resource('reserva','ReservaController');
+Route::resource('cancha_usuario','CanchausuarioController');
 
 Route::resource('ad_detallecentro','DetalleCentroController');
 
@@ -76,6 +78,8 @@ Route::resource('area','AdminCanchaController');
 Route::resource('promocion','PromocionController');
 
 Route::resource('caracteristica','CaractercanchaController');
+
+Route::resource('horario_admin','HorarioadminController');
 
 
 // Route::get('content.contenido', 'HomeController@index')->name('home');

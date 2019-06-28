@@ -12,12 +12,6 @@
                                           @endif
                                       @endforeach
                                     </div>
-                                    <div class="table-data__tool-right">
-                                       <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                            <i class="zmdi zmdi-plus"></i>
-                                            <a style="color:white;" href="{{ route('horario.create') }}">Nuevo Horario</a>
-                                        </button>
-                                    </div>
                                 </div>
                                 <div class="table-responsive table-responsive-data2">
                                     <table class="table table-data2">
@@ -31,12 +25,11 @@
                                         </thead>
                                         @php ($cont=0)
                                         <tbody>
+                                            @foreach($horario as $h)
+                                                @if($c->id == $h->id_centro)
                                             <tr class="tr-shadow">
                                              @php ($cont++)
                                                 {{-- id_usuario hecho con un contador -> c --}}
-                                                @foreach($horario as $h)
-                                                @if($c->id == $h->id_centro)
-                                                    
                                                     <td> {{ $cont }}</td>  
 
                                                      @foreach($detalledia as $d)
@@ -55,10 +48,10 @@
                                                        <div style="align-content: center;" class="table-data-feature">
                                                            <a type="" class="item" data-toggle="tooltip" data-placement="top" title="Edit" style=" text-decoration:  none;"  href="{{ route('horario.edit',$h->id) }}"><i class="zmdi zmdi-edit"></i></a>
                                                         </div>
-                                                     </td> 
+                                                     </td>                                                  
+                                             </tr> 
                                                 @endif
-                                                @endforeach                                                     
-                                             </tr>
+                                                @endforeach   
                                         </tbody>
                                     </table>
                                 </div>

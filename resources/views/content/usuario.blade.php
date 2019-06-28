@@ -1,5 +1,12 @@
 @extends('layouts.app1')
 @section('content1')
+<div class="row justify-content-center mt-5">
+              <div class="col-md-8 text-center">
+                <h1>BIENVENIDO A INFO-SPORT</h1>
+              </div>
+            </div>
+@endsection
+@section('content2')
 {{-- Calendario --}} 
                 <div class="container">
                     <div class="row">
@@ -36,7 +43,6 @@
                 <div class="d-block d-md-flex listing vertical">
                   <a target="_blak" href="{{ asset($cen->foto) }}" class="img d-block"><img title="{{ $cen->nombre }}" src="{{ asset($cen->foto) }}"></a>
                   <div class="lh-content">
-                    <a title="Mirar Ambientes" href="mostrar_cancha" class="bookmark"><span class="icon-eye"></span></a>
                     <h3>Reservar:  <a title="Reservar" href="{{ route('calendario.show',$cen->id) }}">" {{ $cen->nombre }} "</a></h3>
                     <p><b>* Ubicacion:</b> {{ $cen->ubicacion }}</p>
                     <p><b>*Telefono: </b>{{ $cen->telefono }}</p>

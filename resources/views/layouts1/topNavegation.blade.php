@@ -68,12 +68,8 @@
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
+                                                    <a href="{{ route('perfil.edit',Auth::user()->id) }}">
                                                         <i class="zmdi zmdi-account"></i>Perfil</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Ajustes</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">

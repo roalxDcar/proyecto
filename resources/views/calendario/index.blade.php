@@ -7,7 +7,6 @@
 @section('content1')
 
 {{-- Contenido --}}
-{{-- Calendario --}} 
 <div class="container">
     <div class="row">  
         <div class="col-md-10 col-md-offset-1">
@@ -18,10 +17,12 @@
                   <div class="col col-xs-6">
                     @php($contador=0)
                     @foreach($centros as $c)
-                      @if($c->id == $centro)
-                      @php($contador++)
-                        <h1 class="panel-title" style="color:black;">Horario Centro Deportivo "{{ $c->nombre }}"</h1> 
-                        @endif                    
+                      @foreach($horario as $horarios)
+                        @if($c->id == $centro && $horarios->id_centro == $centro && $contador == 0)
+                        @php($contador++)
+                          <h1 class="panel-title" style="color:black;">Horario Centro Deportivo "{{ $c->nombre }}"</h1> 
+                        @endif 
+                      @endforeach                   
                     @endforeach
                     @if($contador == 0)
                       <h1 class="panel-title" style="color:black;">Horario</h1>
@@ -55,6 +56,7 @@
                       <tr>
                         <th style="text-align: center;">...</th>
                       </tr>
+
                     @endif 
                   </thead>
                   <tbody>
@@ -116,4 +118,7 @@
         </div>
     </div>
 </div>
+{{-- Calendario --}} 
+
 @endsection
+

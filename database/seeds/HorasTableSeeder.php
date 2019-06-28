@@ -15,10 +15,6 @@ class HorasTableSeeder extends Seeder
         //
         Hora::create([
         	'id_turno'=>'1',
-            'hora' => '08:00 - 09:00'
-        ]);
-        Hora::create([
-        	'id_turno'=>'1',
             'hora' => '09:00 - 10:00'
         ]);
         Hora::create([
@@ -96,10 +92,6 @@ class HorasTableSeeder extends Seeder
         Hora::create([
             'id_turno'=>'3',
             'hora' => '20:00 - 21:00'
-        ]);
-        Hora::create([
-            'id_turno'=>'3',
-            'hora' => '21:00 - 22:00'
         ]);
     }
 }

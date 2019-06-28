@@ -18,6 +18,7 @@ class CreateHorariosTable extends Migration
             $table->integer('id_centro')->unsigned();
             $table->integer('id_turno')->unsigned();
             $table->integer('id_detalle_dia')->unsigned();
+            $table->integer('estado')->default(1);
             $table->timestamps();
             $table->foreign('id_centro')->references('id')->on('centros');
             $table->foreign('id_turno')->references('id')->on('turnos');

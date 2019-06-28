@@ -70,7 +70,7 @@
                         <li><a href="{{ route('usuario.index') }}">Principal</a></li>
                         <li><a href="#"><span class="border-left pl-xl-4"></span>Comentarios</a></li>
                         <li><a href="#"><span class="border-left pl-xl-4"></span>Contactos</a></li>
-                        <li><a href="{{ route('calendario.index') }}"><span class="border-left pl-xl-4"></span>Reservar Cancha</a></li>
+                        <li><a href="{{ route('cancha_usuario.index') }}"><span class="border-left pl-xl-4"></span>Centros Depotivos</a></li>
                         <li><a href="#"><span class="border-left pl-xl-4"></span>Mapa</a></li>
                         <li class="has-children">
                           <a class="cta"><span class="bg-primary text-white rounded">{{ Auth::user()->name }}</span></a>
@@ -127,28 +127,13 @@
         </div>
       </div>
     </div> 
+
+    @yield('content2')
     
                 {{-- Fin de Parte final --}}
 
     {{-- Contenido dentro de la foto "PRINCIPAL" --}}
 
-    <div class="newsletter bg-primary py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h2>Newsletter</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="col-md-6">
-            
-            <form class="d-flex">
-              <input type="text" class="form-control" placeholder="Email">
-              <input type="submit" value="Subscribe" class="btn btn-white"> 
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
   
     
     <footer class="site-footer">
@@ -196,7 +181,6 @@
       </div>
     </footer>
   </div>
-@yield('script')
   <script src="{!! asset('assets/js/jquery-3.3.1.min.js') !!}"></script>
   <script src="{!! asset('assets/js/jquery-migrate-3.0.1.min.js') !!}"></script>
   <script src="{!! asset('assets/js/jquery-ui.js') !!}"></script>

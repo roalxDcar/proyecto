@@ -16,16 +16,18 @@ class CreateReservasTable extends Migration
         Schema::create('reservas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_centro')->unsigned();
+            $table->integer('id_user')->unsigned();
             $table->integer('id_hora')->unsigned();
             $table->integer('id_dia')->unsigned();
             $table->integer('id_cancha')->unsigned();
-            $table->integer('id_estado')->default(1);
-
+            $table->integer('id_estado')->default(1)->unsigned();
+            
             $table->string('nombre');
 
             $table->foreign('id_hora')->references('id')->on('horas');
             $table->foreign('id_dia')->references('id')->on('dias');
             $table->foreign('id_centro')->references('id')->on('centros');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_cancha')->references('id')->on('canchas');
             $table->foreign('id_estado')->references('id')->on('estadoreservas');
             $table->timestamps();

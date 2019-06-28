@@ -15,6 +15,7 @@
                                         <hr>
                                         <form action="{{ route('area.store') }}" method="post" novalidate="novalidate">
                                             @csrf
+                                            <input type="text" name="id_centro" value="{{ Auth::user()->id_centro }}" style="width:1px;height:1px;visibility: hidden;">
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Nombre de la Cancha *</label>
                                                 <input id="nombre" name="nombre" type="text" class="form-control" aria-required="true" value="" autocomplete="off">

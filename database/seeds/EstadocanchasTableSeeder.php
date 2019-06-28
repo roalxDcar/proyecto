@@ -19,5 +19,8 @@ class EstadocanchasTableSeeder extends Seeder
         EstadoCancha::create([
         	'descripcion' => 'Disponible'
         ]);
+        EstadoCancha::create([
+            'descripcion' => 'Libre'
+        ]);
     }
 }

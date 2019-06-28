@@ -20,7 +20,7 @@ class TurnosTableSeeder extends Seeder
             'descripcion' => 'Tarde / 15:00 a 22:00'
         ]);
         Turno::create([
-            'descripcion' => 'Todo el dia / 08:00 a 22:00'
+            'descripcion' => 'Todo el dia / 09:00 a 21:00'
         ]);
     }
 }

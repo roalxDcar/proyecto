@@ -11,6 +11,7 @@ use App\Detalledia;
 use App\Horario;
 use App\Centro;
 use App\Cancha;
+use App\Reserva;
 
 class CalendarioController extends Controller
 {
@@ -34,6 +35,10 @@ class CalendarioController extends Controller
     public function create()
     {
         //
+        $reserva = Reserva::all();
+        return view('calendario.reserva',[
+            'reserva' => $reserva
+        ]);
     }
 
     /**
@@ -45,6 +50,16 @@ class CalendarioController extends Controller
     public function store(Request $request)
     {
         //
+        $reserva = new Reserva;
+        $reserva -> id_user = $request->id_user;
+        $reserva -> id_centro = $request->id_centro;
+        $reserva -> id_hora = $request->id_hora;
+        $reserva -> id_dia = $request->id_dia;
+        $reserva -> id_cancha = $request->id_cancha;
+        $reserva -> id_nombre = $request->id_nombre;
+        $reserva->save();
+        return redirect()->route('calendario.create');
+
     }
 
     /**
@@ -106,6 +121,9 @@ class CalendarioController extends Controller
         $dia = $request->id_dia;
         
         $cancha = Cancha::all();
+
+        $user = User::all();
+
         return view('calendario.edit',[
             'centros'=>$centros,
             'horas'=>$horas,
@@ -114,7 +132,8 @@ class CalendarioController extends Controller
             'centro' => $centro,
             'hora' => $hora,
             'dia' => $dia,
-            'cancha' => $cancha
+            'cancha' => $cancha,
+            'user' => $user
         ]);
     }
 

@@ -56,7 +56,7 @@ class CentroController extends Controller
             $centro->ubicacion = $request->ubicacion;
             $centro->foto = $file;
             $centro->save();
-            return redirect()->route('ad_centro.index');
+            return redirect()->route('horario_admin.create');
     }
 
     /**
