@@ -14,10 +14,6 @@
                             <a href="{{ route('horario.index') }}">
                                 <i class="fas fa-edit"></i>Horario</a>
                         </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Mapa</a>
-                        </li>
 
                         <li class="has-sub">
                             <a class="js-arrow" href="#">

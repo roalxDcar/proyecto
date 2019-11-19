@@ -17,10 +17,12 @@ class CentroController extends Controller
     {
         $centro = Centro::all();
         $detalle = DetalleCentro::all();
-        return view('centro.index',[
-            'centro'=> $centro,
-            'detalle'=>$detalle
-        ]);
+        // return view('centro.index',[
+        //     'centro'=> $centro,
+        //     'detalle'=>$detalle
+        // ]);
+
+        return view('centro.index', compact('centro','detalle'));
     }
 
     /**

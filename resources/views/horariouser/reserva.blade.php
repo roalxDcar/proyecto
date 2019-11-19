@@ -4,8 +4,8 @@
              <div class="col-lg-6">
                                <br>
                                 <h4 class="mb-0 site-logo"><a href="#" class="text-black mb-0"><b>Datos de Registrados</b></a></h4>
-                                @foreach($reserva as $r)
-                                 @php($reserva = $r)
+                                @foreach($reserva as $r2)
+                                 @php($r = $r2)
                                 @endforeach
 
                                 <div class="card-body">

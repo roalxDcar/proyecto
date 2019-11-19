@@ -84,8 +84,8 @@
                                                   @if($d->id == $dias->id_detalle_dia)
                                                   @php($paso=0)
                                                     @foreach($reserva as $res)
-          @if($res->id_estado == 1 && $res->id_hora == $horas->id && $res->id_dia == $dias->id && $centro == $res->id_centro)
-
+         @if($res->id_estado == 1 && $res->id_hora == $horas->id && $res->id_dia == $dias->id && $centro == $res->id_centro)
+          
                                                     <td style="text-align: center;">
                                                           <button disabled="" style="background-color: orange; color:white;" class="btn btn-default" type="submit">Reservado</button>
                                                     </td>
@@ -94,6 +94,7 @@
 
                                                     @endif
                                                     @endforeach
+
                                                     @if($paso == 0)
                                                     <td style="text-align: center;">
                                                       <form action="{{ route('calendario.update',$centro) }}" enctype="multipart/form-data" method="POST">

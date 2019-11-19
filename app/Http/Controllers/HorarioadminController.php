@@ -60,10 +60,12 @@ class HorarioadminController extends Controller
         $dia = Dia::all();
         $cancha = Cancha::all();
         $estado = Estadoreserva::all();
-        return view('horariouser.reserva',[
+        $turno = Turno::all();
+        return view('horario_admin.create',[
             'reserva' => $reserva,
             'centro'=>$centro,
             'hora' => $hora,
+            'turno'=> $turno
             'dia' => $dia,
             'cancha' => $cancha,
             'estado' => $estado
